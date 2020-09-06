@@ -35,6 +35,7 @@ button {
 .navbar {
     background-color: white;
     padding: 15px 0px;
+    height: 20vh;
 }
 .nav-align {
     display: flex;
