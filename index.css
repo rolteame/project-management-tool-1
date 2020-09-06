@@ -229,6 +229,7 @@ li.nav-item-trail a{
     border-radius: 20px;
     width: 25%;
     padding: 3px;
+    transition: all 1s ease-in-out;
 }
 .landing-try:hover {
     background-color: #007AA3;
