@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/navigation.css">
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/signup.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
-    <title>Bascom Projects || Login</title>
+    <title>Bascom Projects || Signup</title>
 </head>
 <body>
     <header>
@@ -31,7 +31,7 @@
                             <li class="nav-item"><a href="./resource.html">Resources</a></li>
                             <li class="nav-item"><a href="./pricing.html">Pricing</a></li>
                             <li class="nav-item"><a href="./login.html">Log in</a></li>
-                            <li class="nav-item-trail"><a href="./signup.html">Free Trial</a></li>
+                            <li class="nav-item-trail"><a href="#">Free Trial</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,13 +39,16 @@
         </nav>
     </header>
     <section class="login-container">
-        <h1>Continue Your Journey To Success</h1>
+        <h1>Try Bascom Projects For Free</h1>
+        <p>By signing up, I agree to the Bascom Projects Privacy Policy and Terms of Service.</p>
         <form action="">
             <label for="email">Email:</label>
             <input id="email" type="email" placeholder="Enter Email Address" name="email" required>
             <label for="password">Password:</label>
             <input id="password" type="password" placeholder="Enter Password" name="password" required>
-            <input type="submit" value="Login">
+            <label for="retypePassword">Retype Password:</label>
+            <input id="retypePassword" type="password" placeholder="Enter Password Again" name="retypePassword" required>
+            <input type="submit" value="Register">
         </form>
     </section>
     <footer class="landing-footer-section">
