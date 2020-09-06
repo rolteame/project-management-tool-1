@@ -193,9 +193,11 @@ li.nav-item-trail a{
         max-width: 100%;
     }
 }
+/* navbar end*/
 /*main body*/
 .landing-section {
     height: auto;
+    max-width: 100%;
     padding-top: 50px;
     padding-bottom: 71px;
     width: 80%;
@@ -283,7 +285,7 @@ li.nav-item-trail a{
     }
     .landing-footer-section {
         height: auto;
-        width: 100%;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -291,4 +293,9 @@ li.nav-item-trail a{
         background-color: #00465d;
     }
 }
-/* navbar end*/
+@media (min-width: 425px) and (max-width: 768px) {
+    .landing-footer-section {
+        height: auto;
+        max-width: 100%;
+    }
+}
