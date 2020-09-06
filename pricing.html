@@ -4,83 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/defaults.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/utility.css">
     <link rel="stylesheet" href="assets/css/pricing.css">
 
     <title>Pricing</title>
-    
+    <script src="https://kit.fontawesome.com/bb034dbd21.js" crossorigin="anonymous"></script>    
 </head>
 <body>
+    <!-- Navbar  -->
+        <nav class="navbar">
+            <!-- hamburger -->
+            <div class="nav-align container">
+                <a href="index.html" class="logo"><span class="text-primary">BAS</span>COM</a>
+                <!-- navbar content -->
+                <div class="nav-content">
+                    <!-- nav-list  -->
+                    <button class="hamburger hamburger--collapse" aria-label="Toggle navigation" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"> </span>
+                        </span>
+                    </button>
+                    <div class="navbar-collapse">
+                        <ul class="nav-list">
+                            <!-- nav items -->
+                            <li class="nav-item"><a class="current" href="index.html">Why Bascom Projects?</a></li>
+                            <li class="nav-item"><a href="solution.html">Solutions</a></li>
+                            <li class="nav-item"><a href="resource.html">Resources</a></li>
+                            <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+                            <li class="nav-item"><a href="login.html">Log in</a></li>
+                            <li class="nav-item-trail"><a href="#">Free Trial</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header> 
+
     <!-- SECTION: PRICING -->
     <div class="container">
       
-        <div  id="pricing-container">
-            <h1  class="pricing-heading">Pricing</h1>
+        <div  id="pricing-top-content">
+            <div  class="pricing-heading">Pricing</div>
              <p  class="pricng-paragraph">get the power to control your
-                    project in diverse ways</p>
+                    project in diverse ways
+            </p>
 
         </div>
 
         <!-- PRICING PACKAGES -->
-        <div class="pricing-cards-container">
-            <div class="pricing-card-basic">
+        <div class="pricing-cards-container" >
+            <div id="pricing-card-basic" class="pricing-card">
 
                 <!-- BASIC START -->
-                <div>
-                    <h1>BASIC</h1>
-                    <h1>SIGNUP</h1>
+                <div class="pricing-card-header">
+                    <div class="p-card-1st-div">BASIC</div>
+                    <div class="p-card-2nd-div">SIGNUP</div>
                 </div>
-                <div>
+                <div class="pricing-features-list">
                     <ul>
-                        <li>Unlimited tasks</li>
-                        <li>Unlimited projects</li>
-                        <li>Unlimited tasks</li>
-                        <li>List view projects</li>
-                        <li>Unlimited activity log</li>
-                        <li>Calendar view</li>
+                        <li><i class="fas fa-check"></i>Unlimited tasks</li>
+                        <li><i class="fas fa-check"></i>Unlimited projects</li>
+                        <li><i class="fas fa-check"></i>Unlimited tasks</li>
+                        <li><i class="fas fa-check"></i>List view projects</li>
+                        <li><i class="fas fa-check"></i>Unlimited activity log</li>
+                        <li><i class="fas fa-check"></i>Calendar view</li>
                     </ul>
-                    <button type="button">FREE</button>
+                    <button id="p-btn-basic">FREE</button>
                 </div>
             </div>
             <!-- BASIC START -->
 
             
                 <!-- STANDARD  START-->
-            <div class="pricing-card-standard">
-                <div>
-                    <h1>STANDARD</h1>
-                    <h1>$99.99/MON</h1>
+            <div id="pricing-card-standard" class="pricing-card">
+                <div class="pricing-card-header">
+                    <div class="p-card-1st-div">STANDARD</div>
+                    <div class="p-card-2nd-div">$99.99/MON</div>
                 </div>
-                <div>
+                <div class="pricing-features-list">
                     <ul>
-                        <li>Unlimited tasks</li>
-                        <li>Unlimited projects</li>
-                        <li>Unlimited tasks</li>
-                        <li>List view projects</li>
-                        <li>Unlimited activity log</li>
-                        <li>Calendar view</li>
+                        <li><i class="fas fa-check"></i>Unlimited tasks</li>
+                        <li><i class="fas fa-check"></i>Unlimited projects</li>
+                        <li><i class="fas fa-check"></i>Unlimited tasks</li>
+                        <li><i class="fas fa-check"></i>List view projects</li>
+                        <li><i class="fas fa-check"></i>Unlimited activity log</li>
+                        <li><i class="fas fa-check"></i>Calendar view</li>
                     </ul>
-                    <button type="button">SIGNUP</button>
+                    <button id="p-btn-standard">SIGNUP</button>
                 </div>
             </div>
             <!-- STANDARD END-->
              
                 <!-- PREMIUM START-->
-            <div class="pricing-card-premium">
-                <div>
-                    <h1>PREMIUM</h1>
-                    <h1>$99.99/MON</h1>
+            <div id="pricing-card-premium" class="pricing-card">
+                <div class="pricing-card-header">
+                    <div class="p-card-1st-div">PREMIUM</div>
+                    <div class="p-card-2nd-div">$99.99/MON</div>
                 </div>
-                <div>
+                <div class="pricing-features-list">
                     <ul>
-                        <li>Unlimited tasks</li>
-                        <li>Unlimited projects</li>
-                        <li>Unlimited tasks</li>
-                        <li>List view projects</li>
-                        <li>Unlimited activity log</li>
-                        <li>Calendar view</li>
+                        <li><i class="fas fa-check"></i>Unlimited tasks</li>
+                        <li><i class="fas fa-check"></i>Unlimited projects</li>
+                        <li><i class="fas fa-check"></i>Unlimited tasks</li>
+                        <li><i class="fas fa-check"></i>List view projects</li>
+                        <li><i class="fas fa-check"></i>Unlimited activity log</li>
+                        <li><i class="fas fa-check"></i>Calendar view</li>
                     </ul>
-                    <button type="button">SIGNUP</button>
+                    <button id="p-btn-premium">SIGNUP</button>
                 </div>
             </div> 
             <!-- PREMIUM  END-->
@@ -88,5 +120,25 @@
         </div>
         
     </div>
+
+    <!--FOOTER BEGINS-->
+    <footer class="landing-footer-section">
+        <div class="landing-footer-full-logo">
+          <span><h1><span class="landing-footer-logo">&copyBAS</span>COM INC.</h1></span>
+        </div>
+        <div class="landing-footer-menu">
+          <p><a href=""><span>Terms and Policy</span></a><a href=""><span class="landing-footer-space">Blog</span></a></p>
+          <p><a href=""><span>Bascom Policy</span></a><a href=""><span class="landing-footer-space">FAQs</span></a></p>
+        </div>
+        <div class="landing-footer-external-links">
+          <p>Contact Us on Social Media:</p>
+          <div class="landing-footer-icons">
+            <a href="#"><img src="https://img.icons8.com/office/16/000000/linkedin.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/officexs/16/000000/facebook.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/officexs/16/000000/instagram-new.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/ultraviolet/16/000000/twitter-circled.png"/></a>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
