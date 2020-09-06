@@ -1,7 +1,9 @@
+/* The  pricing page is structurally divided into two units(aside the navbar and the footer)*/
 .pricing-container{
     display: flex;
     flex-direction: column;
 }
+
 
 #pricing-top-content{
    height: 70vh;  
@@ -141,4 +143,19 @@
     border: none;
     background-image: linear-gradient(to right,#d6973a, #de8c12 ,#d6973a);
     color: white;
+}
+
+@media screen and (max-width: 740px){
+    .pricing-cards-container{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        justify-content: center; 
+        margin-bottom: 7rem;
+        gap: 50px;
+    }   
+
+    .pricing-container{
+        position: relative;
+        z-index: -1;
+    }
 }
