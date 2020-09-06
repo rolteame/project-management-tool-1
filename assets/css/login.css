@@ -1,0 +1,42 @@
+.login-container {
+    height: 100vh;
+    width: 80%;
+    height: auto;
+    margin: 10px auto;
+    padding-bottom: 43px;
+}
+.login-container h1 {
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form input {
+    width: 60%;
+    padding: 15px;
+    margin: 5px;
+    border: 2px solid #0099CC;
+    border-radius: 5px;
+}
+form input[type="submit"] {
+    background-color: #0099CC;
+    color: #ffffff;
+    font-size: 24px;
+    outline: none;
+    cursor: pointer;
+}
+@media (max-width: 425px) {
+    .login-container h1 {
+        font-size: 25px;
+    }
+    .login-container {
+        max-width: 100%;
+    }
+    form input {
+        width: 100%;
+    }
+}
