@@ -6,19 +6,19 @@
 
 
 #pricing-top-content{
-   height: 70vh;  
+   height: 30vh;  
 }
 
 .pricing-heading {
-    font-size: 150px;
-    font-weight: lighter;
+    font-size: 50px;
+    font-weight: normal;
     text-align: center;
 }
 
 .pricng-paragraph{
     color:#a1a1a1 /*#6e6d6b*/;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 2rem;
 }
 
 .pricing-cards-container{
@@ -46,7 +46,7 @@
     padding: 0;
     background-color: #e3e3e3;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 #pricing-card-basic .pricing-card-header .p-card-1st-div{
@@ -106,7 +106,7 @@
 
 .pricing-features-list{
     margin: 1rem 1rem 1rem 1.2rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .pricing-features-list ul li{
@@ -131,18 +131,30 @@
     border: solid 3px #0099cc;
     color: #0099cc;
     background-color: white;
+    display: block;
+    margin: 0 auto;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 #p-btn-standard{
     border: none;
     background-image: linear-gradient(to right,#a3f0a9, #50eb5d ,#a3f0a9);
     color: white;
+    display: block;
+    margin: 0 auto;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 #p-btn-premium{
     border: none;
     background-image: linear-gradient(to right,#d6973a, #de8c12 ,#d6973a);
     color: white;
+    display: block;
+    margin: 0 auto;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 740px){
