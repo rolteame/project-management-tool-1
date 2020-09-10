@@ -19,10 +19,11 @@
     text-align: center;
 }
 .about-content {
-    text-align: center;
+    text-align: justify;
     display: flex;
     align-self: center;
     padding: 20px;
+    
 }
 @media (max-width: 425px){
     
