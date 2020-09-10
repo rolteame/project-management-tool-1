@@ -1,14 +1,16 @@
-.login-container {
-    height: 100vh;
-    width: 80%;
+.reset-container {
     height: auto;
-    margin: 10px auto;
+    width: 80%;
     padding-bottom: 43px;
+    margin: 10px auto;
 }
-.login-container h1 {
+.reset-container h1 {
     font-size: 40px;
     text-align: center;
-    padding: 10px;
+}
+.reset-container p {
+    font-size: 1rem;
+    text-align: center;
 }
 form {
     display: flex;
@@ -22,6 +24,7 @@ form input {
     margin: 5px;
     border: 2px solid #0099CC;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 form input[type="submit"] {
     background-color: #0099CC;
@@ -33,23 +36,11 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #007AA3;
 }
-form label {
-    margin-right: 50px;
-}
-.forgot {
-    color: #0099CC;
-    margin-left: 280px;
-    font-weight: normal;
-}
-.forgot:hover {
-    color: #007AA3;
-    text-decoration: underline;
-}
 @media (max-width: 425px) {
-    .login-container h1 {
+    .reset-container h1 {
         font-size: 25px;
     }
-    .login-container {
+    .reset-container {
         max-width: 100%;
     }
     form {

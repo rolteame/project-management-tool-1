@@ -40,6 +40,13 @@ form input[type="submit"]:hover {
 form label {
     margin-right: 50px;
 }
+.login-link {
+    color: #0099CC;
+}
+.login-link:hover {
+    color: #007AA3;
+    text-decoration: underline;
+}
 @media (max-width: 425px) {
     .login-container h1 {
         font-size: 25px;
