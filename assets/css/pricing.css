@@ -2,6 +2,9 @@
 .pricing-container{
     display: flex;
     flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 
