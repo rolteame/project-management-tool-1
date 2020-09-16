@@ -23,9 +23,9 @@
 
 .pricing-cards-container{
     display: grid;
-    grid-template-columns: repeat(3,minmax(100px,400px));
-    column-gap: 50px;
-    justify-content: center;
+    grid-template-columns: repeat(3,300px);/*repeat(3,minmax(100px,400px)); */
+    column-gap: 150px;
+    margin: auto;
     margin-bottom: 7rem;
 }
 
@@ -121,7 +121,7 @@
 .pricing-features-list button{
     text-align: center;
     border-radius: 3rem;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 1.5rem;
     margin-bottom: 3rem;
     margin:0 auto 50px auto;
@@ -133,7 +133,6 @@
     background-color: white;
     display: block;
     margin: 0 auto;
-    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -143,7 +142,6 @@
     color: white;
     display: block;
     margin: 0 auto;
-    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -153,21 +151,67 @@
     color: white;
     display: block;
     margin: 0 auto;
-    font-size: 2rem;
     cursor: pointer;
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 499px){
     .pricing-cards-container{
         display: grid;
-        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        grid-template-columns: repeat(1, 250px);
         justify-content: center; 
-        margin-bottom: 7rem;
+        margin: 7rem 0;
         gap: 50px;
     }   
 
     .pricing-container{
         position: relative;
         z-index: -1;
+    }
+    .pricing-card .pricing-card-header {
+        margin-top: 0px;
+        padding: 0;
+        background-color: #e3e3e3;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .pricing-features-list{
+       margin: 1rem 1rem 1rem 1rem;
+        font-size: 1rem;
+    }
+
+    .pricing-features-list ul li{
+        padding: 1rem 0.8rem;
+    }
+
+    .pricing-features-list button{
+        text-align: center;
+        border-radius: 3rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+        margin:0 auto 50px auto;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 740px){
+    .pricing-cards-container{
+        display: grid;
+        grid-template-columns: repeat(1, 300px);
+        justify-content: center; 
+        margin: 7rem 0;
+        gap: 50px;
+    }   
+
+    .pricing-container{
+        position: relative;
+        z-index: -1;
+    }
+    .pricing-features-list button{
+        text-align: center;
+        border-radius: 3rem;
+        font-size: 2rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+        margin:0 auto 50px auto;
     }
 }
