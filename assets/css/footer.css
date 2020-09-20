@@ -71,3 +71,32 @@
         flex-direction: column;
     }
 }
+/* Search bar */
+form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border:1px solid grey;
+    float: left;
+    width: 80%;
+    background: transparent;
+
+  }
+  
+  /* Submit button */
+  form.search button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #0099CC;
+    color: white;
+    font-size: 17px;
+    border-left: none; 
+    border: 1px solid grey;
+    cursor: pointer;
+  }
+  
+  form.search button:hover {
+    background: #0073AA;
+  }
+  
+  
