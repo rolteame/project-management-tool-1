@@ -1,6 +1,6 @@
 /*main body*/
 .landing-section {
-    height: auto;
+    height: 70vh;
     max-width: 100%;
     padding-top: 50px;
     padding-bottom: 71px;
@@ -17,7 +17,7 @@
     margin-bottom: 0;
 }
 .landing-section p {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
 }
 .landing-try {

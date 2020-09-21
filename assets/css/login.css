@@ -33,6 +33,24 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #007AA3;
 }
+
+/* google button */
+form #google_btn {
+    background-color: #cc0511;
+    color: #ffffff;
+    font-size: 24px;
+    outline: none;
+    cursor: pointer;
+    border:  #cc0511;
+}
+
+form #google_btn:hover {
+    background-color: #8b1018;
+}
+/* end */
+
+
+
 form label {
     margin-right: 50px;
 }
@@ -58,4 +76,6 @@ form label {
     form input {
         width: 100%;
     }
+
+
 }
