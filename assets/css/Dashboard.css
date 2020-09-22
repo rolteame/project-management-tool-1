@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Heebo";
+    background:  #D8D8D8;
+    
+}
+ /* Head section */
+ header{
+    background: #fff;
+    position: absolute;
+    height: 150px;
+        
+}
+
+/* Logo*/
+.text-primary{
+    color: #0099CC;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+l-heading{
+    color: #00465D;
+    margin-top: 12px;
+    
+}
+
+
+label.logo{
+    display: flex;
+    justify-content: flex-start; 
+    margin: 0 30px;
+    padding-bottom: 20px;
+    font-weight: bold;   
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 47px;
+}
+.path{
+    position: relative;
+    display: flex;
+    justify-self: flex-start;
+    margin: 10px 10px;
+}
+
+/* Nav bar start */
+nav ul{
+    display: flex;
+    padding: 0 10px;
+
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 50px; 
+    margin: 0 5px;
+}
+
+
+    nav ul li a{
+    color: #00465D;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;  
+}
+
+a.active, a:hover{
+    transition: .5s;
+    border-bottom: 2px solid #FFC200;
+}
+button{
+    float: right;
+    padding: 9px 15px;
+    margin-bottom:50px 150px;
+    background-color: #e5e5e5;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s ease 0s;
+
+}
+
+.nav-share{
+    float: right;
+    margin-right: 40px;
+    margin-left: 2px;
+    margin-bottom: 60px;
+    padding: 20px;
+
+}
+
+.nav-chat{
+    float: right; 
+    width: 3%;
+    margin-top: 19px;
+    margin-right: 12px;
+    margin-left: 1px;
+      
+} 
+i.fa{
+    color:#FFC200;
+
+}
+.picture{
+    float: right;
+    width: 3%;
+    padding: 2px 2px;
+    margin-top: 16px;
+    border-radius: 50%;
+}
+i.fa-ellipsis-h{
+    color: #D8D8D8;
+    margin-top: 40px;
+    margin-left: 120px;
+    border-radius: 50%;
+    width: 50px;
+    align-content: center;
+    
+}
+
+
