@@ -44,7 +44,7 @@ Bascom Projects is a user friendly Project Management Tool(software) that is aim
 - All sections of styling should have short and precise comment for easy understanding.
 - Not more than one space is allowed between selectors
 
-> site link: https://bascom-projects.vercel.app
+> site link: https://bascom-projects.netlify.app
 
 
 > Creators

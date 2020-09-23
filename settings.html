@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/settings.css">
+    <title>Profile Settings</title>
+</head>
+<body>
+    <!-- SETTINGS CONTAINER -->
+    <div class="settings-container">
+        <!-- HEADER SECTION OF THE SETTINGS PAGE STARTS HERE -->
+        <header class="settings-header">
+            <h1>Profile Settings</h1>
+            <div class="settings-profile-menu"><div>Profile</div><div>Notifications</div><div>Account</div><div>Apps</div></div>
+        </header>
+        <!-- HEADER SECTION OF THE SETTINGS PAGE ENDS HERE -->
+
+        <!-- DETAILS SECTION OF THE SETTINGS PAGE STARTS HERE -->
+        <div class="settings-profile-details">
+            <!-- PROFILE PICTURE OF THE DETAILS SECTION -->
+            <!-- <div class="settings-profile-image-container"> -->
+                <img class="settings-profile-image" src="./assets/img/placeholder-image.svg" alt="settings image" srcset="">
+            <!-- </div> -->
+            <!-- PROFILE PICTURE OF THE DETAILS SECTION ENDS HERE -->
+
+            <!-- FORM SECTION OF THE DETAILS STARTS HERE -->
+            <div class="settings-form-container">
+                <form class="settings-form">
+                    <label for="settings-name">Name</label>
+                    <input id="settings-name" type="text">
+                    <label for="settings-role">Role</label>
+                    <input id="settings-role" type="text">
+                    <label for="teams">Teams</label>
+                    <input id="settings-teams" type="text">
+                    <label for="settings-about">About</label>
+                    <textarea id="settings-about" type="text"></textarea>
+                    <button class="settings-submit">Update Profile</button>
+                </form>
+                <button class="settings-cancel-submit">Cancel</button>
+            </div>
+            <!-- FORM SECTION OF THE DETAILS SECTION ENDS HERE -->
+        </div>
+        <!-- DETAILS SECTION OF THE SETTINGS PAGE ENDS HERE -->
+    </div>
+</body>
+</html>

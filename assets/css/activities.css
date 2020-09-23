@@ -1,0 +1,91 @@
+.activities-body {
+    background: #E5E5E5;
+    font-size: 16px;
+    color: #00465D;
+    font-family: 'heebo';
+    padding: 20px 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+.activities-section{
+    padding: 30px;
+    width: 50%;
+    background: #ffffff;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.activities {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.activity {
+    display: flex;
+    justify-content: space-between;
+}
+.activity-comment {
+    display: flex;
+    flex-direction: column;
+}
+.activity-text {
+    display: flex;
+    justify-content: space-between;
+}
+.comment {
+    display: flex;
+    width: 80%;
+    background: #E5E5E5;
+    margin: 0 50px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.comment p {
+    margin-left: 30px;
+}
+.comment-img {
+    position: absolute;
+    left: 365px;
+    margin-top: 5px;
+}
+.images {
+    margin: 0 50px;
+}
+
+.text {
+    width: 60%;
+}
+.time {
+    margin-top: 20px;
+    margin-left: 80px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.bold {
+    font-weight: 700;
+}
+.icons {
+    margin-top: 5px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+.icon-check {
+    font-size: 14px;
+    background: #CEF9C6;
+    padding: 10px;
+}
+.icon-download {
+    font-size: 14px;
+    background: #E3EFFF;
+    padding: 10px;
+}
+.icon-edit {
+    font-size: 14px;
+    background: #F5F0FF;
+    padding: 10px;
+}
+.icon-message {
+    font-size: 14px;
+    background: #FFF8DD;
+    padding: 10px;
+}
