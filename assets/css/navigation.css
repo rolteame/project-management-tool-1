@@ -1,98 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Roboto';
+body {
+  font-family: "Roboto";
 }
 /* Nav bar start */
 
 /* Logo*/
-.text-primary{
-    color: #0099CC;
+.text-primary {
+  color: #0099cc;
 }
 
-li.nav-item-trail a{
-    transition: all ease-in 300ms;
-    color: white;
-    background: #0099CC;
-    border-radius: 30px;
-    font-size: 20px;
-    margin-bottom: 10px;
-    padding: 3px 25px;
+li.nav-item-trail a {
+  transition: all ease-in 300ms;
+  color: white;
+  background: #0099cc;
+  border-radius: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding: 3px 25px;
+  border: 1px solid transparent;
 }
 
-nav{
-    color: black;
-    height: 80px;
-    width: 100%;
+/* *new hover effect */
+li.nav-item-trail a:hover {
+  color: #0099cc;
+  border: 1px solid #0099cc;
+  background-color: #fff;
+  transition: 0.5s;
+}
+/* ends here */
+
+nav {
+  color: black;
+  height: 80px;
+  width: 100%;
 }
 
 .logo-text {
-    color: black;
+  color: black;
 }
 
-label.logo{
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
+label.logo {
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
 }
-nav ul{
-    float: right;
-    margin-right:20px;
+nav ul {
+  float: right;
+  margin-right: 20px;
 }
-nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-
-nav ul li a{
-    color: black;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
 }
 
-.nav-item a.active, .nav-item a:hover{
-    background: #007AA3;
-    transition: .5s;
-    color: white;
-
+nav ul li a {
+  color: black;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
 }
 
-.checkbtn{
+.nav-item a.active,
+.nav-item a:hover {
+  color: #007aa3;
+  transition: 0.4s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: #0099cc;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 952px) {
+  label.logo {
     font-size: 30px;
-    color: #0099CC;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-#check{
-    display: none;
-}
-@media (max-width:952px){
-    label.logo{
-        font-size: 30px;
-        padding-left:50px;
-    } 
-    nav ul li a{
+    padding-left: 50px;
+  }
+  nav ul li a {
     font-size: 16px;
+  }
 }
-}
-@media (max-width:858px){
-    .checkbtn{
-        display: block;
-    }
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
 
-ul{
+  ul#navbarList {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -100,22 +109,23 @@ ul{
     top: 80px;
     left: -100%;
     text-align: center;
-    transition: all .5s;
-}
-nav ul li{
+    transition: all 0.5s;
+  }
+  nav ul li {
     display: block;
     margin: 50px 0;
     line-height: 30px;
-}
-nav ul li a{
+  }
+  nav ul li a {
     font-size: 20px;
-}
-a:hover, a.active{
-    background: #007AA3;
+  }
+  a:hover,
+  a.active {
+    background: #007aa3;
     color: #fff;
-}
-#check:checked ~ ul{
+  }
+  #check:checked ~ ul {
     left: 0;
-}
+  }
 }
 /* Nav bar end*/
