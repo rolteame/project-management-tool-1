@@ -1,17 +1,18 @@
-.activities-body {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.activities-section{
+    padding: 20px 0;
+    font-family: 'heebo';
     background: #E5E5E5;
     font-size: 16px;
     color: #00465D;
-    font-family: 'heebo';
-    padding: 20px 0;
-    box-sizing: border-box;
-    font-weight: normal;
-}
-.activities-section{
-    padding: 30px;
     width: 50%;
     background: #ffffff;
-    margin: 0 auto;
+    margin: 40px auto;
     border-radius: 10px;
 }
 .activities {

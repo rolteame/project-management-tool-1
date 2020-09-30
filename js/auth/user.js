@@ -33,15 +33,15 @@ function register() {
         role: "casual",
       };
 
-      userExist.map();
+      //userExist.map();
 
-      console.log(newUser);
+      //console.log(newUser);
 
       users.push(newUser);
 
       localStorage.setItem("users", JSON.stringify(users));
 
-      location.href = "/views/dashboard/Dashboard.html";
+      location.href = "/views/dashboard/template-overview.html";
     } else {
       alert("password mismatch");
     }
@@ -65,7 +65,7 @@ function login() {
   let passwordExist = users.find((user) => userPassword === user.password);
 
   if (userExist && passwordExist) {
-    location.href = "../views/dashboard/Dashboard.html";
+    location.href = "../views/dashboard/template-overview.html";
   } else {
     alert("Wrong Email and Password");
   }
