@@ -25,9 +25,9 @@ function register() {
     // check if password matches
     if (userPassword === userConfirmPassword) {
       newUser = {
-        firstName: firstName,
-        lastName: lastName,
-        image: profilePicture,
+        firstName: "",
+        lastName: "",
+        image: "",
         email: userEmail,
         password: userPassword,
         role: "casual",
