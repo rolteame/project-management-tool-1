@@ -33,9 +33,9 @@ function register() {
         role: "casual",
       };
 
-      userExist.map();
+      //userExist.map();
 
-      console.log(newUser);
+      //console.log(newUser);
 
       users.push(newUser);
 
