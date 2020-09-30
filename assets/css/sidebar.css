@@ -10,7 +10,6 @@
   box-sizing: border-box;
   /* list-style: none; */
   /* text-decoration: none; */
-
 }
 
 body {
@@ -18,18 +17,12 @@ body {
 }
 
 .wrapper {
-
-  display: flex;
-  position: relative;
 }
 
 
-/* Sidebar position and color */
 .wrapper .sidebar {
-  width: 230px;
   height: 100%;
   background: #00465d;
-
   color: #ffffff;
   padding: 30px 5px;
   position: fixed;
@@ -38,26 +31,22 @@ body {
 /* end of sidebar positon and color */
 
 /* Text color themes */
-
 .wrapper .sidebar .primary-color {
   color: #00465d;
 }
 
 .wrapper .sidebar .primary-logo-color {
   color: #ffc200;
-
 }
 
 .wrapper .sidebar .primary-options-color {
   color: #878787;
-
 }
 /* End of text color themes */
 
 .wrapper .sidebar h2 {
   display: flex;
   align-items: center;
-
 
   color: #fff;
   text-transform: uppercase;
@@ -105,11 +94,9 @@ body {
 .profile-info-group {
   margin-left: 0.5rem;
   font-weight: bold;
-
 }
 
 /* End of sidebar profile picture */
-
 
 .wrapper .sidebar ul li {
   list-style: none;
@@ -118,7 +105,6 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 /* End of sidebar menu list    */
 
 /* Sidebar menu list links style */
@@ -133,7 +119,6 @@ body {
 
 /* End of Sidebar list links style */
 
-
 .wrapper .sidebar ul li a .fas {
   width: 25px;
 }
@@ -143,14 +128,12 @@ body {
 }
 
 .wrapper .sidebar ul li:hover a {
-
   color: #ffffff;
 }
 /* End of Sidebar Menus */
 
 /* Bascom main icon at top of the Nav bar */
 .icon {
-
   background: url("/assets/img/bascom-logo.svg");
   align-content: center;
   height: 20px;
@@ -164,11 +147,10 @@ body {
 
 
 .wrapper .main_content {
->>>>>>> 706d21d51035bad0f6af2e0d189ba8504eb1ed64
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   width: 100%;
   margin-left: 270px;
 }
-
 
 .wrapper .header {
   padding: 20px;
@@ -178,7 +160,6 @@ body {
 }
 
 .wrapper .info {
-
   margin: 20px;
   color: #717171;
   line-height: 25px;
@@ -211,11 +192,9 @@ body {
   border-radius: 20%;
 }
 
-
 /* end of main content .. all links */
 
 /* Sidebar footer */
-
 
 .wrapper .sidebar .bottom-content {
   color: #ffffff;
@@ -251,5 +230,4 @@ body {
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: #047196;
 }
-
 /* scrollbar ends */
