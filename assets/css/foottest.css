@@ -1,0 +1,111 @@
+/* footer section */
+footer {
+  background-color: #00465d;
+}
+.landing-footer-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* align-items: flex-start; */
+  justify-content: space-around;
+
+  height: auto;
+}
+.landing-footer-external-links {
+  padding-top: 0.5rem;
+}
+
+.landing-footer-menu {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  /* align-items: flex-start; */
+}
+.landing-footer-menu a {
+  text-align: left;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0.5rem 0.2rem;
+  width: fit-content;
+}
+.landing-footer-menu a:hover {
+  text-decoration: underline;
+}
+.landing-footer-logo {
+  color: #0099cc;
+}
+.landing-footer-copyright {
+  display: block;
+  margin: 10px 0 0 0;
+  background-color: #002430;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.landing-footer-copyright span :only-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0.1rem;
+}
+
+.landing-footer-external-links {
+  color: #ffffff;
+}
+.landing-footer-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.landing-footer-icons a img {
+  width: 20px;
+  height: 20px;
+}
+/* Search bar */
+form.search input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: transparent;
+}
+
+/* Submit button */
+form.search button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #0099cc;
+  color: white;
+  font-size: 17px;
+  border-left: none;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+form.search button:hover {
+  background: #0073aa;
+}
+/* @media (max-width: 425px) {
+  .landing-footer-section {
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #00465d;
+  }
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  .landing-footer-section {
+    height: auto;
+    max-width: 100%;
+  }
+  .landing-footer-menu p {
+    display: flex;
+    flex-direction: column;
+  }
+} */
