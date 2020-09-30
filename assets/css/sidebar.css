@@ -1,32 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
 
-*{
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* list-style: none; */
   /* text-decoration: none; */
-  font-family: 'Heebo', sans-serif;
 }
 
-body{
-   background-color: #f3f5f9;
-   
+body {
+  background-color: #f3f5f9;
 }
 
-
-
-.wrapper{
+.wrapper {
   display: flex;
   position: relative;
 }
 
-
 /* Sidebar position and color */
-.wrapper .sidebar{
-  width: 250px;
+.wrapper .sidebar {
+  width: 230px;
   height: 100%;
-  background: #00465D;
+  background: #00465d;
   color: #ffffff;
   padding: 30px 5px;
   position: fixed;
@@ -35,31 +31,31 @@ body{
 /* end of sidebar positon and color */
 
 /* Text color themes */
-.wrapper .sidebar .primary-color{
-  color: #00465D ;
+.wrapper .sidebar .primary-color {
+  color: #00465d;
 }
 
 .wrapper .sidebar .primary-logo-color {
-  color: #FFC200;
+  color: #ffc200;
 }
 
 .wrapper .sidebar .primary-options-color {
   color: #878787;
-} 
+}
 /* End of text color themes */
 
-.wrapper .sidebar h2{
-  display:flex;
+.wrapper .sidebar h2 {
+  display: flex;
   align-items: center;
-  
+
   color: #fff;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 30px;
 }
-.wrapper .sidebar h2 span{
+.wrapper .sidebar h2 span {
   margin-right: 1rem;
-  margin-left: .5rem
+  margin-left: 0.5rem;
 }
 
 /* Sidebar Menus */
@@ -77,61 +73,60 @@ body{
   border-radius: 50%;
 }
 
-.profile{
+.profile {
   display: flex;
   /* background-color:  #076c8d; */
   margin: 0;
   padding: 0.625rem;
 }
 
-.profile:hover{
+.profile:hover {
   background-color: #067ea7;
   cursor: pointer;
 }
 
-.profile-info-group{
-  margin-left: .5rem; 
-  font-weight: bold; 
+.profile-info-group {
+  margin-left: 0.5rem;
+  font-weight: bold;
 }
 
 /* End of sidebar profile picture */
 
-.wrapper .sidebar ul li{
+.wrapper .sidebar ul li {
   list-style: none;
   padding: 10px;
   border-bottom: 1px solid #bdb8d7;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  border-top: 1px solid rgba(255,255,255,0.05);
-} 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
 /* End of sidebar menu list    */
 
 /* Sidebar menu list links style */
 
-.wrapper .sidebar ul li a{
-  color: #FFFFFF;
+.wrapper .sidebar ul li a {
+  color: #ffffff;
   display: block;
   text-decoration: none;
 }
 
 /* End of Sidebar list links style */
 
-
-.wrapper .sidebar ul li a .fas{
+.wrapper .sidebar ul li a .fas {
   width: 25px;
 }
 
-.wrapper .sidebar ul li:hover{
+.wrapper .sidebar ul li:hover {
   background-color: #067ea7;
 }
-    
-.wrapper .sidebar ul li:hover a{
+
+.wrapper .sidebar ul li:hover a {
   color: #ffffff;
 }
 /* End of Sidebar Menus */
 
 /* Bascom main icon at top of the Nav bar */
 .icon {
-  background: url('/assets/img/bascom-logo.svg');
+  background: url("/assets/img/bascom-logo.svg");
   align-content: center;
   height: 20px;
   width: 20px;
@@ -141,25 +136,25 @@ body{
 /* End of bascom main icon style */
 
 /* main content ... all links */
-.wrapper .main_content{
+.wrapper .main_content {
   width: 100%;
   margin-left: 270px;
 }
 
-.wrapper .header{
+.wrapper .header {
   padding: 20px;
   background: #fff;
   color: #717171;
-  border-bottom: 1px solid #e0e4e8
+  border-bottom: 1px solid #e0e4e8;
 }
 
-.wrapper .info{
+.wrapper .info {
   margin: 20px;
   color: #717171;
   line-height: 25px;
 }
 
-.wrapper .info div{
+.wrapper .info div {
   margin-bottom: 20px;
 }
 
@@ -171,11 +166,9 @@ body{
 }
 /* end of new team/project link style */
 
-
-.nav-list{
-padding: 10px;
-padding-bottom: 10px;
-
+.nav-list {
+  padding: 10px;
+  padding-bottom: 10px;
 }
 .project-image {
   vertical-align: left;
@@ -184,18 +177,16 @@ padding-bottom: 10px;
   border-radius: 20%;
 }
 
-
 /* end of main content .. all links */
 
 /* Sidebar footer */
- 
+
 .wrapper .sidebar .bottom-content {
   color: #ffffff;
   position: absolute;
   /* bottom: 0; */
   display: block;
 }
-
 
 .wrapper .sidebar .bottom-content a {
   text-decoration: underline;
