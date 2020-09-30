@@ -1,7 +1,10 @@
 
+
+
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 * {
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,15 +17,17 @@ body {
 }
 
 .wrapper {
-  display: flex;
-  position: relative;
 }
+<<<<<<< HEAD
+=======
 
-/* Sidebar position and color */
 .wrapper .sidebar {
-  width: 230px;
   height: 100%;
   background: #00465d;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   color: #ffffff;
   padding: 30px 5px;
   position: fixed;
@@ -31,16 +36,28 @@ body {
 /* end of sidebar positon and color */
 
 /* Text color themes */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 .wrapper .sidebar .primary-color {
   color: #00465d;
 }
 
 .wrapper .sidebar .primary-logo-color {
   color: #ffc200;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 }
 
 .wrapper .sidebar .primary-options-color {
   color: #878787;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 }
 /* End of text color themes */
 
@@ -48,14 +65,26 @@ body {
   display: flex;
   align-items: center;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   color: #fff;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 30px;
 }
+<<<<<<< HEAD
 .wrapper .sidebar h2 span {
   margin-right: 1rem;
   margin-left: 0.5rem;
+=======
+
+.wrapper .sidebar h2 span {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 }
 
 /* Sidebar Menus */
@@ -73,14 +102,26 @@ body {
   border-radius: 50%;
 }
 
+<<<<<<< HEAD
 .profile {
+=======
+
+.profile {
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   display: flex;
   /* background-color:  #076c8d; */
   margin: 0;
   padding: 0.625rem;
 }
 
+<<<<<<< HEAD
 .profile:hover {
+=======
+
+.profile:hover {
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   background-color: #067ea7;
   cursor: pointer;
 }
@@ -88,10 +129,18 @@ body {
 .profile-info-group {
   margin-left: 0.5rem;
   font-weight: bold;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 }
 
 /* End of sidebar profile picture */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 .wrapper .sidebar ul li {
   list-style: none;
   padding: 10px;
@@ -99,18 +148,33 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 /* End of sidebar menu list    */
 
 /* Sidebar menu list links style */
 
+<<<<<<< HEAD
 .wrapper .sidebar ul li a {
   color: #ffffff;
+=======
+
+.wrapper .sidebar ul li a {
+  color: #ffffff;
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   display: block;
   text-decoration: none;
 }
 
 /* End of Sidebar list links style */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 .wrapper .sidebar ul li a .fas {
   width: 25px;
 }
@@ -120,12 +184,20 @@ body {
 }
 
 .wrapper .sidebar ul li:hover a {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   color: #ffffff;
 }
 /* End of Sidebar Menus */
 
 /* Bascom main icon at top of the Nav bar */
 .icon {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   background: url("/assets/img/bascom-logo.svg");
   align-content: center;
   height: 20px;
@@ -136,11 +208,22 @@ body {
 /* End of bascom main icon style */
 
 /* main content ... all links */
+<<<<<<< HEAD
 .wrapper .main_content {
+=======
+
+
+.wrapper .main_content {
+>>>>>>> 706d21d51035bad0f6af2e0d189ba8504eb1ed64
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   width: 100%;
   margin-left: 270px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 .wrapper .header {
   padding: 20px;
   background: #fff;
@@ -149,12 +232,22 @@ body {
 }
 
 .wrapper .info {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   margin: 20px;
   color: #717171;
   line-height: 25px;
 }
 
+<<<<<<< HEAD
 .wrapper .info div {
+=======
+
+.wrapper .info div {
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
   margin-bottom: 20px;
 }
 
@@ -166,9 +259,17 @@ body {
 }
 /* end of new team/project link style */
 
+<<<<<<< HEAD
 .nav-list {
   padding: 10px;
   padding-bottom: 10px;
+=======
+
+.nav-list {
+  padding: 10px;
+  padding-bottom: 10px;
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 }
 .project-image {
   vertical-align: left;
@@ -177,10 +278,18 @@ body {
   border-radius: 20%;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 /* end of main content .. all links */
 
 /* Sidebar footer */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 .wrapper .sidebar .bottom-content {
   color: #ffffff;
   position: absolute;
@@ -188,6 +297,11 @@ body {
   display: block;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 .wrapper .sidebar .bottom-content a {
   text-decoration: underline;
 }
@@ -213,4 +327,8 @@ body {
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: #047196;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f187faffa7d56d20e0aeebd06a22fc4c45d4a69
 /* scrollbar ends */
