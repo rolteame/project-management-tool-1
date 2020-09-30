@@ -113,7 +113,7 @@
           <div class="main_content">
 
                     <!-- SETTINGS CONTAINER -->
-            <div class="settings-container">
+            <div id="settings" class="settings-container">
                 <!-- HEADER SECTION OF THE SETTINGS PAGE STARTS HERE -->
                 <header class="settings-header">
                     <h1>Profile Settings</h1>
@@ -132,6 +132,7 @@
                     <!-- FORM SECTION OF THE DETAILS STARTS HERE -->
                     <div class="settings-form-container">
                         <form class="settings-form">
+                            <input id="settings-hidden" type="hidden">
                             <label for="settings-name">Name</label>
                             <input id="settings-name" type="text">
                             <label for="settings-role">Role</label>
@@ -142,7 +143,7 @@
                             <textarea id="settings-about" type="text"></textarea>
                             <button class="settings-submit">Update Profile</button>
                         </form>
-                        <button class="settings-cancel-submit">Cancel</button>
+                        <button onclick="update()" class="settings-cancel-submit">Cancel</button>
                     </div>
                     <!-- FORM SECTION OF THE DETAILS SECTION ENDS HERE -->
                 </div>
@@ -152,6 +153,6 @@
            </div>
 
 
-    
+    <script src="../../js/projectController/settings.js"></script>
 </body>
 </html>
