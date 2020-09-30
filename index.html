@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/img/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- add bootstrap css -->
     <link
       rel="stylesheet"
@@ -27,7 +23,7 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/about.css" />
     <link rel="stylesheet" href="./assets/css/newpricing.css" />
-    <link rel="stylesheet" href="./assets/css/foottest.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/foottest.css" /> -->
     <link rel="stylesheet" href="./assets/css/contact.css" />
     <title>BASCOM PROJECTS</title>
     <script
@@ -72,7 +68,7 @@
             <div class="md-form mb-5">
               <input
                 type="email"
-                id="Form-email1"
+                id="loginEmail"
                 class="form-control validate"
               />
               <label data-error="wrong" data-success="right" for="Form-email1"
@@ -83,7 +79,7 @@
             <div class="md-form pb-3">
               <input
                 type="password"
-                id="Form-pass1"
+                id="loginPassword"
                 class="form-control validate"
               />
               <label data-error="wrong" data-success="right" for="Form-pass1"
@@ -98,6 +94,7 @@
               <button
                 type="button"
                 class="btn blue-gradient btn-block btn-rounded z-depth-1a bt-primary"
+                onclick="login()"
               >
                 Sign in
               </button>
@@ -173,7 +170,9 @@
               >Log in</a
             >
           </li>
-          <li class="nav-item-trail"><a href="./signup.html">Free Trial</a></li>
+          <li class="nav-item-trail">
+            <a href="./views/signup.html">Free Trial</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -189,7 +188,7 @@
         Tool that makes it easier for technical and non-technical personnel to
         make their dreams come through.
       </p>
-      <a href="./signup.html"
+      <a href="./views/signup.html"
         ><button class="landing-try">Try for Free</button></a
       >
     </section>
@@ -501,16 +500,17 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
+    <!--User JS-->
+    <script src="./js/auth/user.js"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- add bootstrap js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- <script
+    <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
     <!-- ends here -->
   </body>
 </html>

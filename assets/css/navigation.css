@@ -6,6 +6,7 @@
   list-style: none;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Roboto";
 }
@@ -119,10 +120,11 @@ nav ul li a {
   nav ul li a {
     font-size: 20px;
   }
-  a:hover,
+
+  nav ul li a:hover,
   a.active {
+    color: #ffffff;
     background: #007aa3;
-    color: #fff;
   }
   #check:checked ~ ul {
     left: 0;
