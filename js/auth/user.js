@@ -41,7 +41,7 @@ function register() {
 
       localStorage.setItem("users", JSON.stringify(users));
 
-      location.href = "/views/dashboard/Dashboard.html";
+      location.href = "/views/dashboard/template-overview.html";
     } else {
       alert("password mismatch");
     }
