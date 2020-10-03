@@ -11,6 +11,8 @@ users = JSON.parse(localStorage.getItem("users"));
 if (users == null || users == undefined) {
   users = [];
 }
+
+
 function register() {
   let userEmail = document.getElementById("email").value;
   let userPassword = document.getElementById("password").value;
@@ -24,7 +26,13 @@ function register() {
   if (userExist == undefined || userExist == null) {
     // check if password matches
     if (userPassword === userConfirmPassword) {
+      let userId;
+      for(let i = 0; i <= users.length; i++) {
+        userId = i;
+      }
+
       newUser = {
+        id : userId,
         firstName: "",
         lastName: "",
         image: "",
@@ -32,12 +40,13 @@ function register() {
         password: userPassword,
         role: "casual",
       };
-
+      
       //userExist.map();
 
       //console.log(newUser);
 
       users.push(newUser);
+      
 
       localStorage.setItem("users", JSON.stringify(users));
 
@@ -72,3 +81,4 @@ function login() {
 }
 
 function getImage() {}
+
