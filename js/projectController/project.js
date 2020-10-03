@@ -1,18 +1,23 @@
-let projects = JSON.parse(localStorage.getItem("projects"));
+users = JSON.parse(localStorage.getItem("users"));
 
+projects = JSON.parse(localStorage.getItem("projects"));
 if (projects == null || projects == undefined) {
   projects = [];
 }
 
-function createProject(event) {
-  const newProject = {
-    name: document.getElementById("project-name"),
-    description: getElementById("project-description"),
+function displayProjects() {}
+function addProjects(id) {
+  let projectId;
+  for (let i = 0; i <= projects.length; i++) {
+    projectId = i;
+  }
+  newProject = {
+    projectId: projectId,
+    projectName: document.getElementById("projectName").value,
+    projectDescription: document.getElementById("projectDescription").value,
+    userId: id,
   };
 
   projects.push(newProject);
-  localStorage.setItem("projects", JSON.stringify(projects));
-  location.href = "/views/dashboard/home.html";
+  localStorage.setItem("projectsDetails", project);
 }
-
-function displayPage() {}

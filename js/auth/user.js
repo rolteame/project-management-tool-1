@@ -32,6 +32,7 @@ if (activeUsers == null || activeUsers == undefined) {
 /**
  * Registers a particular user
  */
+
 function register() {
   let userEmail = document.getElementById("email").value;
   let userPassword = document.getElementById("password").value;
@@ -45,7 +46,13 @@ function register() {
   if (userExist == undefined || userExist == null) {
     // check if password matches
     if (userPassword === userConfirmPassword) {
+      let userId;
+      for (let i = 0; i <= users.length; i++) {
+        userId = i;
+      }
+
       newUser = {
+        id: userId,
         firstName: "",
         lastName: "",
         image: "",
