@@ -72,6 +72,9 @@ function register() {
       localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
       location.href = dasboardHome;
+      localStorage.setItem("currentUser", JSON.stringify(newUser));
+
+      location.href = "../views/dashboard/projects.html";
     } else {
       alert("password mismatch");
     }
@@ -100,7 +103,8 @@ function login() {
     activeUsers.push(token);
     localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
-    location.href = dasboardHome;
+    localStorage.setItem("currentUser", JSON.stringify(userExist));
+    location.href = "../views/dashboard/projects.html";
   } else {
     alert("Wrong Email and/or Password");
   }
@@ -115,5 +119,9 @@ function logout() {
   activeUsers.pop();
   localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
-  location.href = indexPage;
+  localStorage.removeItem("currentTask");
+  localStorage.removeItem("currentProject");
+  localStorage.removeItem("currentUser");
+
+  location.href = "../signup.html";
 }
