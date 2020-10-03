@@ -1,34 +1,34 @@
+@import "https://fonts.googleapis.com/css?family=Heebo:300,400,500,600,700";
 
-
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-* {
-
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* list-style: none; */
-  /* text-decoration: none; */
-}
+/* text-decoration: none; */
+/* } 
 
 body {
   background-color: #f3f5f9;
 }
-
-.wrapper {
-}
-
+*/
 
 .wrapper .sidebar {
   height: 100%;
   background: #00465d;
   color: #ffffff;
-  padding: 30px 5px;
+  padding: 5px 0;
   position: fixed;
   overflow-x: hidden;
+  width: 230px;
 }
 /* end of sidebar positon and color */
+.wrapper .sidebar a {
+  height: 32px;
+  text-justify: center;
+  margin: 0 10px;
+  font-size: 14px;
+}
 
 /* Text color themes */
 .wrapper .sidebar .primary-color {
@@ -57,7 +57,6 @@ body {
 .wrapper .sidebar h2 span {
   margin-right: 1rem;
   margin-left: 0.5rem;
-
 }
 
 /* Sidebar Menus */
@@ -75,18 +74,14 @@ body {
   border-radius: 50%;
 }
 
-
 .profile {
-
   display: flex;
   /* background-color:  #076c8d; */
   margin: 0;
   padding: 0.625rem;
 }
 
-
 .profile:hover {
-
   background-color: #067ea7;
   cursor: pointer;
 }
@@ -100,15 +95,10 @@ body {
 
 .wrapper .sidebar ul li {
   list-style: none;
-  padding: 10px;
-  border-bottom: 1px solid #bdb8d7;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 /* End of sidebar menu list    */
 
 /* Sidebar menu list links style */
-
 
 .wrapper .sidebar ul li a {
   color: #ffffff;
@@ -145,9 +135,7 @@ body {
 
 /* main content ... all links */
 
-
 .wrapper .main_content {
-
   width: 100%;
   margin-left: 270px;
 }
@@ -165,9 +153,7 @@ body {
   line-height: 25px;
 }
 
-
 .wrapper .info div {
-
   margin-bottom: 20px;
 }
 
@@ -178,17 +164,19 @@ body {
   font-weight: bold;
 }
 /* end of new team/project link style */
-
-
+/* dropdown hover */
+.project-teams:hover {
+  background-color: #067ea7;
+}
 .nav-list {
-  padding: 10px;
   padding-bottom: 10px;
-
 }
 .project-image {
-  vertical-align: left;
-  width: 30px;
-  height: 30px;
+  vertical-align: center;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  /* padding: 0 5px 5px 5px; */
   border-radius: 20%;
 }
 
@@ -203,8 +191,35 @@ body {
   display: block;
 }
 
+.font-14 {
+  font-size: 12px !important;
+}
 
+.cursor-pointer {
+  cursor: pointer;
+}
 
+/* caret */
+.down-caret {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #ffffff transparent transparent transparent;
+  display: inline-block;
+  margin-left: 6px;
+  top: -3px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: all 0.25s ease-in;
+}
+
+.open-caret {
+  transform: rotate(180deg);
+  transition: all 0.25s ease-out;
+}
+
+/* ends */
 .wrapper .sidebar .bottom-content a {
   text-decoration: underline;
 }
