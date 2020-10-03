@@ -33,8 +33,22 @@ function displayProjects() {
   for (i = 0; i < projects.length; i++) {
     project = projects[i];
     if (project.userId == currentUser.id) {
-      projectsPlaceholder += `<div onclick={openProject(${project.projectId})}>       
-             ${project.projectName}<br>
+      projectsPlaceholder += `
+      <div class="card m-3 py-1 bg-grey pr-1 cursor-pointer"  onclick={openProject(${project.projectId})} style="width: 13.5rem; border: none">
+        <div class="card-body pt-0 pl-2 pr-1">
+          <h6 class="text-default-color">${project.projectName}</h6>
+          <div class="card-img my-0">
+            <img
+              src="../../assets/img/image.png"
+              alt=""
+              style="height: 90px"
+            />
+          </div>
+        </div>
+
+        </div>
+      <div>
+             <br>
         </div>`;
     }
     document.getElementById("showAllProjects").innerHTML = projectsPlaceholder;
@@ -73,3 +87,5 @@ function openProject(id) {
 
   location.href = "overview.html";
 }
+
+function displayName(params) {}

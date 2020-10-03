@@ -1,3 +1,27 @@
 .projects-section {
-    margin: 0 auto;
+  margin: 0 auto;
+  background-color: E5E5E5;
+}
+
+.heading-3 {
+  font-size: 38px;
+}
+
+.bg-grey {
+  background-color: #f7f6f3;
+}
+.project-welcome {
+  background-color: #fff;
+}
+.text-default-color {
+  color: #00465d;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+button.add-btn-color {
+  background: #cef9c6;
+  color: #1d201c;
 }

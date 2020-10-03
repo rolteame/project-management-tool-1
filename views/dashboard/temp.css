@@ -10,6 +10,10 @@
   background: #fff;
 }
 
+nav.navbar {
+  z-index: 400;
+}
+
 .sidebar {
   position: sticky;
   top: 0;
@@ -17,7 +21,7 @@
   bottom: 0;
   height: 100vh;
   background-color: #00465d;
-  z-index: 10000;
+  z-index: 1000;
   padding-top: 10px;
   border-right: 1px solid #d3d3d3;
 }
@@ -140,5 +144,3 @@ li #DropdownProfile:hover {
   transition: 0.2s;
   border-bottom: 3px solid #ffc200;
 }
-
-.side;
