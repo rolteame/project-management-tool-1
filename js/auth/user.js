@@ -49,8 +49,9 @@ function register() {
       
 
       localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem('currentUser', JSON.stringify(newUser))
 
-      location.href = "/views/dashboard/template-overview.html";
+      location.href = "../views/dashboard/projects.html";
     } else {
       alert("password mismatch");
     }
@@ -74,7 +75,8 @@ function login() {
   let passwordExist = users.find((user) => userPassword === user.password);
 
   if (userExist && passwordExist) {
-    location.href = "../views/dashboard/template-overview.html";
+    localStorage.setItem('currentUser', JSON.stringify(userExist))
+    location.href = "../views/dashboard/projects.html";
   } else {
     alert("Wrong Email and Password");
   }
@@ -82,3 +84,10 @@ function login() {
 
 function getImage() {}
 
+function logout(){
+  localStorage.removeItem('currentTask')
+  localStorage.removeItem('currentProject')
+  localStorage.removeItem('currentUser')
+
+  location.href = "../signup.html"
+}
