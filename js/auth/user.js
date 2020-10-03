@@ -5,12 +5,33 @@ if (preventDisplay) {
     e.preventDefault();
   });
 }
+// token sytem
+var tokeniser = document.getElementById("Token");
+var token = {
+  token: "eHAiOjE1ODA0NTU3Nzd9.i3rOwqV1Bc-JEAaxT7lHZHUlDuFf9ADVP7qjy50WqT0",
+};
 
-users = JSON.parse(localStorage.getItem("users"));
+// user array
+var userExist = new Object();
+var users = JSON.parse(localStorage.getItem("users"));
 
 if (users == null || users == undefined) {
   users = [];
 }
+
+// redirect locations
+var dasboardHome = "../views/dashboard/temp.html";
+var indexPage = "../../../index.html";
+
+// activeUser
+var activeUsers = JSON.parse(localStorage.getItem("activeUsers"));
+
+if (activeUsers == null || activeUsers == undefined) {
+  activeUsers = [];
+}
+/**
+ * Registers a particular user
+ */
 function register() {
   let userEmail = document.getElementById("email").value;
   let userPassword = document.getElementById("password").value;
@@ -38,10 +59,12 @@ function register() {
       //console.log(newUser);
 
       users.push(newUser);
+      activeUsers.push(token);
 
       localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
-      location.href = "/views/dashboard/template-overview.html";
+      location.href = dasboardHome;
     } else {
       alert("password mismatch");
     }
@@ -56,19 +79,34 @@ function register() {
 // firstname
 // lastname
 
-// token in input
+/**
+ * logs a registered user in
+ */
 function login() {
-  let userEmail = document.getElementById("loginEmail").value;
+  var userEmail = document.getElementById("loginEmail").value;
   let userPassword = document.getElementById("loginPassword").value;
 
-  let userExist = users.find((user) => userEmail == user.email);
+  userExist = users.find((user) => userEmail == user.email);
   let passwordExist = users.find((user) => userPassword === user.password);
 
   if (userExist && passwordExist) {
-    location.href = "../views/dashboard/template-overview.html";
+    activeUsers.push(token);
+    localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
+
+    location.href = dasboardHome;
   } else {
-    alert("Wrong Email and Password");
+    alert("Wrong Email and/or Password");
   }
 }
 
 function getImage() {}
+
+/**
+ * logs out a registered user
+ */
+function logout() {
+  activeUsers.pop();
+  localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
+
+  location.href = indexPage;
+}

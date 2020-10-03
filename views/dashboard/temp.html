@@ -2,134 +2,168 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 shrink-to-fit-no"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    /> -->
-    <link
-      rel="stylesheet"
       href="../../assets/css/bootstrap/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../../assets/css/Dashboard.css">   
+    /> -->
+    <link rel="stylesheet" href="temp.css">
+    <script src="../../js/auth/auth.js"></script>
 
-    <link rel="stylesheet" href="./temp.css" />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <title>Document</title>
   </head>
   <body>
-    <div class="wrapper">
-      <!-- Sidebar  -->
-      <nav id="sidebar">
-        <div class="sidebar-header">
-          <span class='icon'></span><h3>Bascom</h3>
-          <strong><span class='icon'></span></strong>
+    <body>
+      <!-- navbar -->
+      <nav class="navbar navbar-light bg-light flex-md-nowrap fixed-top  p-0 shadow-sm">
+        <div class="">
+          <div class="row">
+            
+            <ul class="navbar-nav px-3">
+              <div class="d-flex flex-row justify-content-end">
+                  <!-- <span class="fas fa-search form-control-feedback"></span> -->
+                  <input type="text" placeholder="Search..." class="form-control search"></input>
+                
+                <img src="../../assets/img/Onyedika.jpg" alt="Team member" class="picture">
+                <img src="../../assets/img/Chidinma.jpg" alt="Team member" class="picture">
+                <img src="../../assets/img/Sophia.jpg" alt="Team member" class="picture">
+              <button class="nav-btn badge badge-pill"><a  href="chat.html"><i class="fa fa-comments" >Chat</i></a></button>
+              <button class="nav-btn badge badge-pill"><a  href="share.html"><i class="fa fa-comments" >Share</i></a></button>
+              
+              </div>
+                
+        
+             <!-- logo-section -->
+          <!-- <label class="logo"><img src="../../assets/img/Logo.png" class="path"></img><span class="text-primary">BAS</span><l-heading>COM</l-heading><i class="fas fa-ellipsis-h"></i></label>      -->
+        
+              <!-- <li class="nav-item text-nowrap">
+                <a href="#" class="nav-link text-secondary">holla</a>
+              </li> -->
+            </ul>
+          </div>
+          <ul class="nav flex-row offset-lg-2 offset-sm-0">
+            <li class="nav-item">
+              <a class="nav-link hover-border-bottom" href="#">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-border-bottom" href="#">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-border-bottom" href="#">Calender</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-border-bottom" href="#">Files</a>
+            </li>
+            
+          </ul>
+
         </div>
-      <div class="profile">
-        <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar"></img>
-        <div class="profile-info-group">
-          <p class="profile-name">Sophia Daniels</p>
-          <h6 class="profile-info">Product Manager</h6>
+      </nav>
+      <!-- navbar ends -->
+
+      <!-- container -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 d-none d-md-block sidebar px-1">
+            <div class="left-sidebar">
+              <a class="navbar-brand col-md-2 ml-0 pr-1 my-2" href="#">
+              <img src="../../assets/img/Logo.png" width="30" height="30" class="align-top" alt="">
+              <span class="font-weight-bolder">
+              <span class="text-primary">BAS</span><span class="text-white">COM</span>  
+            </span>
+            
+            </a>
+            <div class="d-flex justify-content-around">
+              <div class="profile mt-2 ">
+                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
+                <div class="profile-info-group">
+                  <p class="profile-name mb-0">Sophia Daniels</p>
+                  <small class="profile-info primary-options-color text-wrap">Product Manager</small>
+                </div>
+                <span >
+                <li class="dropdown"><a class="dropdown-toggle ml-3" data-toggle="dropdown" href="#" id="DropdownProfile">...</a>
+                  <ul class="dropdown-menu">
+                    <li class="mx-2"><a href="#" class="text-black">Profile</a></li>
+                    <li class="mx-2"><a href="#" class="text-black">Settings</a></li>
+                    <li class="mx-2"><a href="#" class="text-black" onclick="logout()">Log Out</a></li>
+                  </ul>
+                </li>
+              </span>
+              </div>
+              
+            </div>
+              <ul class="nav flex-column sidehover">
+                <li class="nav-item">
+                  <a class="nav-link text-white hover-color" href="#"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item hover-color">
+                  <a class="nav-link text-white hover-color" href="#"><i class="fas fa-tasks"></i>Tasks</a>
+                </li>
+                <li class="nav-item hover-color">
+                  <a class="nav-link text-white " href="#"><i class="fas fa-bell"></i>Notification</a>
+                </li>
+                
+              </ul>
+            </div>
+
+  <div class="project-teams">
+    <a class="menu-header primary-options-color px-2 py-2 cursor-pointer d-flex flex-row justify-content-between " data-toggle="collapse" data-target="#projects" aria-expanded="false" aria-controls="collapseExample">Projects <i class="fas fa-caret-down"></i></a>
+  </div>
+  <div class="collapse" id="projects">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Pace Time Sheet</i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Yellow Card System</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Chat App</a>
+      </li>
+      <div class="add-team-project primary-logo-color px-2"><small>+ Add new project</small></div>
+    </ul>
+  </div>
+  <!--  -->
+    <div class="project-teams">
+      <a class="menu-header primary-options-color px-2 py-2 cursor-pointer d-flex flex-row justify-content-between " data-toggle="collapse" data-target="#teams" aria-expanded="false" aria-controls="collapseExample">Teams <i class="fas fa-caret-down"></i></a>
+    </div>
+    <div class="collapse" id="teams">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Backend</i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">MiddleEnd</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Frontend</a>
+        </li>
+        <div class="add-team-project primary-logo-color px-2"><small>+ Add a Team</small></div>
+      </ul>
+    </div>
+            <!--  -->
+          </div>
+
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 overflow-auto"></main>
         </div>
       </div>
-        <ul class="list-unstyled components list">
-          <li class="active">
-            <a
-              href="#homeSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-            >
-              <i class="fas fa-home"></i>
-              Home
-            </a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li>
-                <a href="#">Home 1</a>
-              </li>
-              <li>
-                <a href="#">Home 2</a>
-              </li>
-              <li>
-                <a href="#">Home 3</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-tasks"></i>
-              My Tasks
-            </a>
-            <a
-              href="#pageSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-            >
-              <i class="fas fa-bell"></i>
-              Notifications
-            </a>
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-              <li>
-                <a href="#">Page 1</a>
-              </li>
-              <li>
-                <a href="#">Page 2</a>
-              </li>
-              <li>
-                <a href="#">Page 3</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <!-- <header>
-
-      <a class="nav-chat" href="chat.html"><button><i class="fa fa-comments" >Chat</i></button></a>
-      <a class="nav-share" href="share.html"><button>Share</button></a>
-
-      <img src="../../assets/img/Onyedika.jpg" alt="Team member" class="picture">
-      <img src="../../assets/img/Chidinma.jpg" alt="Team member" class="picture">
-      <img src="../../assets/img/Sophia.jpg" alt="Team member" class="picture">
-
-       logo-section
-    <label class="logo"><img src="../../assets/img/Logo.png" class="path"></img><span class="text-primary">BAS</span><l-heading>COM</l-heading><i class="fas fa-ellipsis-h"></i></label>     
-  
-    <nav>
-  
-  Nav bar list
-  <ul>
-      <li class="nav-item"><a href="overview.html">Overview</a></li>
-      <li class="nav-item"><a href="activity.html">Activity</a></li>
-      <li class="nav-item"><a href="calender.html">Calender</a></li>
-      <li class="nav-item"><a href="files.html">Files</a></li>
-     
-  </ul>
- 
-</nav>
 
 
-</header> -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="../../assets/img/Logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    <span class="text-primary">BAS</span><l-heading>COM</l-heading><i class="fas fa-ellipsis-h"></i>
-  </a>
-</nav>
-    <!-- Page Content  -->
-    <!-- <div id="content">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <button type="button" id="sidebarCollapse" class="btn btn-info">
-            <i class="fas fa-align-left"></i>
-            <span>Toggle Sidebar</span>
-          </button>
-        </div>
-      </nav>
-    </div> -->
+
+
+
+
+
+
+    <script src="../../js/auth/user.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
