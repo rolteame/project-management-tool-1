@@ -84,3 +84,10 @@ function login() {
 
 function getImage() {}
 
+function logout(){
+  localStorage.removeItem('currentTask')
+  localStorage.removeItem('currentProject')
+  localStorage.removeItem('currentUser')
+
+  location.href = "../signup.html"
+}
