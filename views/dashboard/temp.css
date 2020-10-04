@@ -1,185 +1,68 @@
-/*
-    ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
-*/
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-body {
-  font-family: "Poppins", sans-serif;
-  background: #fafafa;
-}
-p {
-  margin-bottom: 0.1rem;
-}
-a,
-a:hover,
-a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
+.form-control.search {
+  margin: 20px 20px 0 20px;
+  opacity: 0.5;
+  border-radius: 50px;
+  width: 200px;
 }
 
-#sidebar {
-  /* don't forget to add all the previously mentioned styles here too */
-  background: #00465d;
-  color: #fff;
-  position: fixed;
-  transition: all 0.3s;
-  height: 100%;
-  width: 230px;
-}
-
-#sidebar .sidebar-header {
-  padding: 20px;
-  background: #6d7fcc;
-}
-
-#sidebar ul.components {
-  padding: 20px 0;
-  border-bottom: 1px solid #00465d;
-}
-
-#sidebar ul p {
-  color: #fff;
-  padding: 10px;
-}
-
-#sidebar ul li a {
-  padding: 10px;
-  font-size: 1.1em;
-  display: block;
-}
-#sidebar ul li a:hover {
-  color: #7386d5;
+.form-control.search:focus {
+  box-shadow: inset 0 0 3px 1px #888;
   background: #fff;
 }
 
-#sidebar ul li.active > a,
-a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
-}
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
+nav.navbar {
+  z-index: 400;
 }
 
-/* Shrinking the sidebar from 250px to 80px and center aligining its content*/
-#sidebar.active {
-  min-width: 80px;
-  max-width: 80px;
-  text-align: center;
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #00465d;
+  z-index: 1000;
+  padding-top: 10px;
+  border-right: 1px solid #d3d3d3;
 }
 
-/* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [strong] and vice versa*/
-#sidebar .sidebar-header strong {
-  display: none;
-}
-#sidebar.active .sidebar-header h3 {
-  display: none;
-}
-#sidebar.active .sidebar-header strong {
-  display: block;
+.sidebar-left {
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
-#sidebar ul li a {
-  text-align: left;
+.navbar-brand {
+  background-color: #00465d;
 }
 
-#sidebar.active ul li a {
-  padding: 20px 10px;
-  text-align: center;
-  font-size: 0.85em;
+.sidebar-nav li.nav-link {
+  color: #333;
+  font-weight: 500;
 }
 
-#sidebar.active ul li a i {
-  margin-right: 0;
-  display: block;
-  font-size: 1.8em;
-  margin-bottom: 5px;
+/* top nav bar */
+.picture {
+  float: right;
+  width: 3%;
+  padding: 2px 2px;
+  margin-top: 20px;
+  border-radius: 50%;
+  height: 35px;
 }
 
-/* Same dropdown links padding*/
-#sidebar.active ul ul a {
-  padding: 10px !important;
+.nav-btn {
+  margin-top: 19px;
+  margin-right: 12px;
+  margin-left: 1px;
+  border: none;
 }
 
-/* Changing the arrow position to bottom center position, 
- translateX(50%) works with right: 50% 
- to accurately  center the arrow */
-#sidebar.active .dropdown-toggle::after {
-  top: auto;
-  bottom: 10px;
-  right: 50%;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-}
-
-@media (max-width: 768px) {
-  /* 80px and its content aligned to centre. Pushing it off the screen with the
-     negative left margin
-  */
-  #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
-    text-align: center;
-    margin-left: -80px !important;
-  }
-
-  /* Reappearing the sidebar on toggle button click */
-  #sidebar {
-    margin-left: 0;
-  }
-
-  /* Toggling the sidebar header content, 
-     hide the big heading [h3] and showing the small heading [strong] and vice versa
-  */
-  #sidebar .sidebar-header strong {
-    display: none;
-  }
-  #sidebar.active .sidebar-header h3 {
-    display: none;
-  }
-  #sidebar.active .sidebar-header strong {
-    display: block;
-  }
-
-  /* Downsize the navigation links font size */
-  #sidebar.active ul li a {
-    padding: 20px 10px;
-    font-size: 0.85em;
-  }
-
-  #sidebar.active ul li a i {
-    margin-right: 0;
-    display: block;
-    font-size: 1.8em;
-    margin-bottom: 5px;
-  }
-
-  /* Adjust the dropdown links padding*/
-  #sidebar.active ul ul a {
-    padding: 10px !important;
-  }
-
-  /* Changing the arrow position to bottom center position, 
-    translateX(50%) works with right: 50% 
-    to accurately  center the arrow */
-  .dropdown-toggle::after {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
-  }
-}
-
-/* profile css */
+/* Sidebar profile picture */
 .avatar {
-  vertical-align: left;
-  width: 50px;
-  height: 50px;
+  /* vertical-align: left; */
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 
@@ -187,27 +70,77 @@ ul ul a {
   display: flex;
   /* background-color:  #076c8d; */
   margin: 0;
-  padding: 0.625rem;
-  color: white;
+  /* padding: 0.625rem; */
 }
 
-.profile:hover {
+.profile li {
+  list-style: none;
+
   /* background-color: #067ea7; */
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .profile-info-group {
   margin-left: 0.5rem;
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
-/* Bascom main icon at top of the Nav bar */
-.icon {
-  background: url("../../assets/img/Logo.svg");
-  align-content: center;
-  height: 20px;
-  width: 20px;
-  font-weight: bold;
-  display: block;
+/* End of sidebar profile picture */
+
+.project-image {
+  vertical-align: center;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  /* padding: 0 5px 5px 5px; */
+  border-radius: 20%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a:hover.nav-link.text-white {
+  background-color: rgba(6, 126, 167, 0.3);
+}
+
+/* .nav-item a {
+  color: white;
+} */
+.fas {
+  /* padding-left: 5px; */
+  margin-right: 8px;
+}
+
+.text-primary {
+  color: #0099cc;
+}
+.text-black {
+  color: black;
+}
+li #DropdownProfile {
+  color: rgb(163, 162, 162);
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+li #DropdownProfile:hover {
+  color: white;
+  transition: 0.3s;
+  background-color: none;
+}
+.dropdown-toggle:after {
+  content: none;
+}
+
+.nav-link.hover-border-bottom {
+  border-bottom: 3px solid transparent;
+  color: #0099cc;
+}
+
+.nav-link.hover-border-bottom:hover,
+.nav-link.hover-border-bottom:active {
+  transition: 0.2s;
+  border-bottom: 3px solid #ffc200;
 }

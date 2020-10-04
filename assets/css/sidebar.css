@@ -18,7 +18,7 @@ body {
   background: #00465d;
   color: #ffffff;
   padding: 5px 0;
-  position: fixed;
+  position: relative;
   overflow-x: hidden;
   width: 230px;
 }
@@ -135,11 +135,6 @@ body {
 
 /* main content ... all links */
 
-.wrapper .main_content {
-  width: 100%;
-  margin-left: 270px;
-}
-
 .wrapper .header {
   padding: 20px;
   background: #fff;
@@ -246,3 +241,10 @@ body {
   background: #047196;
 }
 /* scrollbar ends */
+.app {
+  max-width: 100%;
+  /* margin: 10% auto; */
+}
+.h-max {
+  height: 100%;
+}
