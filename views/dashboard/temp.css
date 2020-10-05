@@ -101,7 +101,8 @@ nav.navbar {
   cursor: pointer;
 }
 
-a:hover.nav-link.text-white {
+li a:hover.nav-link.text-white,
+li a.nav-link.text-white.active {
   background-color: rgba(6, 126, 167, 0.3);
 }
 
@@ -139,8 +140,10 @@ li #DropdownProfile:hover {
   color: #0099cc;
 }
 
-.nav-link.hover-border-bottom:hover,
-.nav-link.hover-border-bottom:active {
+li a.nav-link.hover-border-bottom:hover {
   transition: 0.2s;
   border-bottom: 3px solid #ffc200;
+}
+li a.nav-link.hover-border-bottom.active {
+  border-bottom: 3px solid #ffc200 !important;
 }

@@ -22,9 +22,10 @@ li.nav-item-trail a {
   color: white;
   background: #0099cc;
   border-radius: 30px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
   margin-bottom: 10px;
-  padding: 3px 25px;
+  padding: 5px 25px;
   border: 1px solid transparent;
 }
 
@@ -41,6 +42,8 @@ nav {
   color: black;
   height: 80px;
   width: 100%;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .logo-text {

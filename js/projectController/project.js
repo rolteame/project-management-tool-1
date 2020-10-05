@@ -78,14 +78,14 @@ function addProject() {
     JSON.stringify(newProject)
   );
 
-  location.href = "projects.html";
+  location.href = "temp.html";
 }
 
 // Open selected project
 function openProject(id) {
   localStorage.setItem("currentProject", JSON.stringify(projects[id]));
 
-  location.href = "overview.html";
+  location.href = "taskDetail.html";
 }
 
 function displayName(params) {}

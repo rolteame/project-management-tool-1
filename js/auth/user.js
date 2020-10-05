@@ -29,10 +29,13 @@ var activeUsers = JSON.parse(localStorage.getItem("activeUsers"));
 if (activeUsers == null || activeUsers == undefined) {
   activeUsers = [];
 }
+
+var passId = 0;
+var passEmail = "";
+var passWord = "";
 /**
  * Registers a particular user
  */
-
 function register() {
   let userEmail = document.getElementById("email").value;
   let userPassword = document.getElementById("password").value;
@@ -58,9 +61,12 @@ function register() {
         image: "",
         email: userEmail,
         password: userPassword,
-        role: "casual",
+        role: "",
       };
 
+      userEmail = passEmail;
+      userId = passId;
+      userPassword = password;
       //userExist.map();
 
       //console.log(newUser);
@@ -74,15 +80,39 @@ function register() {
       location.href = dasboardHome;
       localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-      location.href = "../views/dashboard/projects.html";
+      location.href = "../views/dashboard/step2.html";
     } else {
-      alert("password mismatch");
+      alertBox("signupAlert", "danger", "!password mismatch");
     }
   } else {
-    alert("user already exist");
+    alertBox("signupAlert", "danger", "!user already exist");
   }
 }
 
+function continueSignup() {
+  let firstName = document.getElementById("firstName").value;
+  let lastName = document.getElementById("lastName").value;
+  let role = document.getElementById("role").value;
+
+  let addedUser = users.find((user) => user.email == passEmail);
+
+  addedUser = {
+    id: passId,
+    firstName: firstName,
+    lastName: lastName,
+    image: "",
+    email: passEmail,
+    password: passWord,
+    role: role,
+  };
+
+  users.push(newUser);
+
+  localStorage.setItem("users", JSON.stringify(users));
+
+  location.href = dasboardHome;
+  localStorage.setItem("currentUser", JSON.stringify(newUser));
+}
 // email
 // password
 // role
@@ -104,9 +134,10 @@ function login() {
     localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
     localStorage.setItem("currentUser", JSON.stringify(userExist));
-    location.href = "../views/dashboard/projects.html";
+    location.href = "../views/dashboard/temp.html";
   } else {
-    alert("Wrong Email and/or Password");
+    let error = "!Wrong Email and/or Password";
+    alertBox("loginAlert", "danger", error);
   }
 }
 
@@ -125,3 +156,25 @@ function logout() {
 
   location.href = "../signup.html";
 }
+
+/**
+ *
+ * @param {string} alert_id Div Id of alert box
+ * @param {string} alert_type type of alert to show
+ * @param {string} alert_message message to display
+ * @example alertBox("alert_id", "danger", "danger alert")
+ */
+function alertBox(alert_id, alert_type, alert_message) {
+  alerts = document.getElementById(alert_id);
+  if (alerts != null) {
+    alerts.innerHTML = alert_message;
+  }
+  alerts.classList.add(`alert-${alert_type}`);
+}
+
+var userName = document.getElementById("userName");
+var userRole = document.getElementById("userRole");
+
+document.onload = () => {
+  userName.innerHTML = pa;
+};

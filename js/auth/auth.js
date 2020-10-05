@@ -5,7 +5,7 @@
  */
 
 var activeUsers = JSON.parse(localStorage.getItem("activeUsers"));
-var indexPage = "../../../index.html";
+var indexPage = "../signup.html";
 
 if (activeUsers == "" || activeUsers == null) {
   location.href = indexPage;
