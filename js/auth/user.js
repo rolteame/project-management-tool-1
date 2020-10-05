@@ -18,6 +18,11 @@ var users = JSON.parse(localStorage.getItem("users"));
 if (users == null || users == undefined) {
   users = [];
 }
+var saveDetails = JSON.parse(localStorage.getItem("saveDetails"));
+
+if (saveDetails == null || saveDetails == undefined) {
+  saveDetails = [];
+}
 
 // redirect locations
 var dasboardHome = "../views/dashboard/temp.html";
@@ -76,11 +81,12 @@ function register() {
 
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
+      localStorage.setItem("saveDetails", JSON.stringify(activeUsers));
 
       location.href = dasboardHome;
       localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-      location.href = "../views/dashboard/step2.html";
+      location.href = "../views/step2.html";
     } else {
       alertBox("signupAlert", "danger", "!password mismatch");
     }
@@ -97,21 +103,22 @@ function continueSignup() {
   let addedUser = users.find((user) => user.email == passEmail);
 
   addedUser = {
-    id: passId,
+    id: saveDetails.id,
     firstName: firstName,
     lastName: lastName,
     image: "",
-    email: passEmail,
-    password: passWord,
+    email: saveDetails.email,
+    password: saveDetails.password,
     role: role,
   };
+  getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
+  getCurrentUser[saveDetails.id] = addedUser;
 
-  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(getCurrentUser));
 
-  localStorage.setItem("users", JSON.stringify(users));
-
+  localStorage.setItem("currentUser", JSON.stringify(addedUser));
   location.href = dasboardHome;
-  localStorage.setItem("currentUser", JSON.stringify(newUser));
+  localStorage.removeItem("saveDetails");
 }
 // email
 // password
@@ -175,6 +182,7 @@ function alertBox(alert_id, alert_type, alert_message) {
 var userName = document.getElementById("userName");
 var userRole = document.getElementById("userRole");
 
-document.onload = () => {
-  userName.innerHTML = pa;
-};
+// document.onload = () => {
+getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
+console.log(getCurrentUser);
+// };
