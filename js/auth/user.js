@@ -45,6 +45,9 @@ function register() {
   let userEmail = document.getElementById("email").value;
   let userPassword = document.getElementById("password").value;
   let userConfirmPassword = document.getElementById("retypePassword").value;
+  let firstName = document.getElementById("firstName").value;
+  let lastName = document.getElementById("lastName").value;
+  let role = document.getElementById("role").value;
 
   // get user email
   let userExist = users.find((user) => user.email == userEmail);
@@ -61,17 +64,17 @@ function register() {
 
       newUser = {
         id: userId,
-        firstName: "",
-        lastName: "",
+        firstName: firstName,
+        lastName: lastName,
         image: "",
         email: userEmail,
         password: userPassword,
-        role: "",
+        role:role,
       };
 
-      userEmail = passEmail;
-      userId = passId;
-      userPassword = password;
+      passEmail = userEmail;
+      passId = userId;
+      password = userPassword;
       //userExist.map();
 
       //console.log(newUser);
@@ -86,7 +89,7 @@ function register() {
       location.href = dasboardHome;
       localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-      location.href = "../views/step2.html";
+      location.href = "../views/dashboard/temp.html";
     } else {
       alertBox("signupAlert", "danger", "!password mismatch");
     }
@@ -95,12 +98,15 @@ function register() {
   }
 }
 
-function continueSignup() {
+function continueSignup(e) {
+  
   let firstName = document.getElementById("firstName").value;
   let lastName = document.getElementById("lastName").value;
   let role = document.getElementById("role").value;
 
   let addedUser = users.find((user) => user.email == passEmail);
+  alert('adderUser');
+
 
   addedUser = {
     id: saveDetails.id,
@@ -118,7 +124,7 @@ function continueSignup() {
 
   localStorage.setItem("currentUser", JSON.stringify(addedUser));
   location.href = dasboardHome;
-  localStorage.removeItem("saveDetails");
+  // localStorage.removeItem("saveDetails");
 }
 // email
 // password
@@ -184,5 +190,22 @@ var userRole = document.getElementById("userRole");
 
 // document.onload = () => {
 getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
-console.log(getCurrentUser);
+
 // };
+
+//edit trigger
+
+function editTrigger() {
+  // editUser = find(user => getCurrentUser.firstName == users.firstName);
+  // console.log('editUser');
+  currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  //userDetails = getCurrentUser;
+  console.log(currentUser)
+  
+  // document.getElementById("email").value = getCurrentUser.email;
+  // document.getElementById("firstName").value = getCurrentUser.firstName;
+  // document.getElementById("lastName").value = getCurrentUser.lastName;
+  // document.getElementById("role").value = getCurrentUser.role;
+
+}
+
