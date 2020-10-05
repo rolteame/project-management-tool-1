@@ -15,12 +15,13 @@
     /> -->
     <link rel="stylesheet" href="temp.css">
     <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <link rel="stylesheet" href="../../assets/css/task.css">
 
     <script src="../../js/auth/auth.js"></script>
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
-    <title>Document</title>
+    <title>Bascom || Task Overview</title>
   </head>
   <body>
     <body onload="displayTasks()">
@@ -225,18 +226,43 @@
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-6">
               <div class="mt-5"></div>
             <div  class="container pt-5 mt-5">
-                    <button class="btn btn-outline-secondary rounded-pill add-btn-color mt-3"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#staticBackdrop">+ Create Task</button>
-                    
-                    <div >
-                        <h4>All Tasks</h4>
-                        <div id="showAllTasks" class="d-flex flex-wrap">
-                            
-                                
+              <section class="container">
+                <div class="card-deck d-flex justify-content-around mt-4">
+                    <div class="card" style="max-width: 25%">
+                      <div class="card-body">
+                        <div class="card-header d-flex justify-content-between">
+                            <span class="card-heading ">Tasks</span>
+                            <button data-toggle="modal" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
                         </div>
+                        <div id="showAllTasks">
+        
+                        </div>
+                      </div>
                     </div>
+                    <div class="card" style="max-width: 25%">
+                      <div class="card-body">
+                        <div class="card-header d-flex justify-content-between">
+                            <span class="card-heading ">To Do</span>
+                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
+                        </div>
+                        <div id="showAllTasks">
+                            
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card" style="max-width: 25%">
+                      <div class="card-body">
+                        <div class="card-header d-flex justify-content-between">
+                            <span class="card-heading ">Done</span>
+                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
+                        </div>
+                        <div id="showAllTasks">
+                            
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </section>
                     
               
             </div>

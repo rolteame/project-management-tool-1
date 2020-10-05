@@ -58,10 +58,10 @@ function displayTasks() {
     document.getElementById("showAllTasks").innerHTML = tasksPlaceholder;
   }
 }
-
+ let taskId;
 // create a new task
 function addTask() {
-  let taskId;
+ 
 
   for (let i = 0; i <= tasks.length; i++) {
     taskId = i;
@@ -81,12 +81,13 @@ function addTask() {
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
-  location.href = "taskDetail.html";
+  location.href = "taskoverview.html";
 }
 
-function deleteTask(id) {
-  tasks.splice(id, 1);
+function deleteTask() {
+  tasks.splice(taskId, 1);
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
   displayTasks();
+  location.reload();
 }

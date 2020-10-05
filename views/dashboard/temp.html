@@ -156,8 +156,8 @@
                 <span >
                 <li class="dropdown"><a class="dropdown-toggle ml-3" data-toggle="dropdown" href="#" id="DropdownProfile">...</a>
                   <ul class="dropdown-menu">
-                    <li class="mx-2 text-decoration-none"><a href="settings.html" class="text-black">Profile settings</a></li>
-                    <li class="mx-2 text-decoration-none"><a class="text-black" onclick="logout()">Log Out</a></li>
+                    <li class="mx-2 text-decoration-none" ><a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong"  class="text-black">Profile settings</a></li>
+                    <li class="mx-2 text-decoration-none"><a onclick=editTrigger() class="text-black" onclick="logout()">Log Out</a></li>
                   </ul>
                 </li>
               </span>
@@ -227,7 +227,7 @@
 
                 <div class="project-welcome jumbotron my-4 p-3">
                   <p class="heading-3 font-weight-normal text-default-color">
-                    Hello, <span id="userName"></span>
+                    Hello, <span id="helloUserName"></span>
                   </p>
                   <div class="lead bg-grey px-3 py-2 rounded">
                     <p class="text-default-color">
@@ -271,6 +271,40 @@
           </main>
         </div>
       </div>
+
+
+
+<!-- Modal edit profile -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="editFirstName">First Name</label>
+            <input type="text" class="form-control" id="editFirstName" aria-describedby="emailHelp" placeholder="Enter First Name">
+            <label for="editLastName">Last Name</label>
+            <input type="text" class="form-control" id="editLastName" aria-describedby="emailHelp" placeholder="Enter Last Name">
+            <label for="editRole">Role</label>
+            <input type="text" class="form-control" id="editRole" aria-describedby="emailHelp" placeholder="Enter Job Role">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
