@@ -23,9 +23,9 @@
 
     <title>Bascom || Task Overview</title>
   </head>
-  <body>
-    <body onload="displayTasks()">
-      <!-- Add Project Modal -->
+
+    <body  onload="displayTasksLists()">
+      <!-- ############### [ MODAL FOR TO ADD TASK ] ########################-->
       <div
       class="modal fade addProject"
       id="staticBackdrop"
@@ -97,7 +97,9 @@
         </div>
       </div>
     </div>
-      <!-- navbar -->
+    <!-- ###############[ MODAL END ]########################################## -->
+      
+    <!-- ###########################[ NAVBAR BEGINS HERE] ############################################# -->
       <nav class="navbar navbar-light bg-light flex-md-nowrap fixed-top  p-0 shadow-sm">
         <div class="">
           <div class="row">
@@ -137,9 +139,9 @@
 
         </div>
       </nav>
-      <!-- navbar ends -->
+    <!-- ###########################[ NAVBAR BEGINS HERE] ############################################# -->
 
-      <!-- container -->
+    <!-- ###########################[ SIDEBAR BEGINS HERE] ############################################# -->
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-2 d-none d-md-block sidebar px-1">
@@ -222,13 +224,16 @@
             </div>
         
           </div>
+              <!-- ###########################[ SIDEBAR ENDS HERE] ############################################# -->
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-6">
-              <div class="mt-5"></div>
+          <div class="mt-5"></div>
             <div  class="container pt-5 mt-5">
               <section class="container">
-                <div class="card-deck d-flex justify-content-around mt-4">
-                    <div class="card" style="max-width: 25%">
+                <input type="text" id="listName"><button onclick="addList()">Add list</button>
+                <div class="card-deck d-flex justify-content-around mt-4" id="showLists">
+                    
+                  <!-- <div class="card" style="max-width: 25%">
                       <div class="card-body">
                         <div class="card-header d-flex justify-content-between">
                             <span class="card-heading ">Tasks</span>
@@ -260,7 +265,8 @@
                             
                         </div>
                       </div>
-                    </div>
+                    </div> 
+                  -->
                   </div>
             </section>
                     
