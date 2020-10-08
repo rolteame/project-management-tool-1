@@ -34,19 +34,24 @@ function displayTasksLists(){
   tasksListsPlaceholder = ""
 
   for(i = 0; i < tasksLists.length; ++i){
-    tasksListsPlaceholder += `
-        <div class="card" style="max-width: 25%">
-        <div class="card-body">
-          <div class="card-header d-flex justify-content-between">
-              <span class="card-heading ">${tasksLists[i].name}</span>
-              <button data-toggle="modal" value="${tasksLists[i].name}" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-          </div>
-          <div id="${tasksLists[i].name}">
+    if (tasksLists[i].userId == currentUser.id) {
+      if (tasksLists[i].projectId == currentProject.projectId) {
+        tasksListsPlaceholder += `
+            <div class="card" style="max-width: 25%">
+            <div class="card-body">
+              <div class="card-header d-flex justify-content-between">
+                  <span class="card-heading ">${tasksLists[i].name}</span>
+                  <button data-toggle="modal" value="${tasksLists[i].name}" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
+                  <button  class="btn btn-outline-secondary rounded-pill add-btn-color" onclick="deleteTasksList(${i})">Delete List</button>
+              </div>
+              <div id="${i}">
 
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    `;
+        `;
+      }
+    }
   }
   document.getElementById('showLists').innerHTML = tasksListsPlaceholder
 
@@ -64,8 +69,8 @@ function displayTasks() {
     tasksPlaceholder = "";
       for (i = 0; i < tasks.length; i++) {
         task = tasks[i];
-        if(tasksLists[j].name == task.listName){
         if (task.userId == currentUser.id) {
+        if(tasksLists[j].name == task.listName){        
           if (task.projectId == currentProject.projectId) {  
 
             tasksPlaceholder += `<div class="card bg-grey m-3 ">   
@@ -88,9 +93,10 @@ function displayTasks() {
                     <button class="btn btn-danger" onclick= "deleteTask(${i})">Delete</button><br>
                 </div>
             </div>`;
+            document.getElementById(j).innerHTML = tasksPlaceholder;
           }
           }
-          document.getElementById(tasksLists[j].name).innerHTML = tasksPlaceholder;
+
         }
 
       }
@@ -105,15 +111,36 @@ document.getElementById("showLists").addEventListener('click',function(event){
   
   localStorage.setItem('activeList', JSON.stringify(activeList))
 })
-
+let listId;
 function addList(){
+  for (let i = 0; i <= tasksLists.length; i++) {
+    listId = i;
+  }
+
   newList = {
-    "name" : document.getElementById('listName').value
+    "listId": listId,
+    "name" : document.getElementById('listName').value,
+    "projectId": currentProject.projectId,
+    "userId": currentUser.id,
   }
 
   tasksLists.push(newList)
   localStorage.setItem('tasksLists', JSON.stringify(tasksLists))
   displayTasksLists()
+}
+
+function deleteTasksList(id){
+  
+  for( i=0; i < tasks.length;++i){
+     if(tasksLists[id].name == tasks[i].listName){
+       alert("Cannot delete Non-Empty List!")
+       return
+     }
+  }
+  tasksLists.splice(id,1)
+  localStorage.setItem('tasksLists', JSON.stringify(tasksLists))
+  displayTasksLists()
+
 }
 
 let taskId;
@@ -146,6 +173,7 @@ function deleteTask(id) {
   tasks.splice(id, 1);
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
-  displayTasks();
+  // displayTasks();
   location.reload();
 }
+
