@@ -32,7 +32,7 @@ function displayTasks() {
     task = tasks[i];
     if (task.userId == currentUser.id) {
       if (task.projectId == currentProject.projectId) {
-        tasksPlaceholder += `<div class="card w-25 bg-grey m-3 ">   
+        tasksPlaceholder += `<div class="card bg-grey m-3 ">   
             <div class="card-header my-0 py-1 bg-grey">
                 <h6 class="">${task.taskName}</h6>
                     
@@ -41,7 +41,7 @@ function displayTasks() {
                 <p>
                 ${task.taskBody}
                 </p>
-                <small class="text-muted my-0 py-0 float-right">
+                <small class="text-muted my-0 py-0">
                         <span class="my-0">${task.startDate} </span>
                         <br class="my-0">to <br class="my-0">
                         <span class="my-0">${task.endDate}</span>
