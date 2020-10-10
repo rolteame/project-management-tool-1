@@ -6,23 +6,26 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0 shrink-to-fit-no"
     />
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
     <!-- <link
       rel="stylesheet"
       href="../../assets/css/bootstrap/bootstrap.min.css"
     /> -->
     <link rel="stylesheet" href="temp.css">
-    <link rel="stylesheet" href="../../assets/css/activities.css" />
+    <link rel="stylesheet" href="../../assets/css/projects.css" />
+    <link rel="stylesheet" href="../../assets/css/task.css">
 
     <script src="../../js/auth/auth.js"></script>
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
-    <title>Document</title>
+    <title>Bascom || Task Overview</title>
   </head>
-  <body>
-    <body>
-      <!-- Add Project Modal -->
+
+    <body  onload="displayTasksLists()">
+      <!-- ############### [ MODAL FOR TO ADD TASK ] ########################-->
       <div
       class="modal fade addProject"
       id="staticBackdrop"
@@ -36,7 +39,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title text-default-color" id="staticBackdropLabel">
-              Add Project
+              Add new Task
             </h5>
             <button
               type="button"
@@ -51,28 +54,35 @@
             <form>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label"
-                  >Project Name</label
+                  >Task Name</label
                 >
                 <input
                   type="text"
-                  name="project-name"
-                  placeholder="Project Name"
-                  id="projectName"
+                  name="task-name"
+                  placeholder="Task Name"
+                  id="taskName"
                   class="form-control"
                 />
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label"
-                  >Project Description</label
+                  >Task Description</label
                 >
                 <textarea
                   class="form-control"
                   cols="10"
                   rows="5"
-                  name="project-description"
-                  placeholder="Project Description"
-                  id="projectDescription"
+                  name="task-description"
+                  placeholder="Task Description"
+                  id="taskBody"
                 ></textarea>
+
+                <label for="date" class="col-form-label">Timeline</label> <br>
+                <div class="input-group pt-1 pb-2">
+                    <br><input type="text" class="form-control" placeholder="YYYY-MM-DD" id="startDate">
+                    <div class="input-group-addon mx-1">to</div>
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="endDate">
+                </div>
               </div>
             </form>
           </div>
@@ -80,14 +90,16 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               Cancel
             </button>
-            <button type="button" class="btn btn-primary" onclick="addProject()">
-              Add Project
+            <button type="button" class="btn btn-primary" onclick="addTask()">
+              Create Task
             </button>
           </div>
         </div>
       </div>
     </div>
-      <!-- navbar -->
+    <!-- ###############[ MODAL END ]########################################## -->
+      
+    <!-- ###########################[ NAVBAR BEGINS HERE] ############################################# -->
       <nav class="navbar navbar-light bg-light flex-md-nowrap fixed-top  p-0 shadow-sm">
         <div class="">
           <div class="row">
@@ -106,20 +118,15 @@
               </div>
                 
         
-             <!-- logo-section -->
-          <!-- <label class="logo"><img src="../../assets/img/Logo.png" class="path"></img><span class="text-primary">BAS</span><l-heading>COM</l-heading><i class="fas fa-ellipsis-h"></i></label>      -->
-        
-              <!-- <li class="nav-item text-nowrap">
-                <a href="#" class="nav-link text-secondary">holla</a>
-              </li> -->
+            
             </ul>
           </div>
           <ul class="nav flex-row offset-lg-2 offset-sm-0">
             <li class="nav-item">
-              <a class="nav-link hover-border-bottom" href="taskDetail.html">Overview</a>
+              <a class="nav-link hover-border-bottom active" href="taskDetail.html">Overview</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hover-border-bottom active" href="#">Activities</a>
+              <a class="nav-link hover-border-bottom" href="activities.html">Activities</a>
             </li>
             <li class="nav-item">
               <a class="nav-link hover-border-bottom" href="#">Calender</a>
@@ -132,9 +139,9 @@
 
         </div>
       </nav>
-      <!-- navbar ends -->
+    <!-- ###########################[ NAVBAR BEGINS HERE] ############################################# -->
 
-      <!-- container -->
+    <!-- ###########################[ SIDEBAR BEGINS HERE] ############################################# -->
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-2 d-none d-md-block sidebar px-1">
@@ -150,14 +157,15 @@
               <div class="profile mt-2 ">
                 <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
                 <div class="profile-info-group">
-                    <p class="profile-name mb-0" id="userName"></p>
-                    <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
+                  <p class="profile-name mb-0" id="userName"></p>
+                  <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
                 </div>
                 <span >
                 <li class="dropdown"><a class="dropdown-toggle ml-3" data-toggle="dropdown" href="#" id="DropdownProfile">...</a>
                   <ul class="dropdown-menu">
-                    <li class="mx-2 text-decoration-none"><a href="settings.html" class="text-black">Profile settings</a></li>
-                    <li class="mx-2 text-decoration-none"><a class="text-black" onclick="logout()">Log Out</a></li>
+                    <li class="mx-2"><a href="#" class="text-black">Profile</a></li>
+                    <li class="mx-2"><a href="#" class="text-black">Settings</a></li>
+                    <li class="mx-2"><a href="#" class="text-black" onclick="logout()">Log Out</a></li>
                   </ul>
                 </li>
               </span>
@@ -166,7 +174,7 @@
             </div>
               <ul class="nav flex-column sidehover">
                 <li class="nav-item">
-                  <a class="nav-link text-white hover-color " href="temp.html"><i class="fas fa-home"></i>Home</a>
+                  <a class="nav-link text-white hover-color" href="temp.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item hover-color">
                   <a class="nav-link text-white hover-color active" href="taskDetail.html"><i class="fas fa-tasks"></i>Tasks</a>
@@ -195,7 +203,7 @@
                   <div class="add-team-project primary-logo-color px-2"><small>+ Add new project</small></div>
                 </ul>
               </div>
-              <!--  -->
+              
                 <div class="project-teams">
                   <a class="menu-header text-white primary-options-color px-2 py-2 cursor-pointer d-flex flex-row justify-content-between " data-toggle="collapse" data-target="#teams" aria-expanded="false" aria-controls="collapseExample">Teams <i class="fas fa-caret-down"></i></a>
                 </div>
@@ -214,84 +222,56 @@
                   </ul>
                 </div>
             </div>
-            <!--  -->
+        
           </div>
+              <!-- ###########################[ SIDEBAR ENDS HERE] ############################################# -->
 
-          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-5">
-            <section class="activities-section ml-5 pt-3">
-                <h5 class="pt-3">TODAY</h5>
-                <div class="activities">
-                    <div class="activity">
-                        <p><img class="icons icon-check" src="https://img.icons8.com/android/24/000000/checkmark.png"/>
-                        <p class="text">
-                            <span class="bold">Daniel Ugwu</span> mark as done <span class="bold">Listing on Product Hunt so that we can reach as many potential users</span>
-                        </p>
-                        <span class="time">8:40 PM</span></p>
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-6">
+          <div class="mt-5"></div>
+            <div  class="container pt-5 mt-5">
+              <section class="container">
+                <input type="text" id="listName"><button onclick="addList()">Add list</button>
+                <div class="card-deck d-flex justify-content-around mt-4" id="showLists">
+                    
+                  <!-- <div class="card" style="max-width: 25%">
+                      <div class="card-body">
+                        <div class="card-header d-flex justify-content-between">
+                            <span class="card-heading ">Tasks</span>
+                            <button data-toggle="modal" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
+                        </div>
+                        <div id="showAllTasks">
+        
+                        </div>
+                      </div>
                     </div>
-                    <div class="activity activity-comment">
-                        <div class="activity-text">
-                            <p><img class="icons icon-message" src="https://img.icons8.com/android/24/000000/checkmark.png"/>
-                                <p class="text">
-                                    <span class="bold">Chidinma Nwabeke</span> commented on <span class="bold">Account for teams and personal in bottom style</span>
-                                </p>
-                            <span class="time">7:32 PM</span></p>
+                    <div class="card" style="max-width: 25%">
+                      <div class="card-body">
+                        <div class="card-header d-flex justify-content-between">
+                            <span class="card-heading ">To Do</span>
+                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
                         </div>
-                        <div class="comment">
-                            <img class="comment-img" src="../../assets/img/Oval.png" alt="">
-                            <p>During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes</p>
+                        <div id="showAllTasks">
+                            
                         </div>
+                      </div>
                     </div>
-                    <div class="activity activity-comment">
-                        <div class="activity-text">
-                            <p><img class="icons icon-download" src="https://img.icons8.com/fluent-systems-regular/24/000000/download.png"/>
-                                <p class="text">
-                                    <span class="bold">Daniel Ugwu</span> uploaded 4 files on <span class="bold">An option to search in current projects or in all projects</span>
-                                </p>
-                            <span class="time">6:02 PM</span></p>
+                    <div class="card" style="max-width: 25%">
+                      <div class="card-body">
+                        <div class="card-header d-flex justify-content-between">
+                            <span class="card-heading ">Done</span>
+                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
                         </div>
-                            <div class="images">
-                                <img src="../../assets/img/Image1.png" alt="">
-                                <img src="../../assets/img/Image2.png" alt="">
-                                <img src="../../assets/img/Image3.png" alt="">
-                                <img src="../../assets/img/Image4.png" alt="">
-                            </div>
-                    </div>
-                </div>
-                <h5>YESTERDAY</h5>
-                    <div class="activities">
-                        <div class="activity activity-comment">
-                            <div class="activity-text">
-                                <p><img class="icons icon-download" src="https://img.icons8.com/fluent-systems-regular/24/000000/download.png"/>
-                                <p class="text">
-                                    <span class="bold">Daniel Ugwu</span> uploaded 4 files on <span class="bold">An option to search in current projects or in all projects</span></span>
-                                </p>
-                                <span class="time">6:02 PM</span></p>
-                            </div>
-                            <div class="images">
-                                <img src="../../assets/img/Image1.png" alt="">
-                                <img src="../../assets/img/Image2.png" alt="">
-                                <img src="../../assets/img/Image3.png" alt="">
-                                <img src="../../assets/img/Image4.png" alt="">
-                            </div>
+                        <div id="showAllTasks">
+                            
                         </div>
-                        <div class="activity">
-                            <p><img class="icons icon-check" src="https://img.icons8.com/android/24/000000/checkmark.png"/>
-                            <p class="text">
-                                <span class="bold">Adedeji Bankole</span> mark as done <span class="bold">Listing on Product Hunt so that we can reach as many potential users</span>
-                            </p>
-                            <span class="time">5:49 PM</span></p>
-                        </div>
-                        <div class="activity">
-                            <p><img class="icons icon-edit" src="https://img.icons8.com/metro/26/000000/edit.png"/>
-                            <p class="text">
-                                <span class="bold">Maxwell Diogu</span> edited <span class="bold">Listing on Product Hunt so that we can reach as many potential users</span>
-                            </p>
-                            <span class="time">6:02 PM</span></p>
-                        </div>
-                    </div>
+                      </div>
+                    </div> 
+                  -->
+                  </div>
             </section>
+                    
               
-            
+            </div>
             
           </main>
         </div>
@@ -305,13 +285,10 @@
 
 
     <script src="../../js/auth/user.js"></script>
-  <script src="../../js/projectController/project.js"></script>
+    <script src="../../js/taskController/task.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-
