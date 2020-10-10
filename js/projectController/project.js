@@ -78,14 +78,26 @@ function addProject() {
     JSON.stringify(newProject)
   );
 
-  location.href = "projects.html";
+  location.href = "temp.html";
 }
 
 // Open selected project
 function openProject(id) {
   localStorage.setItem("currentProject", JSON.stringify(projects[id]));
 
-  location.href = "overview.html";
+  location.href = "taskoverview.html";
 }
 
 function displayName(params) {}
+
+showUserName = currentUser.firstName;
+showLastName = currentUser.lastName;
+userRole = currentUser.role
+document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
+document.getElementById('userRole').innerHTML = userRole;
+document.getElementById('helloUserName').innerHTML = showUserName;
+
+//edit trigger
+
+
+
