@@ -16,20 +16,25 @@ if (currentProject == null || currentProject == undefined) {
   currentProject = {};
 }
 
-// TASKS LIST GOTTEN FROM LOCAL STORAGE
+// TASKS GOTTEN FROM LOCAL STORAGE
 tasks = JSON.parse(localStorage.getItem("tasks"));
 if (tasks == null || tasks == undefined) {
   tasks = [];
 }
 
+// Lists GOTTEN FROM LOCAL STORAGE
 tasksLists = JSON.parse(localStorage.getItem('tasksLists'))
 if (tasksLists == null || tasksLists == undefined) {
   tasksLists = [];
 }
+
+// ACTIVE LIST GOTTEN FROM LOCAL STORAGE
 activeList = JSON.parse(localStorage.getItem('activeList'))
 if (activeList == null || activeList == undefined) {
   activeList = {};
 }
+
+// function to display tasks list
 function displayTasksLists(){
   tasksListsPlaceholder = ""
 
@@ -59,6 +64,7 @@ function displayTasksLists(){
 
 }
 
+// #####[ function to display tasks ]######
 function displayTasks() {
   
   if (tasks == null || tasks == undefined) {
@@ -129,6 +135,7 @@ function addList(){
   displayTasksLists()
 }
 
+// #####[ function to delete tasks list(works only when list is empty)]######
 function deleteTasksList(id){
   
   for( i=0; i < tasks.length;++i){
@@ -143,8 +150,9 @@ function deleteTasksList(id){
 
 }
 
+
 let taskId;
-// create a new task
+// ######[ Function to create new task ]###############
 function addTask() {
 
   for (let i = 0; i <= tasks.length; i++) {
@@ -169,6 +177,8 @@ function addTask() {
   location.href = "taskoverview.html";
 }
 
+
+// ######[ Function to delete task ]###############
 function deleteTask(id) {
   tasks.splice(id, 1);
 
