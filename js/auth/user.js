@@ -165,7 +165,7 @@ function login() {
 
   let userExist = users.find((user) => userEmail == user.email);
   let passwordExist = users.find((user) => userPassword === user.password);
-  alert(passwordExist);
+  // alert(userEmail);
   if (userEmail === "" || userPassword === "") {
     Swal.fire({
       icon: "error",

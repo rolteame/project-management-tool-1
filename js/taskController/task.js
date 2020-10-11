@@ -42,12 +42,14 @@ function displayTasksLists(){
     if (tasksLists[i].userId == currentUser.id) {
       if (tasksLists[i].projectId == currentProject.projectId) {
         tasksListsPlaceholder += `
-            <div class="card" style="max-width: 25%">
+            <div class="card " style="max-width: 30%">
             <div class="card-body">
-              <div class="card-header d-flex justify-content-between">
-                  <span class="card-heading ">${tasksLists[i].name}</span>
-                  <button data-toggle="modal" value="${tasksLists[i].name}" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                  <button  class="btn btn-outline-secondary rounded-pill add-btn-color" onclick="deleteTasksList(${i})">Delete List</button>
+              <div class="card-header d-flex justify-content-between flex-column">
+                  <span class="card-heading text-center ">${tasksLists[i].name}</span>
+                  <div class="d-flex justify-content-around">
+                    <button data-toggle="modal" value="${tasksLists[i].name}" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color p-2" style="font-size: 12px;">+ Add Task</button>
+                    <button  class="btn btn-outline-secondary rounded-pill add-btn-color p-2" style="font-size: 12px;" onclick="deleteTasksList(${i})">- Delete List</button>
+                  </div>
               </div>
               <div id="${i}">
 
@@ -79,16 +81,16 @@ function displayTasks() {
         if(tasksLists[j].name == task.listName){        
           if (task.projectId == currentProject.projectId) {  
 
-            tasksPlaceholder += `<div class="card bg-grey m-3 ">   
-                <div class="card-header my-0 py-1 bg-grey">
+            tasksPlaceholder += `<div class="card bg-grey m-3 " style="max-width: 90%">   
+                <div class="card-header my-0 bg-grey">
                     <h6 class="">${task.taskName}</h6>
                         
                 </div>    
-                <div class="card-body bg-grey">
-                    <p>
+                <div class="card-body bg-grey" >
+                    <p class="text-center">
                     ${task.taskBody}
                     </p>
-                    <small class="text-muted my-0 py-0 float-right">
+                    <small class="text-muted my-0 py-0">
                             <span class="my-0">${task.startDate} </span>
                             <br class="my-0">to <br class="my-0">
                             <span class="my-0">${task.endDate}</span>

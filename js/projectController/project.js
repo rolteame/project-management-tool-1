@@ -112,7 +112,6 @@ document.getElementById('userName').innerHTML = showUserName +  " " + showLastNa
 document.getElementById('userRole').innerHTML = userRole;
 document.getElementById('helloUserName').innerHTML = showUserName;
 
-//edit trigger
 
 
 
