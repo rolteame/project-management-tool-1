@@ -103,12 +103,20 @@ function register() {
 
         location.href = dasboardHome;
         localStorage.setItem("currentUser", JSON.stringify(newUser));
-
-        location.href = "../views/dashboard/temp.html";
+        Swal.fire({
+          title: "Generating Your experience...",
+          footer: "Thank you for choosing Bascom projects",
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          timer: 5000,
+          onOpen: () => {
+            swal.showLoading();
+          },
+        }).then(() => (location.href = "../views/dashboard/temp.html"));
       } else {
         Swal.fire({
           icon: "error",
-          title: "!password mismatch",
+          title: "password mismatch",
           showConfirmButton: false,
           timer: 2000,
         });
@@ -116,7 +124,7 @@ function register() {
     } else {
       Swal.fire({
         icon: "error",
-        title: "!user already exist",
+        title: "user already exist",
         showConfirmButton: false,
         timer: 2000,
       });
@@ -165,7 +173,6 @@ function login() {
 
   let userExist = users.find((user) => userEmail == user.email);
   let passwordExist = users.find((user) => userPassword === user.password);
-  alert(passwordExist);
   if (userEmail === "" || userPassword === "") {
     Swal.fire({
       icon: "error",
@@ -186,8 +193,7 @@ function login() {
       onOpen: () => {
         swal.showLoading();
       },
-    });
-    // .then(() => (location.href = "../views/dashboard/temp.html"));
+    }).then(() => (location.href = "../views/dashboard/temp.html"));
 
     localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
@@ -196,7 +202,7 @@ function login() {
     let error = "Wrong Email and/or Password";
     Swal.fire({
       icon: "error",
-      title: userExist,
+      title: error,
       showConfirmButton: false,
       timer: 2000,
     });
@@ -210,18 +216,16 @@ function getImage() {}
  */
 function logout() {
   activeUsers.pop();
-  swal
-    .fire({
-      title: "Logging Out...",
-      footer: "Thank you for choosing Bascom projects",
-      allowEscapeKey: false,
-      allowOutsideClick: false,
-      timer: 4000,
-      onOpen: () => {
-        swal.showLoading();
-      },
-    })
-    .then(() => (location.href = "../signup.html"));
+  Swal.fire({
+    title: "Logging Out...",
+    footer: "Thank you for choosing Bascom projects",
+    allowEscapeKey: false,
+    allowOutsideClick: false,
+    timer: 4000,
+    onOpen: () => {
+      swal.showLoading();
+    },
+  }).then(() => (location.href = "../signup.html"));
   localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
   localStorage.removeItem("currentTask");
@@ -316,4 +320,49 @@ function editUser() {
   localStorage.setItem("currentUser", JSON.stringify(edittedUser));
 }
 
+function deleteUser() {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-danger mx-2",
+      cancelButton: "btn btn-secondary mx-2",
+    },
+    buttonsStyling: false,
+  });
+
+  swalWithBootstrapButtons
+    .fire({
+      position: "top-end",
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        $("#exampleModalLong").modal("hide");
+        Swal.fire({
+          title: "Deleting Account...",
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          timer: 4000,
+          onOpen: () => {
+            swal.showLoading();
+          },
+        }).then(() => {
+          location.href = "../signup.html";
+
+          let Users = users.find((user) => getCurrentUser.email == user.email);
+          let UserIndex = users.indexOf(Users);
+          users.splice(UserIndex, 1);
+          localStorage.removeItem("currentTask");
+          localStorage.removeItem("currentProject");
+          localStorage.removeItem("currentUser");
+          localStorage.removeItem("activeUsers");
+        });
+      }
+    });
+}
 // console.log(editUser().id);
