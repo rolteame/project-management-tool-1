@@ -141,10 +141,10 @@ function addList(){
 function deleteTasksList(id){
   
   for( i=0; i < tasks.length;++i){
-     if(tasksLists[id].name == tasks[i].listName){
-       alert("Cannot delete Non-Empty List!")
-       return
-     }
+    //  if(tasksLists[id].name == tasks[i].listName){
+    //   //  alert("Cannot delete Non-Empty List!")
+    //    return
+    //  }
   }
   tasksLists.splice(id,1)
   localStorage.setItem('tasksLists', JSON.stringify(tasksLists))

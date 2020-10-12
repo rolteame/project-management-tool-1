@@ -105,12 +105,7 @@ function openProject(id) {
 
 function displayName(params) {}
 
-showUserName = currentUser.firstName;
-showLastName = currentUser.lastName;
-userRole = currentUser.role
-document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
-document.getElementById('userRole').innerHTML = userRole;
-document.getElementById('helloUserName').innerHTML = showUserName;
+
 
 
 

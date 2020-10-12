@@ -225,7 +225,7 @@ function logout() {
     onOpen: () => {
       swal.showLoading();
     },
-  }).then(() => (location.href = "../signup.html"));
+  }).then(() => (location.href = "../../index.html"));
   localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
   localStorage.removeItem("currentTask");
@@ -366,3 +366,12 @@ function deleteUser() {
     });
 }
 // console.log(editUser().id);
+
+// CURRENT USER GOTTEN FROM LOCAL STORAGE
+currentUser = JSON.parse(localStorage.getItem("currentUser"));
+showUserName = currentUser.firstName;
+showLastName = currentUser.lastName;
+userRole = currentUser.role
+document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
+document.getElementById('userRole').innerHTML = userRole;
+document.getElementById('helloUserName').innerHTML = showUserName;

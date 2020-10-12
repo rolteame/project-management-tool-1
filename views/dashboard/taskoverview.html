@@ -177,7 +177,7 @@
                   <a class="nav-link text-white hover-color" href="temp.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item hover-color">
-                  <a class="nav-link text-white hover-color active" href="taskDetail.html"><i class="fas fa-tasks"></i>Tasks</a>
+                  <a class="nav-link text-white hover-color active" href="taskoverview.html"><i class="fas fa-tasks"></i>Tasks</a>
                 </li>
                 <li class="nav-item hover-color">
                   <a class="nav-link text-white " href="#"><i class="fas fa-bell"></i>Notification</a>
@@ -284,7 +284,14 @@
 
 
 
-
+    <script>
+      showUserName = currentUser.firstName;
+      showLastName = currentUser.lastName;
+      userRole = currentUser.role
+      document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
+      document.getElementById('userRole').innerHTML = userRole;
+      document.getElementById('helloUserName').innerHTML = showUserName;
+    </script>
     <script src="../../js/auth/user.js"></script>
     <script src="../../js/taskController/task.js"></script>
 
