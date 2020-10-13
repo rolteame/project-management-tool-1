@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container m-5 d-flex justify-content-center">
+      <div class="card col-5 bg-light">
+        <form>
+          <h2 class="text-center my-3">Continue Sign Up</h2>
+          <div class="form-group col-md-12">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              placeholder="First name"
+            />
+          </div>
+          <div class="form-group col-md-12">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              placeholder="Last name"
+            />
+          </div>
+          <div class="form-group col-md-12">
+            <label for="role">Role</label>
+            <input
+              type="text"
+              class="form-control"
+              id="role"
+              placeholder="E.g Project Manager"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary col-md-12 my-4"
+            onclick="continueSignup()"
+          >
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!--User JS-->
+    <script src="../js/auth/user.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- add bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

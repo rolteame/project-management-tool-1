@@ -1,0 +1,126 @@
+
+/* reset */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* styling for the cards container */
+.overview-board-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    width: 80%;
+    height: 100%;
+    background-color: #E5E5E5;
+    padding: 20px;
+    margin: auto;  
+    
+}
+
+/* stying for cards-backlog,to-do and done */
+.cards{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 8px;
+    top: 30px;
+    bottom: 30px;
+    height: fit-content;
+    background: #ffffff;
+    padding: 30px;
+  
+}
+
+/* styling for card title */
+.overview-board-header{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.overview-board-header h2{
+    color:  #00465D;
+    
+}
+.add-task-btn{
+    background-color: #CEF9C6;
+    border-radius:20px;
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    color: #1D201C;
+    font-weight: bold;
+    text-align: center;
+
+}
+.add-task-btn:hover{
+    background:#c1ebb9 ;
+    
+}
+
+/* styling for task cards */
+
+
+
+.task-card-wrapper{
+    display: flex;
+    flex-direction: column;
+   align-items: space-between;
+    margin-top: 15px;
+    background: #ffffff;
+    height: fit-content;
+    border: none;
+    padding: 5px;
+
+}
+.task-card{
+    background-color: #F7F6F3;
+    border-radius: 5px;
+    margin: 0.5rem;
+    padding: 10px;
+    position: relative;
+    
+}
+
+
+/* styling task title */
+.cards p{
+    color:  #00465D;
+    font-size: 14px;
+    
+}
+
+
+
+
+/* styling team names  */
+.task-1 a{
+    text-decoration: none;
+    color: #ED6400;
+    font-size: 12px; 
+}
+
+.task-2 a{
+    text-decoration: none;
+    color: #764CED;
+    font-size: 12px; 
+}
+.task-3 a{
+    text-decoration: none;
+    color:#1975D0;
+    font-size: 12px; 
+}
+
+
+/* styling task cards */
+
+
+
+
+
+

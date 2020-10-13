@@ -1,28 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/navigation.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
-      rel="stylesheet"
-    />
-   
-
-    <link rel="stylesheet" href="../assets/css/signup.css" />
-    <link rel="stylesheet" href="../assets/css/foottest.css">
-    <title>Bascom Projects || Signup</title>
-    <script
-      src="https://kit.fontawesome.com/bb034dbd21.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <link rel="stylesheet" href="../assets/css/signupmodal.css" /> -->
- 
-
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -85,19 +60,23 @@
               </div>
               <!--Body-->
               <div class="modal-body mx-4">
+                <div class="my-0 py-0">
+                  <div class="alert" role="alert" id="loginAlert"></div>
+                </div>
                 <!--Body-->
                 <div class="md-form mb-5">
-                  <input
-                    type="email"
-                    id="loginEmail"
-                    class="form-control validate"
-                  />
                   <label
                     data-error="wrong"
                     data-success="right"
                     for="Form-email1"
-                    >Your email</label
+                    ></label
                   >
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    class="form-control validate"
+                    placeholder="Your email"
+                  />
                 </div>
 
                 <div class="md-form pb-3">
@@ -105,12 +84,13 @@
                     type="password"
                     id="loginPassword"
                     class="form-control validate"
+                    placeholder="Your password"
                   />
                   <label
                     data-error="wrong"
                     data-success="right"
                     for="Form-pass1"
-                    >Your password</label
+                    ></label
                   >
                   <p class="font-small blue-text d-flex justify-content-end">
                     Forgot <a href="#" class="blue-text ml-1"> Password?</a>
@@ -184,10 +164,10 @@
             <!--Nav bar list-->
             <ul id="navbarList">
               <li class="nav-item">
-                <a href="about.html">Why Bascom Projects?</a>
+                <a href="#about">Why Bascom Projects?</a>
               </li>
-              <li class="nav-item"><a href="./pricing.html">Pricing</a></li>
-              <li class="nav-item"><a href="./contact.html">Contact us</a></li>
+              <li class="nav-item"><a href="#pricing">Pricing</a></li>
+              <li class="nav-item"><a href="#contact">Contact us</a></li>
               <li class="nav-item">
                 <a
                   href="./login.html"
@@ -205,15 +185,49 @@
         </header>
         <!--Main Body section-->
         <section class="login-container">
-          <h1>Try Bascom Projects For Free</h1>
-          <p>
-            By signing up, I agree to the Bascom Projects Privacy Policy and
-            Terms of Service.
-          </p>
-          <form action="">
+          <h1 class="mb-0 pb-1">Try Bascom Projects For Free</h1>
+          <div class="d-flex justify-content-center my-0 py-0 mb-0">
+            <div class="alert w-50 mb5" role="alert" id="signupAlert">
+              
+            </div>
+          </div>
+          <form action="" class="mt-0">
+            <small class="font-weight-normal">
+              <div class="form-check d-flex flex-row">
+                <input class="form-check-input position-relative col-1" type="checkbox" value="" id="defaultCheck1" required>
+                <label class="" for="defaultCheck1">
+                  By signing up, I agree to the Bascom Projects Privacy Policy and Terms of Service.
+                </label>
+              </div>
+              
+            </small>
+            <label for="firstName">First Name:</label>
+            <input
+              id="firstName" class="form-control py-3"
+              type="text"
+              placeholder="Enter Your First Name"
+              name="firstName"
+              required
+            />
+            <label for="lastName">Last Name:</label>
+            <input
+              id="lastName" class="form-control py-3"
+              type="text"
+              placeholder="Enter Your Last Name"
+              name="firstName"
+              required
+            />
+            <label for="role">Role:</label>
+            <input
+              id="role" class="form-control py-3"
+              type="text"
+              placeholder="Enter Your Job Role"
+              name="firstName"
+              required
+            />
             <label for="email">Email:</label>
             <input
-              id="email"
+              id="email" class="form-control py-3"
               type="email"
               placeholder="Enter Email Address"
               name="email"
@@ -221,7 +235,7 @@
             />
             <label for="password">Password:</label>
             <input
-              id="password"
+              id="password" class="form-control py-3"
               type="password"
               placeholder="Enter Password"
               name="password"
@@ -230,23 +244,62 @@
             <label for="retypePassword">Retype Password:</label>
             <input
               id="retypePassword"
-              type="password"
+              type="password" class="form-control py-3"
               placeholder="Enter Password Again"
               name="retypePassword"
               required
             />
-            <input
-              type="submit"
-              onclick="register()"
-              id="Register"
-              value="Register"
-            />
-            <input type="submit" value="continue with Google" id="google_btn" />
+            
+            <small class="text-right my-2">
+              Already have an Acccount?
+              <a class="login-link"
+              href="./login.html"
+              class="nav-item"
+              data-toggle="modal"
+              data-target="#elegantModalForm"
+              >Log in</a>
+            </small>
+  
+            <div class="text-center mb-3">
+              <button
+                type="button"
+                class="btn blue-gradient btn-block btn-rounded z-depth-1a bt-primary"
+                onclick="register()"
+              >
+                Sign up
+              </button>
+            </div>
+            <p
+              class="font-small dark-grey-text text-right d-flex justify-content-center mb-1 pt-0"
+            >
+              or Sign in with:
+            </p>
+  
+            <div class="row my-3 d-flex justify-content-center">
+              <!--Facebook-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+              >
+                <i class="fab fa-facebook-f text-center"></i>
+              </button>
+              <!--Twitter-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+              >
+                <i class="fab fa-twitter"></i>
+              </button>
+              <!--Google +-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded z-depth-1a"
+              >
+                <i class="fab fa-google-plus-g"></i>
+              </button>
+            </div>
           </form>
-          <p>
-            Already have an Acccount?
-            <a class="login-link" href="./login.html">Login</a>
-          </p>
+        </div>
         </section>
 
         <!-- Footer -->
@@ -395,6 +448,8 @@
         <!-- Footer -->
         <!--User JS-->
         <script src="../js/auth/user.js"></script>
+    <script src="../js/sweetalert2.all.min.js"></script>
+
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- add bootstrap js -->

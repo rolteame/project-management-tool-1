@@ -66,14 +66,13 @@
           <div class="modal-body mx-4">
             <!--Body-->
             <div class="md-form mb-5">
+              <div class="alert w-50" role="alert" id="loginAlert"></div>
               <input
                 type="email"
                 id="loginEmail"
                 class="form-control validate"
+                placeholder="Your Email"
               />
-              <label data-error="wrong" data-success="right" for="Form-email1"
-                >Your email</label
-              >
             </div>
 
             <div class="md-form pb-3">
@@ -81,10 +80,9 @@
                 type="password"
                 id="loginPassword"
                 class="form-control validate"
+                placeholder="Your Password"
               />
-              <label data-error="wrong" data-success="right" for="Form-pass1"
-                >Your password</label
-              >
+
               <p class="font-small blue-text d-flex justify-content-end">
                 Forgot <a href="#" class="blue-text ml-1"> Password?</a>
               </p>
@@ -132,7 +130,8 @@
           <!--Footer-->
           <div class="modal-footer mx-5 pt-3 mb-1">
             <p class="font-small grey-text d-flex justify-content-end">
-              Not a member? <a href="#" class="blue-text ml-1"> Sign Up</a>
+              Not a member?
+              <a href="/signup.html" class="blue-text ml-1"> Sign Up</a>
             </p>
           </div>
         </div>
@@ -157,10 +156,10 @@
         <!--Nav bar list-->
         <ul id="navbarList">
           <li class="nav-item">
-            <a href="about.html">Why Bascom Projects?</a>
+            <a href="#about">Why Bascom Projects?</a>
           </li>
-          <li class="nav-item"><a href="./pricing.html">Pricing</a></li>
-          <li class="nav-item"><a href="./contact.html">Contact us</a></li>
+          <li class="nav-item"><a href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a href="#contact">Contact us</a></li>
           <li class="nav-item">
             <a
               href="./login.html"
@@ -502,6 +501,7 @@
     <!-- Footer -->
     <!--User JS-->
     <script src="./js/auth/user.js"></script>
+    <script src="./js/sweetalert2.all.min.js"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- add bootstrap js -->
