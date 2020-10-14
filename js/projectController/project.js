@@ -10,6 +10,11 @@ if (projects == null || projects == undefined) {
   projects = [];
 }
 
+teams = JSON.parse(localStorage.getItem("teams"));
+if (teams == null || teams == undefined) {
+  teams = [];
+}
+
 // CURRENT USER GOTTEN FROM LOCAL STORAGE
 currentProject = JSON.parse(localStorage.getItem("currentProject"));
 if (currentProject == null || currentProject == undefined) {
@@ -29,6 +34,15 @@ function displayProjects() {
   if (projects == null || projects == undefined) {
     projects = [];
   }
+
+  teamsPlaceholder = "";
+  console.log(teams)
+    for(i=0;i < teams.length; ++i){
+        teamsPlaceholder += `
+            <option id="${i}"  value="${teams[i].teamId}">${teams[i].teamName}</option>
+        `
+    }
+    document.getElementById('teamsListModal').innerHTML = teamsPlaceholder
 
   for (i = 0; i < projects.length; i++) {
     project = projects[i];
@@ -66,6 +80,7 @@ function addProject() {
   newProject = {
     projectId: projectId,
     projectName: document.getElementById("projectName").value,
+    projectTeamId:document.getElementById('teamsListModal').value,
     projectDescription: document.getElementById("projectDescription").value,
     userId: currentUser.id,
   };
@@ -90,14 +105,8 @@ function openProject(id) {
 
 function displayName(params) {}
 
-showUserName = currentUser.firstName;
-showLastName = currentUser.lastName;
-userRole = currentUser.role
-document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
-document.getElementById('userRole').innerHTML = userRole;
-document.getElementById('helloUserName').innerHTML = showUserName;
 
-//edit trigger
+
 
 
 
