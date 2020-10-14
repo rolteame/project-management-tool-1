@@ -128,9 +128,11 @@ class Card{
         });
         
         this.commentsButton.addEventListener('click', ()=>{
+            if ( this.input.value != ""){
             this.state.comments.push(this.commentsInput.value);
             this.renderComments();
             this.commentsInput.value = "";
+            }
         })
 
         //Append
