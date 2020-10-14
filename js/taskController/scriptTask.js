@@ -19,6 +19,7 @@ class todoList{
         this.button.addEventListener('click', ()=>{
             if(this.input.value != ""){
                 this.addToDo.call(this);
+                this.input.value = "";
                 }
         });
 
@@ -128,7 +129,7 @@ class Card{
         });
         
         this.commentsButton.addEventListener('click', ()=>{
-            if ( this.input.value != ""){
+            if(this.commentsInput.value != ""){
             this.state.comments.push(this.commentsInput.value);
             this.renderComments();
             this.commentsInput.value = "";
@@ -262,6 +263,7 @@ let addTodoListButton = document.getElementById("addTodoListButton");
 addTodoListButton.addEventListener('click',()=>{
    if ( addTodoListInput.value.trim() != ""){
     new todoList(root, addTodoListInput.value);
+    addTodoListInput.value = "";
    }
 });
 
