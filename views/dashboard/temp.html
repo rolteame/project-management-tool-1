@@ -164,8 +164,8 @@
                 <span >
                 <li class="dropdown"><a class="dropdown-toggle ml-3" data-toggle="dropdown" href="#" id="DropdownProfile">...</a>
                   <ul class="dropdown-menu">
-                    <li class="mx-2 text-decoration-none" ><a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong"  class="text-black">Profile settings</a></li>
-                    <li class="mx-2 text-decoration-none"><a onclick=editTrigger() class="text-black" onclick="logout()">Log Out</a></li>
+                    <li class="mx-2 text-decoration-none" ><a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong"  class="text-black" onclick=editTrigger()>Profile settings</a></li>
+                    <li class="mx-2 text-decoration-none"><a class="text-black" onclick="logout()">Log Out</a></li>
                   </ul>
                 </li>
               </span>
@@ -177,7 +177,7 @@
                   <a class="nav-link text-white hover-color active" href="temp.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item hover-color">
-                  <a class="nav-link text-white hover-color" href="taskDetail.html"><i class="fas fa-tasks"></i>Tasks</a>
+                  <a class="nav-link text-white hover-color" href="taskoverview.html"><i class="fas fa-tasks"></i>Tasks</a>
                 </li>
                 <li class="nav-item hover-color">
                   <a class="nav-link text-white " href="#"><i class="fas fa-bell"></i>Notification</a>
@@ -308,8 +308,9 @@
         </form>
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-danger mr-auto" onclick="deleteUser()">Delete Account</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" id="editUser" onclick="editUser()">Save changes</button>
       </div>
     </div>
   </div>
@@ -322,7 +323,13 @@
 
 
 
+<<<<<<< HEAD
+<script src="../../js/projectController/project.js"></script>
+<script src="../../js/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+=======
 
+>>>>>>> bb1f909fc808239653e0a3f0330f11f6dca35cca
     <script src="../../js/auth/user.js"></script>
   <script src="../../js/projectController/project.js"></script>
   <script src="../../js/teamController/team.js"></script>

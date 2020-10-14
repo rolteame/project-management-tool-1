@@ -5,7 +5,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0 shrink-to-fit-no"
-    />
+    >
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="temp.css">
     <link rel="stylesheet" href="../../assets/css/projects.css" />
     <link rel="stylesheet" href="../../assets/css/task.css">
+    <link rel="stylesheet" href="../../js/taskController/styleTask.css">
 
     <script src="../../js/auth/auth.js"></script>
 
@@ -24,7 +25,7 @@
     <title>Bascom || Task Overview</title>
   </head>
 
-    <body  onload="displayTasksLists()">
+    <body>
       <!-- ############### [ MODAL FOR TO ADD TASK ] ########################-->
       <div
       class="modal fade addProject"
@@ -177,7 +178,7 @@
                   <a class="nav-link text-white hover-color" href="temp.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item hover-color">
-                  <a class="nav-link text-white hover-color active" href="taskDetail.html"><i class="fas fa-tasks"></i>Tasks</a>
+                  <a class="nav-link text-white hover-color active" href="taskoverview.html"><i class="fas fa-tasks"></i>Tasks</a>
                 </li>
                 <li class="nav-item hover-color">
                   <a class="nav-link text-white " href="#"><i class="fas fa-bell"></i>Notification</a>
@@ -230,43 +231,15 @@
           <div class="mt-5"></div>
             <div  class="container pt-5 mt-5">
               <section class="container">
-                <input type="text" id="listName"><button onclick="addList()">Add list</button>
-                <div class="card-deck d-flex justify-content-around mt-4" id="showLists">
+                
+
+                  <div id="addTodoListDiv">
+                    <input id="addTodoListInput" class="comment">
+                    <button id="addTodoListButton" class="btn-save">Add new to-do list</button>
+                </div>
+                <div id="root"></div>
                     
-                  <!-- <div class="card" style="max-width: 25%">
-                      <div class="card-body">
-                        <div class="card-header d-flex justify-content-between">
-                            <span class="card-heading ">Tasks</span>
-                            <button data-toggle="modal" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                        </div>
-                        <div id="showAllTasks">
-        
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card" style="max-width: 25%">
-                      <div class="card-body">
-                        <div class="card-header d-flex justify-content-between">
-                            <span class="card-heading ">To Do</span>
-                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                        </div>
-                        <div id="showAllTasks">
-                            
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card" style="max-width: 25%">
-                      <div class="card-body">
-                        <div class="card-header d-flex justify-content-between">
-                            <span class="card-heading ">Done</span>
-                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                        </div>
-                        <div id="showAllTasks">
-                            
-                        </div>
-                      </div>
-                    </div> 
-                  -->
+                
                   </div>
             </section>
                     
@@ -283,9 +256,16 @@
 
 
 
-
+    <!-- <script>
+      showUserName = currentUser.firstName;
+      showLastName = currentUser.lastName;
+      userRole = currentUser.role
+      document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
+      document.getElementById('userRole').innerHTML = userRole;
+      document.getElementById('helloUserName').innerHTML = showUserName;
+    </script> -->
     <script src="../../js/auth/user.js"></script>
-    <script src="../../js/taskController/task.js"></script>
+    <script src="../../js/taskController/scriptTask.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

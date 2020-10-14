@@ -54,59 +54,91 @@ function register() {
 
   console.log(userExist);
   // check if email already exists
-  if (userExist == undefined || userExist == null) {
-    // check if password matches
-    if (userPassword === userConfirmPassword) {
-      let userId;
-      for (let i = 0; i <= users.length; i++) {
-        userId = i;
-      }
-
-      newUser = {
-        id: userId,
-        firstName: firstName,
-        lastName: lastName,
-        image: "",
-        email: userEmail,
-        password: userPassword,
-        role:role,
-      };
-
-      passEmail = userEmail;
-      passId = userId;
-      password = userPassword;
-      //userExist.map();
-
-      //console.log(newUser);
-
-      users.push(newUser);
-      activeUsers.push(token);
-
-      localStorage.setItem("users", JSON.stringify(users));
-      localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
-      localStorage.setItem("saveDetails", JSON.stringify(activeUsers));
-
-      location.href = dasboardHome;
-      localStorage.setItem("currentUser", JSON.stringify(newUser));
-
-      location.href = "../views/dashboard/temp.html";
-    } else {
-      alertBox("signupAlert", "danger", "!password mismatch");
-    }
+  if (
+    userEmail === "" ||
+    userPassword === "" ||
+    userConfirmPassword === "" ||
+    firstName === "" ||
+    lastName === "" ||
+    role === ""
+  ) {
+    Swal.fire({
+      icon: "error",
+      title: "Fields cannot be empty",
+      showConfirmButton: false,
+      timer: 2000,
+    });
   } else {
-    alertBox("signupAlert", "danger", "!user already exist");
+    if (userExist == undefined || userExist == null) {
+      // check if password matches
+      if (userPassword === userConfirmPassword) {
+        let userId;
+        for (let i = 0; i <= users.length; i++) {
+          userId = i;
+        }
+
+        newUser = {
+          id: userId,
+          firstName: firstName,
+          lastName: lastName,
+          image: "",
+          email: userEmail,
+          password: userPassword,
+          role: role,
+        };
+
+        passEmail = userEmail;
+        passId = userId;
+        password = userPassword;
+        //userExist.map();
+
+        //console.log(newUser);
+
+        users.push(newUser);
+        activeUsers.push(token);
+
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
+        localStorage.setItem("saveDetails", JSON.stringify(activeUsers));
+
+        location.href = dasboardHome;
+        localStorage.setItem("currentUser", JSON.stringify(newUser));
+        Swal.fire({
+          title: "Generating Your experience...",
+          footer: "Thank you for choosing Bascom projects",
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          timer: 5000,
+          onOpen: () => {
+            swal.showLoading();
+          },
+        }).then(() => (location.href = "../views/dashboard/temp.html"));
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "password mismatch",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      }
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "user already exist",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
   }
 }
 
 function continueSignup(e) {
-  
   let firstName = document.getElementById("firstName").value;
   let lastName = document.getElementById("lastName").value;
   let role = document.getElementById("role").value;
 
   let addedUser = users.find((user) => user.email == passEmail);
-  alert('adderUser');
-
+  alert("adderUser");
 
   addedUser = {
     id: saveDetails.id,
@@ -139,18 +171,41 @@ function login() {
   var userEmail = document.getElementById("loginEmail").value;
   let userPassword = document.getElementById("loginPassword").value;
 
-  userExist = users.find((user) => userEmail == user.email);
+  let userExist = users.find((user) => userEmail == user.email);
   let passwordExist = users.find((user) => userPassword === user.password);
-
-  if (userExist && passwordExist) {
+  if (userEmail === "" || userPassword === "") {
+    Swal.fire({
+      icon: "error",
+      title: "Fields cannot be empty",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  } else if (userExist && passwordExist) {
     activeUsers.push(token);
+
+    Swal.fire({
+      icon: "success",
+      title: "Please wait...",
+      footer: "Thank you for choosing Bascom projects",
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      timer: 4000,
+      onOpen: () => {
+        swal.showLoading();
+      },
+    }).then(() => (location.href = "../views/dashboard/temp.html"));
+
     localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
     localStorage.setItem("currentUser", JSON.stringify(userExist));
-    location.href = "../views/dashboard/temp.html";
-  } else {
-    let error = "!Wrong Email and/or Password";
-    alertBox("loginAlert", "danger", error);
+  } else if (userExist == undefined || passwordExist == undefined) {
+    let error = "Wrong Email and/or Password";
+    Swal.fire({
+      icon: "error",
+      title: error,
+      showConfirmButton: false,
+      timer: 2000,
+    });
   }
 }
 
@@ -161,13 +216,21 @@ function getImage() {}
  */
 function logout() {
   activeUsers.pop();
+  Swal.fire({
+    title: "Logging Out...",
+    footer: "Thank you for choosing Bascom projects",
+    allowEscapeKey: false,
+    allowOutsideClick: false,
+    timer: 4000,
+    onOpen: () => {
+      swal.showLoading();
+    },
+  }).then(() => (location.href = "../../index.html"));
   localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
   localStorage.removeItem("currentTask");
   localStorage.removeItem("currentProject");
   localStorage.removeItem("currentUser");
-
-  location.href = "../signup.html";
 }
 
 /**
@@ -189,23 +252,126 @@ var userName = document.getElementById("userName");
 var userRole = document.getElementById("userRole");
 
 // document.onload = () => {
-getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
+var getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 // };
 
 //edit trigger
 
 function editTrigger() {
-  // editUser = find(user => getCurrentUser.firstName == users.firstName);
-  // console.log('editUser');
-  currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  //userDetails = getCurrentUser;
-  console.log(currentUser)
-  
-  // document.getElementById("email").value = getCurrentUser.email;
-  // document.getElementById("firstName").value = getCurrentUser.firstName;
-  // document.getElementById("lastName").value = getCurrentUser.lastName;
-  // document.getElementById("role").value = getCurrentUser.role;
+  // let currentUser = users.find((user) => {
+  let editUsers = users.find((user) => getCurrentUser.email == user.email);
+  // });
+  let firstname = document.getElementById("editFirstName");
+  let lastname = document.getElementById("editLastName");
+  let role = document.getElementById("editRole");
+  let email = document.getElementById("exampleInputEmail1");
 
+  $("#exampleModalLong").on("shown.bs.modal", function () {
+    // alert("The modal is fully shown.");
+    firstname.value = editUsers.firstName;
+    lastname.value = editUsers.lastName;
+    role.value = editUsers.role;
+    email.value = editUsers.email;
+  });
 }
 
+function editUser() {
+  // let currentUser = users.find((user) => {
+  let editUsers = users.find((user) => getCurrentUser.email == user.email);
+  let editUserIndex = users.indexOf(editUsers);
+  // // });
+
+  let firstname = document.getElementById("editFirstName").value;
+  let lastname = document.getElementById("editLastName").value;
+  let role = document.getElementById("editRole").value;
+  let email = document.getElementById("exampleInputEmail1").value;
+
+  editUsers.firstName = firstname;
+  editUsers.lastName = lastname;
+  editUsers.role = role;
+  editUsers.email = email;
+
+  let edittedUser = {
+    id: editUserIndex,
+    firstName: firstname,
+    lastName: lastname,
+    image: "",
+    email: email,
+    password: editUsers.password,
+    role: role,
+  };
+
+  users.splice(editUserIndex, 1, edittedUser);
+
+  // getCurrentUser.firstName = firstname;
+  // getCurrentUser.lastName = lastname;
+  // getCurrentUser.role = role;
+  // getCurrentUser.email = email;
+  $("#exampleModalLong").modal("hide");
+  Swal.fire({
+    icon: "success",
+    title: "Your details have been updated",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  localStorage.setItem("currentUser", JSON.stringify(edittedUser));
+}
+
+function deleteUser() {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-danger mx-2",
+      cancelButton: "btn btn-secondary mx-2",
+    },
+    buttonsStyling: false,
+  });
+
+  swalWithBootstrapButtons
+    .fire({
+      position: "top-end",
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        $("#exampleModalLong").modal("hide");
+        Swal.fire({
+          title: "Deleting Account...",
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          timer: 4000,
+          onOpen: () => {
+            swal.showLoading();
+          },
+        }).then(() => {
+          location.href = "../signup.html";
+
+          let Users = users.find((user) => getCurrentUser.email == user.email);
+          let UserIndex = users.indexOf(Users);
+          users.splice(UserIndex, 1);
+          localStorage.removeItem("currentTask");
+          localStorage.removeItem("currentProject");
+          localStorage.removeItem("currentUser");
+          localStorage.removeItem("activeUsers");
+        });
+      }
+    });
+}
+// console.log(editUser().id);
+
+// CURRENT USER GOTTEN FROM LOCAL STORAGE
+currentUser = JSON.parse(localStorage.getItem("currentUser"));
+showUserName = currentUser.firstName;
+showLastName = currentUser.lastName;
+userRole = currentUser.role
+document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
+document.getElementById('userRole').innerHTML = userRole;
+document.getElementById('helloUserName').innerHTML = showUserName;
