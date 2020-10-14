@@ -67,6 +67,7 @@ function displayProjects() {
     }
     document.getElementById("showAllProjects").innerHTML = projectsPlaceholder;
   }
+  document.getElementById("theAvatar").src = `${currentUser.image}` || "../../assets/img/Sophia.jpg";
 }
 
 // creates new projects

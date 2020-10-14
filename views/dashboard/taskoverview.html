@@ -156,8 +156,7 @@
             </a>
             <div class="d-flex justify-content-around">
               <div class="profile mt-2 ">
-                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
-                <div class="profile-info-group">
+                <img id="theAvatar" src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>                <div class="profile-info-group">
                   <p class="profile-name mb-0" id="userName"></p>
                   <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
                 </div>
@@ -166,7 +165,7 @@
                   <ul class="dropdown-menu">
                     <li class="mx-2"><a href="#" class="text-black">Profile</a></li>
                     <li class="mx-2"><a href="#" class="text-black">Settings</a></li>
-                    <li class="mx-2"><a href="#" class="text-black" onclick="logout()">Log Out</a></li>
+                    <li class="mx-2" onclick="logout()"><a href="#" class="text-black" >Log Out</a></li>
                   </ul>
                 </li>
               </span>
@@ -265,6 +264,9 @@
       document.getElementById('helloUserName').innerHTML = showUserName;
     </script> -->
     <script src="../../js/auth/user.js"></script>
+    <script src="../../js/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
     <script src="../../js/taskController/scriptTask.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
