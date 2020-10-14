@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/activities.css">
-    <title>Bascom || Activities</title>
-</head>
-<body class="activities-body">
-    <section class="activities-section">
+var pageContent = `
+<section class="activities-section">
         <h5>TODAY</h5>
         <div class="activities">
             <div class="activity">
@@ -27,7 +18,7 @@
                     <span class="time">7:32 PM</span></p>
                 </div>
                 <div class="comment">
-                    <img class="comment-img" src="./assets/img/Oval.png" alt="">
+                    <img class="comment-img" src="../../assets/img/Oval.png" alt="">
                     <p>During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes</p>
                 </div>
             </div>
@@ -40,10 +31,10 @@
                     <span class="time">6:02 PM</span></p>
                 </div>
                     <div class="images">
-                        <img src="./assets/img/Image1.png" alt="">
-                        <img src="./assets/img/Image2.png" alt="">
-                        <img src="./assets/img/Image3.png" alt="">
-                        <img src="./assets/img/Image4.png" alt="">
+                        <img src="../../assets/img/Image1.png" alt="">
+                        <img src="../../assets/img/Image2.png" alt="">
+                        <img src="../../assets/img/Image3.png" alt="">
+                        <img src="../../assets/img/Image4.png" alt="">
                     </div>
             </div>
         </div>
@@ -58,10 +49,10 @@
                         <span class="time">6:02 PM</span></p>
                     </div>
                     <div class="images">
-                        <img src="./assets/img/Image1.png" alt="">
-                        <img src="./assets/img/Image2.png" alt="">
-                        <img src="./assets/img/Image3.png" alt="">
-                        <img src="./assets/img/Image4.png" alt="">
+                        <img src="../../assets/img/Image1.png" alt="">
+                        <img src="../../assets/img/Image2.png" alt="">
+                        <img src="../../assets/img/Image3.png" alt="">
+                        <img src="../../assets/img/Image4.png" alt="">
                     </div>
                 </div>
                 <div class="activity">
@@ -80,5 +71,7 @@
                 </div>
             </div>
     </section>
-</body>
-</html>
+`;
+function displayPage() {
+  document.getElementById("app").innerHTML = pageContent;
+}

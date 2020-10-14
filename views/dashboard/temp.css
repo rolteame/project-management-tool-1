@@ -1,0 +1,150 @@
+.form-control.search {
+  margin: 20px 20px 0 20px;
+  opacity: 0.5;
+  border-radius: 50px;
+  width: 200px;
+}
+
+.form-control.search:focus {
+  box-shadow: inset 0 0 3px 1px #888;
+  background: #fff;
+}
+
+nav.navbar {
+  z-index: 400;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #00465d;
+  z-index: 1000;
+  padding-top: 10px;
+  border-right: 1px solid #d3d3d3;
+}
+
+.sidebar-left {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.navbar-brand {
+  background-color: #00465d;
+}
+
+.sidebar-nav li.nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+/* top nav bar */
+.picture {
+  float: right;
+  width: 3%;
+  padding: 2px 2px;
+  margin-top: 20px;
+  border-radius: 50%;
+  height: 35px;
+}
+
+.nav-btn {
+  margin-top: 19px;
+  margin-right: 12px;
+  margin-left: 1px;
+  border: none;
+}
+
+/* Sidebar profile picture */
+.avatar {
+  /* vertical-align: left; */
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  /* background-color:  #076c8d; */
+  margin: 0;
+  /* padding: 0.625rem; */
+}
+
+.profile li {
+  list-style: none;
+
+  /* background-color: #067ea7; */
+  /* cursor: pointer; */
+}
+
+.profile-info-group {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* End of sidebar profile picture */
+
+.project-image {
+  vertical-align: center;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  /* padding: 0 5px 5px 5px; */
+  border-radius: 20%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+li a:hover.nav-link.text-white,
+li a.nav-link.text-white.active {
+  background-color: rgba(6, 126, 167, 0.3);
+}
+
+/* .nav-item a {
+  color: white;
+} */
+.fas {
+  /* padding-left: 5px; */
+  margin-right: 8px;
+}
+
+.text-primary {
+  color: #0099cc;
+}
+.text-black {
+  color: black;
+}
+li #DropdownProfile {
+  color: rgb(163, 162, 162);
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+li #DropdownProfile:hover {
+  color: white;
+  transition: 0.3s;
+  background-color: none;
+}
+.dropdown-toggle:after {
+  content: none;
+}
+
+.nav-link.hover-border-bottom {
+  border-bottom: 3px solid transparent;
+  color: #0099cc;
+}
+
+li a.nav-link.hover-border-bottom:hover {
+  transition: 0.2s;
+  border-bottom: 3px solid #ffc200;
+}
+li a.nav-link.hover-border-bottom.active {
+  border-bottom: 3px solid #ffc200 !important;
+  border-block-end: #0099cc;
+}
