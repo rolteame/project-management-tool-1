@@ -1,63 +1,73 @@
-.login-container {
-    height: 100vh;
-    width: 80%;
-    height: auto;
-    margin: 10px auto;
-    padding-bottom: 43px;
+.contact-section {
+  background-color: #f8f9faeb;
 }
-.login-container h1 {
-    font-size: 40px;
-    text-align: center;
-    padding: 10px;
+.login-container {
+  height: 100vh;
+  width: 80%;
+  height: auto;
+  margin: 10px auto;
+  padding-bottom: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-container h2 {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+.margin-5px {
+  margin-left: 5px;
 }
 form {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    margin: 0 auto;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin: 0 auto;
 }
 form input {
-    width: 100%;
-    padding: 15px;
-    margin: 5px;
-    border: 2px solid #0099CC;
-    border-radius: 5px;
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border: 2px solid #0099cc;
+  border-radius: 5px;
 }
 textarea {
-    width: 100%;
-    height: 200px;
-    padding: 15px;
-    margin: 5px;
-    border: 2px solid #0099CC;
-    border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  margin: 5px;
+  border: 2px solid #0099cc;
+  border-radius: 5px;
 }
-form input[type="submit"] {
-    background-color: #0099CC;
-    color: #ffffff;
-    font-size: 24px;
-    outline: none;
-    cursor: pointer;
+form button[type="submit"] {
+  background-color: #0099cc;
+  color: #ffffff;
+  font-size: 24px;
+  outline: none;
+  cursor: pointer;
 }
-form input[type="submit"]:hover {
-    background-color: #007AA3;
+form button[type="submit"]:hover {
+  background-color: #007aa3;
 }
 form label {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 @media (max-width: 425px) {
-    .login-container h1 {
-        font-size: 25px;
-    }
-    .login-container {
-        max-width: 100%;
-    }
-    form {
-        width: 100%;
-    }
-    form input {
-        width: 100%;
-    }
-    textarea {
-        width: 100%;
-    }
+  .login-container h1 {
+    font-size: 25px;
+  }
+  .login-container {
+    max-width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  form input {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
 }
