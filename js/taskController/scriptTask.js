@@ -17,7 +17,9 @@ class todoList{
         this.button.id = "to-do-list-button";
 
         this.button.addEventListener('click', ()=>{
+            if ( this.input.classList.contains("comment") != ""){
             this.addToDo.call(this);
+            }
         });
 
         this.div = document.createElement('div');
@@ -70,6 +72,8 @@ class Card{
         this.p.innerText = this.state.text;
 
         this.deleteButton = document.createElement('button');
+        // this.deleteButton.setAttribute("id","btn-delete");
+        // this.deleteButton.setAttribute("class","btn-del");
         this.deleteButton.innerText = "X";
         this.deleteButton.addEventListener('click', ()=>{
             this.deleteCard.call(this);
