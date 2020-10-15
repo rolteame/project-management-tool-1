@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="temp.css">
     <link rel="stylesheet" href="../../assets/css/projects.css" />
     <link rel="stylesheet" href="../../assets/css/task.css">
+    <link rel="stylesheet" href="../../js/taskController/styleTask.css">
 
     <script src="../../js/auth/auth.js"></script>
 
@@ -24,7 +25,7 @@
     <title>Bascom || Task Overview</title>
   </head>
 
-    <body  onload="displayTasksLists()">
+    <body>
       <!-- ############### [ MODAL FOR TO ADD TASK ] ########################-->
       <div
       class="modal fade addProject"
@@ -155,8 +156,7 @@
             </a>
             <div class="d-flex justify-content-around">
               <div class="profile mt-2 ">
-                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
-                <div class="profile-info-group">
+                <img id="theAvatar" src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>                <div class="profile-info-group">
                   <p class="profile-name mb-0" id="userName"></p>
                   <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
                 </div>
@@ -165,7 +165,7 @@
                   <ul class="dropdown-menu">
                     <li class="mx-2"><a href="#" class="text-black">Profile</a></li>
                     <li class="mx-2"><a href="#" class="text-black">Settings</a></li>
-                    <li class="mx-2"><a href="#" class="text-black" onclick="logout()">Log Out</a></li>
+                    <li class="mx-2" onclick="logout()"><a href="#" class="text-black" >Log Out</a></li>
                   </ul>
                 </li>
               </span>
@@ -216,6 +216,10 @@
                   </ul>
                 </div>
             </div>
+              <!-- invite team -->
+            <div class="fixed-bottom">
+              <button type="button" class="btn btn-outline-light   btn-lg  mx-3 my-3">Invite Teams</button>
+            </div>
         
           </div>
               <!-- ###########################[ SIDEBAR ENDS HERE] ############################################# -->
@@ -225,43 +229,14 @@
             <div  class="container pt-5 mt-5">
               <section class="container">
                 
-                <input class="mt-3 d-flex flex-row justify-content-end" type="text" id="listName"><button onclick="addList()">Add list</button>
-                <div class="card-deck d-flex justify-content-around mt-4" id="showLists">
+
+                  <div id="addTodoListDiv">
+                    <input id="addTodoListInput" class="comment">
+                    <button id="addTodoListButton" class="btn-save">Add new to-do list</button>
+                </div>
+                <div id="root"></div>
                     
-                  <!-- <div class="card" style="max-width: 25%">
-                      <div class="card-body">
-                        <div class="card-header d-flex justify-content-between">
-                            <span class="card-heading ">Tasks</span>
-                            <button data-toggle="modal" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                        </div>
-                        <div id="showAllTasks">
-        
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card" style="max-width: 25%">
-                      <div class="card-body">
-                        <div class="card-header d-flex justify-content-between">
-                            <span class="card-heading ">To Do</span>
-                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                        </div>
-                        <div id="showAllTasks">
-                            
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card" style="max-width: 25%">
-                      <div class="card-body">
-                        <div class="card-header d-flex justify-content-between">
-                            <span class="card-heading ">Done</span>
-                            <button class="btn btn-outline-secondary rounded-pill add-btn-color">+ Add Task</button>
-                        </div>
-                        <div id="showAllTasks">
-                            
-                        </div>
-                      </div>
-                    </div> 
-                  -->
+                
                   </div>
             </section>
                     
@@ -282,6 +257,19 @@
     <script src="../../js/auth/user.js"></script>
     <script src="../../js/taskController/task.js"></script>
     <script src="../../js/projectController/project.js"></script>
+    <!-- <script>
+      showUserName = currentUser.firstName;
+      showLastName = currentUser.lastName;
+      userRole = currentUser.role
+      document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
+      document.getElementById('userRole').innerHTML = userRole;
+      document.getElementById('helloUserName').innerHTML = showUserName;
+    </script> -->
+    <!-- <script src="../../js/auth/user.js"></script> -->
+    <script src="../../js/sweetalert2.all.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="../../js/taskController/scriptTask.js"></script> -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

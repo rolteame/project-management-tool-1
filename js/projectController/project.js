@@ -75,6 +75,7 @@ function displayProjects() {
     document.getElementById("showAllProjects").innerHTML = projectsPlaceholder;
     document.getElementById('projectsSidebar').innerHTML = projectsSidebarPlaceholder;
   }
+  document.getElementById("theAvatar").src = `${currentUser.image}` || "../../assets/img/Sophia.jpg";
 }
 
 // creates new projects

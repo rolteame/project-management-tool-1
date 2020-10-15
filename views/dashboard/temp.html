@@ -156,7 +156,7 @@
             </a>
             <div class="d-flex justify-content-around">
               <div class="profile mt-2 ">
-                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
+                <img id="theAvatar" src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
                 <div class="profile-info-group">
                   <p class="profile-name mb-0" id="userName"></p>
                   <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
@@ -216,6 +216,9 @@
                     
                   </ul>
                 </div>
+            </div>
+            <div class="fixed-bottom">
+              <button type="button" class="btn btn-outline-light   btn-lg  mx-3 my-3">Invite Teams</button>
             </div>
             <!--  -->
           </div>
@@ -290,6 +293,8 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
+            <label for="profilePic" >Change Profile Picture</label>
+            <input type="file" name="" id="profilePic"><br>
             <label for="editFirstName">First Name</label>
             <input type="text" class="form-control" id="editFirstName" aria-describedby="emailHelp" placeholder="Enter First Name">
             <label for="editLastName">Last Name</label>
@@ -317,9 +322,13 @@
 
 
 
+<<<<<<< HEAD
 <script src="../../js/projectController/project.js"></script>
 <script src="../../js/sweetalert2.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+=======
+
+>>>>>>> bb1f909fc808239653e0a3f0330f11f6dca35cca
     <script src="../../js/auth/user.js"></script>
   <script src="../../js/projectController/project.js"></script>
   <script src="../../js/teamController/team.js"></script>
