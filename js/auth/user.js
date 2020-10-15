@@ -381,3 +381,5 @@ userRole = currentUser.role
 document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
 document.getElementById('userRole').innerHTML = userRole;
 document.getElementById('helloUserName').innerHTML = showUserName;
+
+
