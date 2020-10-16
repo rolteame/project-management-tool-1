@@ -91,7 +91,7 @@ if (users == null || users == undefined) {
                 <h3>Password Reset</h3>
                 <p>A password reset has been requested on your account. Please click the link below to verify and change your password</p>
                 <div class="container logo">
-                    <a target="_blank" href="http://127.0.0.1:5500/views/reset-password.html?email=${userEmail}">Reset Password</a>
+                    <a target="_blank" href="http://127.0.0.1:5501/views/reset-password.html?email=${userEmail}">Reset Password</a>
                 </div>
                 <small><span class="text-primary">BAS</span><l-heading>COM</l-heading>&copy;2020</small>
             </div>

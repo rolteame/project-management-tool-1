@@ -225,7 +225,7 @@ function logout() {
     onOpen: () => {
       swal.showLoading();
     },
-  }).then(() => (location.href = "../index.html"));
+  }).then(() => (location.href = "../../index.html"));
   localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
   localStorage.removeItem("currentTask");
