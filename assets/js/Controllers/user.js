@@ -81,7 +81,7 @@ function register() {
           id: userId,
           firstName: firstName,
           lastName: lastName,
-          image: "",
+          image: "../../assets/img/Sophia.jpg",
           email: userEmail,
           password: userPassword,
           role: role,
@@ -257,11 +257,12 @@ var getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
 // };
 
 //edit trigger
-
+let editReader =""
 function editTrigger() {
   // let currentUser = users.find((user) => {
   let editUsers = users.find((user) => getCurrentUser.email == user.email);
   // });
+  let profilePic = document.getElementById('profilePic');
   let firstname = document.getElementById("editFirstName");
   let lastname = document.getElementById("editLastName");
   let role = document.getElementById("editRole");
@@ -273,6 +274,10 @@ function editTrigger() {
     lastname.value = editUsers.lastName;
     role.value = editUsers.role;
     email.value = editUsers.email;
+    profilePic.addEventListener("change", function() {
+      editReader = new FileReader();
+      editReader.readAsDataURL(this.files[0]);
+  })
   });
 }
 
@@ -286,6 +291,7 @@ function editUser() {
   let lastname = document.getElementById("editLastName").value;
   let role = document.getElementById("editRole").value;
   let email = document.getElementById("exampleInputEmail1").value;
+  let image = (editReader != "") ? editReader.result : currentUser.image;
 
   editUsers.firstName = firstname;
   editUsers.lastName = lastname;
@@ -296,7 +302,7 @@ function editUser() {
     id: editUserIndex,
     firstName: firstname,
     lastName: lastname,
-    image: "",
+    image: image,
     email: email,
     password: editUsers.password,
     role: role,
@@ -375,3 +381,5 @@ userRole = currentUser.role
 document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
 document.getElementById('userRole').innerHTML = userRole;
 document.getElementById('helloUserName').innerHTML = showUserName;
+
+

@@ -156,7 +156,7 @@
             </a>
             <div class="d-flex justify-content-around">
               <div class="profile mt-2 ">
-                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
+                <img id="theAvatar" src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
                 <div class="profile-info-group">
                   <p class="profile-name mb-0" id="userName"></p>
                   <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
@@ -191,16 +191,11 @@
               </div>
               <div class="collapse" id="projects">
                 <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Pace Time Sheet</i></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Yellow Card System</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Chat App</a>
-                  </li>
-                  <div class="add-team-project primary-logo-color px-2"><small>+ Add new project</small></div>
+                  <div id="projectsSidebar">
+
+                  </div>
+                  <a class="add-team-project primary-logo-color px-2" data-toggle="modal"
+                  data-target="#staticBackdrop"><small>+ Add new project</small></a>
                 </ul>
               </div>
               <!--  -->
@@ -222,6 +217,9 @@
                     
                   </ul>
                 </div>
+            </div>
+            <div class="fixed-bottom">
+              <button type="button" class="btn btn-outline-light   btn-lg  mx-3 my-3">Invite Teams</button>
             </div>
             <!--  -->
           </div>
@@ -296,6 +294,8 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
+            <label for="profilePic" >Change Profile Picture</label>
+            <input type="file" name="" id="profilePic"><br>
             <label for="editFirstName">First Name</label>
             <input type="text" class="form-control" id="editFirstName" aria-describedby="emailHelp" placeholder="Enter First Name">
             <label for="editLastName">Last Name</label>
@@ -323,12 +323,9 @@
 
 
 
-<script src="../../js/projectController/project.js"></script>
-<script src="../../js/sweetalert2.all.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="../../js/auth/user.js"></script>
-  <script src="../../js/projectController/project.js"></script>
-  <script src="../../js/teamController/team.js"></script>
+    <script src="../../assets/js/Controllers/user.js"></script>
+  <script src="../../assets/js/Controller/project.js"></script>
+  <script src="../../assets/js/Controller/team.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

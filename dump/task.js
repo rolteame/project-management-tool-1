@@ -10,7 +10,7 @@ if (projects == null || projects == undefined) {
   projects = [];
 }
 
-// CURRENT USER GOTTEN FROM LOCAL STORAGE
+// CURRENT PROJECT GOTTEN FROM LOCAL STORAGE
 currentProject = JSON.parse(localStorage.getItem("currentProject"));
 if (currentProject == null || currentProject == undefined) {
   currentProject = {};
