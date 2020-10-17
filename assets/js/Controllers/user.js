@@ -225,7 +225,7 @@ function logout() {
     onOpen: () => {
       swal.showLoading();
     },
-  }).then(() => (location.href = "../index.html"));
+  }).then(() => (location.href = "../../index.html"));
   localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
   localStorage.removeItem("currentTask");
@@ -381,3 +381,5 @@ userRole = currentUser.role
 document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
 document.getElementById('userRole').innerHTML = userRole;
 document.getElementById('helloUserName').innerHTML = showUserName;
+
+
