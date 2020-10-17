@@ -14,6 +14,7 @@ class todoList{
         this.button = document.createElement('button');
         this.button.innerText = 'Add';
         this.button.classList.add("btn-save");
+        this.button.style.backgroundColor = "#0099cc"
         this.button.id = "to-do-list-button";
 
         this.button.addEventListener('click', ()=>{
@@ -269,9 +270,9 @@ addTodoListButton.addEventListener('click',()=>{
 
 
 
-let todoList1 = new todoList(root);
+// let todoList1 = new todoList(root);
 let todoList2 = new todoList(root);
-let todoList3 = new todoList(root);
+// let todoList3 = new todoList(root);
 
 
 
