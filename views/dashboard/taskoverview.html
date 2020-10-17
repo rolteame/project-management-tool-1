@@ -13,12 +13,12 @@
       rel="stylesheet"
       href="../../assets/css/bootstrap/bootstrap.min.css"
     /> -->
-    <link rel="stylesheet" href="temp.css">
+    <link rel="stylesheet" href="../../assets/css/temp.css">
     <link rel="stylesheet" href="../../assets/css/projects.css" />
     <link rel="stylesheet" href="../../assets/css/task.css">
-    <link rel="stylesheet" href="../../js/taskController/styleTask.css">
+    <link rel="stylesheet" href="../../assets/css/styleTask.css">
 
-    <script src="../../js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
@@ -156,8 +156,7 @@
             </a>
             <div class="d-flex justify-content-around">
               <div class="profile mt-2 ">
-                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
-                <div class="profile-info-group">
+                <img id="theAvatar" src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>                <div class="profile-info-group">
                   <p class="profile-name mb-0" id="userName"></p>
                   <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
                 </div>
@@ -166,7 +165,7 @@
                   <ul class="dropdown-menu">
                     <li class="mx-2"><a href="#" class="text-black">Profile</a></li>
                     <li class="mx-2"><a href="#" class="text-black">Settings</a></li>
-                    <li class="mx-2"><a href="#" class="text-black" onclick="logout()">Log Out</a></li>
+                    <li class="mx-2" onclick="logout()"><a href="#" class="text-black" >Log Out</a></li>
                   </ul>
                 </li>
               </span>
@@ -192,15 +191,9 @@
               </div>
               <div class="collapse" id="projects">
                 <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Pace Time Sheet</i></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Yellow Card System</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Chat App</a>
-                  </li>
+                  <div id="projectsSidebar">
+
+                  </div>
                   <div class="add-team-project primary-logo-color px-2"><small>+ Add new project</small></div>
                 </ul>
               </div>
@@ -223,6 +216,10 @@
                   </ul>
                 </div>
             </div>
+              <!-- invite team -->
+            <div class="fixed-bottom">
+              <button type="button" class="btn btn-outline-light   btn-lg  mx-3 my-3">Invite Teams</button>
+            </div>
         
           </div>
               <!-- ###########################[ SIDEBAR ENDS HERE] ############################################# -->
@@ -235,7 +232,7 @@
 
                   <div id="addTodoListDiv">
                     <input id="addTodoListInput" class="comment">
-                    <button id="addTodoListButton" class="btn-save">Add new to-do list</button>
+                    <button id="addTodoListButton" style="background-color: #0099cc;" class="btn-save">Add new to-do list</button>
                 </div>
                 <div id="root"></div>
                     
@@ -256,6 +253,10 @@
 
 
 
+    
+    <script src="../../assets/js/Controllers/user.js"></script>
+    <script src="../../js/taskController/task.js"></script>
+    <script src="../../js/projectController/project.js"></script>
     <!-- <script>
       showUserName = currentUser.firstName;
       showLastName = currentUser.lastName;
@@ -264,7 +265,10 @@
       document.getElementById('userRole').innerHTML = userRole;
       document.getElementById('helloUserName').innerHTML = showUserName;
     </script> -->
-    <script src="../../js/auth/user.js"></script>
+    <!-- <script src="../../js/auth/user.js"></script> -->
+    <script src="../../js/sweetalert2.all.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+
     <script src="../../js/taskController/scriptTask.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
