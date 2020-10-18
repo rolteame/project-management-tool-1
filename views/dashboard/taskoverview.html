@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="../../assets/css/task.css">
     <link rel="stylesheet" href="../../assets/css/styleTask.css">
 
-    <script src="../../assets/js/auth/auth.js"></script>
+    <link src="../../assets/js/auth/auth.js"></link>
 
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link src="https://kit.fontawesome.com/b99e675b6e.js"></link>
 
     <title>Bascom || Task Overview</title>
   </head>
@@ -99,50 +99,6 @@
       </div>
     </div>
     <!-- ###############[ MODAL END ]########################################## -->
-
-     <!-- ###############[ MODAL to invite team ]########################################## -->
-  
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!--  modal header -->
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Invite Team</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-       <!--  modal body -->
-      <div class="modal-body">
-        
-        
-        <div id="showSelected" style="border: 1px solid black;  margin-bottom: 10px;">
-          selected user appears here!
-      </div>
-      <p></p>
-      <input type="text" id="teamName" placeholder="Enter Team Name">
-      <p></p>
-      <button onclick="createTeam()">Create Team</button>
-      <p></p>
-      <div>
-          <select multiple style="height: 20vh; width: 25vw; font-size: 1.2rem;" name="users" id="usersList">
-              <option id ="1" onclick="addUp(event)" value="abuja">Abuja</option>
-              <option id ="2" onclick="addUp(event)" value="ogun">Ogun</option>
-              <option id ="3" onclick="addUp(event)" value="lokoja">Lokoja</option>
-              <option id ="4" onclick="addUp(event)" value="benin">Abuja</option>
-              <option id ="5" onclick="addUp(event)" value="lagos">Lagos</option>
-          </select>
-      </div>
-      </div>
-       <!--  modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
- <!-- ------------------------------------- --[ MODAL TO INVITE TEAM ENDS HERE] ------------------------------------- -- -->
       
     <!-- ###########################[ NAVBAR BEGINS HERE] ############################################# -->
       <nav class="navbar navbar-light bg-light flex-md-nowrap fixed-top  p-0 shadow-sm">
@@ -261,18 +217,9 @@
                 </div>
             </div>
               <!-- invite team -->
-            <!-- <div class="fixed-bottom">
+            <div class="fixed-bottom">
               <button type="button" class="btn btn-outline-light   btn-lg  mx-3 my-3">Invite Teams</button>
-            </div> -->
-
-
- <!-- ------------------------------------[ MODAL TO INVITE TEAM] ------------------------------------- -->
-             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="displayUsers()">
-  Invite Team
-</button>
-
-
+            </div>
         
           </div>
               <!-- ###########################[ SIDEBAR ENDS HERE] ############################################# -->
@@ -306,10 +253,10 @@
 
 
 
-      <script src="../../assets/js/Controllers/team.js"></script>
-    <script src="../../assets/js/Controllers/user.js"></script>
-    <script src="../../js/taskController/task.js"></script>
-    <script src="../../js/projectController/project.js"></script>
+    
+    <link src="../../assets/js/Controllers/user.js"></link>
+    <link src="../../js/taskController/task.js"></link>
+    <link src="../../js/projectController/project.js"></link>
     <!-- <script>
       showUserName = currentUser.firstName;
       showLastName = currentUser.lastName;

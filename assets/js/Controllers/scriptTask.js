@@ -1,5 +1,28 @@
 let root = document.getElementById("root");
 
+// USERS LIST GOTTEN FROM LOCAL STORAGE
+users = JSON.parse(localStorage.getItem("users"));
+
+// CURRENT USER GOTTEN FROM LOCAL STORAGE
+currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+// PROJECTS LIST GOTTEN FROM LOCAL STORAGE
+projects = JSON.parse(localStorage.getItem("projects"));
+if (projects == null || projects == undefined) {
+  projects = [];
+}
+
+teams = JSON.parse(localStorage.getItem("teams"));
+if (teams == null || teams == undefined) {
+  teams = [];
+}
+
+// CURRENT USER GOTTEN FROM LOCAL STORAGE
+currentProject = JSON.parse(localStorage.getItem("currentProject"));
+if (currentProject == null || currentProject == undefined) {
+  currentProject = {};
+}
+
 class todoList {
   constructor(place, title = "to-do list") {
     this.place = place;
