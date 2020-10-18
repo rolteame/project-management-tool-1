@@ -70,10 +70,3 @@ function createTeam(){
     localStorage.setItem('teams', JSON.stringify(teams))
     location.href="taskoverview.html"
 }
-
-teamTable = [
-    {
-        teamID: 0,
-        
-    }
-]
