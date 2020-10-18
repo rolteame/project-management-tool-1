@@ -1,5 +1,6 @@
 let root = document.getElementById("root");
 
+/*
 // USERS LIST GOTTEN FROM LOCAL STORAGE
 users = JSON.parse(localStorage.getItem("users"));
 
@@ -22,6 +23,7 @@ currentProject = JSON.parse(localStorage.getItem("currentProject"));
 if (currentProject == null || currentProject == undefined) {
   currentProject = {};
 }
+*/
 
 class todoList {
   constructor(place, title = "to-do list") {
@@ -39,7 +41,7 @@ class todoList {
     this.button.id = "to-do-list-button";
 
     this.button.addEventListener("click", () => {
-      if (this.input.value != "") {
+      if (this.input.value.trim() != "") {
         this.addToDo.call(this);
         this.input.value = "";
       }
@@ -150,7 +152,7 @@ class Card {
     });
 
     this.commentsButton.addEventListener("click", () => {
-      if (this.commentsInput.value != "") {
+      if (this.commentsInput.value.trim() != "") {
         this.state.comments.push(this.commentsInput.value);
         this.renderComments();
         this.commentsInput.value = "";
