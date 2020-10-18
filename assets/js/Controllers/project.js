@@ -102,6 +102,9 @@ function addProject() {
     JSON.stringify(newProject)
   );
 
+  // #####[ BANKOLE AYODEJI POPULATING THE USERS OBJECT WITH ITS PROJECT ] ######
+  users[currentUser.id].projects.push(newProject.projectId)
+  localStorage.setItem('users', JSON.stringify(users))
   location.href = "temp.html";
 }
 
