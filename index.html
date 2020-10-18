@@ -22,11 +22,11 @@
     />
     <!-- ends here -->
     <!-- ends here -->
-    <link rel="stxylesheet" href="./assets/css/signupmodal.css" />
-    <link rel="stylesheet" href="./assets/css/navigation.css" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <link rel="stylesheet" href="./assets/css/about.css" />
-    <link rel="stylesheet" href="./assets/css/newpricing.css" />
+    <link rel="stxylesheet" href="../assets/css/signupmodal.css" />
+    <link rel="stylesheet" href="../assets/css/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/about.css" />
+    <link rel="stylesheet" href="../assets/css/newpricing.css" />
     <!-- <link rel="stylesheet" href="./assets/css/foottest.css" /> -->
     <link rel="stylesheet" href="./assets/css/contact.css" />
 
@@ -38,12 +38,119 @@
   </head>
   <!--Body tag-->
   <body>
+
     <!-- Loader section  -->
     <div class="loader-holder">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
       <div class="bounce4"></div>
+
+    <!-- Sign In Modal -->
+    <div
+      class="modal fade"
+      id="elegantModalForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content form-elegant">
+          <!--Header-->
+          <div class="modal-header text-center">
+            <h3
+              class="modal-title w-100 dark-grey-text font-weight-bold my-3"
+              id="myModalLabel"
+            >
+              <strong>Sign in</strong>
+            </h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mx-4">
+            <!--Body-->
+            <div class="md-form mb-5">
+              <div class="alert w-50" role="alert" id="loginAlert"></div>
+              <input
+                type="email"
+                id="loginEmail"
+                class="form-control validate"
+                placeholder="Your Email"
+              />
+            </div>
+
+            <div class="md-form pb-3">
+              <input
+                type="password"
+                id="loginPassword"
+                class="form-control validate"
+                placeholder="Your Password"
+              />
+
+              <p class="font-small blue-text d-flex justify-content-end">
+                Forgot <a href="#" class="blue-text ml-1"> Password?</a>
+              </p>
+            </div>
+
+            <div class="text-center mb-3">
+              <button
+                type="button"
+                class="btn blue-gradient btn-block btn-rounded z-depth-1a bt-primary"
+                onclick="login()"
+              >
+                Sign in
+              </button>
+            </div>
+            <p
+              class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"
+            >
+              or Sign in with:
+            </p>
+
+            <div class="row my-3 d-flex justify-content-center">
+              <!--Facebook-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+              >
+                <i class="fab fa-facebook-f text-center"></i>
+              </button>
+              <!--Twitter-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+              >
+                <i class="fab fa-twitter"></i>
+              </button>
+              <!--Google +-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded z-depth-1a"
+              >
+                <i class="fab fa-google-plus-g"></i>
+              </button>
+            </div>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-end">
+              Not a member?
+              <a href="../views/signup.html" class="blue-text ml-1"> Sign Up</a>
+            </p>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+
     </div>
     <header>
       <!--Nav bar section-->
@@ -61,7 +168,21 @@
         <!--Nav bar list-->
         <ul>
           <li class="nav-item">
-            <a href="about.html">Why Bascom Projects?</a>
+            <a href="#about">Why Bascom Projects?</a>
+          </li>
+          <li class="nav-item"><a href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a href="#contact">Contact us</a></li>
+          <li class="nav-item">
+            <a
+              href="./login.html"
+              class="nav-item"
+              data-toggle="modal"
+              data-target="#elegantModalForm"
+              >Log in</a
+            >
+          </li>
+          <li class="nav-item-trail">
+            <a href="../views/signup.html">Free Trial</a>
           </li>
           <li class="nav-item"><a href="./pricing.html">Pricing</a></li>
           <li class="nav-item"><a href="./contact.html">Contact us</a></li>
@@ -130,8 +251,10 @@
     <script src="./js/loader.js"></script>
     <!-- Footer -->
     <!--User JS-->
-    <script src="./js/auth/user.js"></script>
-    <script src="./js/sweetalert2.all.min.js"></script>
+    <!-- <script src="../js/auth/user.js"></script> -->
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/Controllers/user.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- add bootstrap js -->

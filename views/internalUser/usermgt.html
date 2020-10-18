@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../../assets/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/css/Dashboard.css">  
     <link rel="tyle.sheet" href="../../assets/css/activities.css">
+    <link rel="stylesheet" href="../assets/css/usermgt.css">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-  <script src="../../assets/js/Controller/activites.js"></script>
+  <script src="../../js/projectController/activites.js"></script>
   
 </head>
 <body>
@@ -79,9 +80,13 @@
           
             <div class="bottom-content list-u font-14 fixed-bottom pt-2 pb-3">
     
-             <small class=""><a class="primary-logo-cContentolor pl-0 pr-0 mr-0 font-14" href="#">Invite your team</a> and start collaborating!</small> 
+              <div>
+                <button type="button" class="btn btn-outline-light btn-lg mx-3 my-3" >Invite Teams</button>
+              </div>
           </div>
-        </nav>  
+        </nav> 
+        
+      
       </section>
       <!-- <header>
     
@@ -121,19 +126,42 @@
             </a>
           </nav>
 
-          
-          <div id="app" class="px-2">
-            <div id="activites_app">
-              s;grgndgingi
+          <!-- USER MANAGEMENT CONSOLE -->
+
+            <!-- Registered Users -->
+          <div class="card-deck" >
+            <div class="card user-console-card" >
+             
+              <div class="card-body">
+                <h5 class="card-title">Registered Users</h5>
+                <p class="card-text">10</p>
+                <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
+              </div>
             </div>
-            <div id="settings_app">somecontent</div>
-            <div id="home_app">somecontent</div>
-            <div id="newProject_app"></div>
-          </div>
+               <!-- Tasks Created -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Tasks Created</h5>
+                <p class="card-text">20</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+
+             <!-- Tasks Completed -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Tasks Completed</h5>
+                <p class="card-text">5</p>
+                <p class="card-text"><small class="text-muted">Last updated 4 mins ago</small></p>
+              </div>
+            </div>
         </div>
+
+          <!--END:  USER MANAGEMENT CONSOLE -->
+      
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../../js/web/routes.js"></script>
-  <script src="../../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../../assets/js/web/routes.js"></script>
+  <script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
 </body>.
 </html>
