@@ -1,53 +1,53 @@
 .forgot-container {
-    height: 55vh;
-    width: 80%;
-    padding-bottom: 43px;
-    margin: 10px auto;
+  height: 55vh;
+  width: 80%;
+  padding-bottom: 43px;
+  margin: 10px auto;
 }
 .forgot-container h1 {
-    font-size: 40px;
-    text-align: center;
+  font-size: 40px;
+  text-align: center;
 }
 .forgot-container p {
-    font-size: 1rem;
-    text-align: center;
+  font-size: 1rem;
+  text-align: center;
 }
-form {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    margin: 0 auto;
+.email {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin: 0 auto;
 }
-form input {
-    width: 100%;
-    padding: 15px;
-    margin: 5px;
-    border: 2px solid #0099CC;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.email input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border: 2px solid #0099cc;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
-form input[type="submit"] {
-    background-color: #0099CC;
-    color: #ffffff;
-    font-size: 24px;
-    outline: none;
-    cursor: pointer;
+.email input[type="submit"] {
+  background-color: #0099cc;
+  color: #ffffff;
+  font-size: 24px;
+  outline: none;
+  cursor: pointer;
 }
-form input[type="submit"]:hover {
-    background-color: #007AA3;
+.email input[type="submit"]:hover {
+  background-color: #007aa3;
 }
 @media (max-width: 425px) {
-    .forgot-container h1 {
-        font-size: 25px;
-    }
-    .forgot-container {
-        max-width: 100%;
-        height: auto;
-    }
-    form {
-        width: 100%;
-    }
-    form input {
-        width: 100%;
-    }
+  .forgot-container h1 {
+    font-size: 25px;
+  }
+  .forgot-container {
+    max-width: 100%;
+    height: auto;
+  }
+  .email {
+    width: 100%;
+  }
+  .email input {
+    width: 100%;
+  }
 }
