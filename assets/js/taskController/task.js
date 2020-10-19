@@ -23,22 +23,22 @@ if (tasks == null || tasks == undefined) {
 }
 
 // Lists GOTTEN FROM LOCAL STORAGE
-tasksLists = JSON.parse(localStorage.getItem('tasksLists'))
+tasksLists = JSON.parse(localStorage.getItem("tasksLists"));
 if (tasksLists == null || tasksLists == undefined) {
   tasksLists = [];
 }
 
 // ACTIVE LIST GOTTEN FROM LOCAL STORAGE
-activeList = JSON.parse(localStorage.getItem('activeList'))
+activeList = JSON.parse(localStorage.getItem("activeList"));
 if (activeList == null || activeList == undefined) {
   activeList = {};
 }
 
 // function to display tasks list
-function displayTasksLists(){
-  tasksListsPlaceholder = ""
+function displayTasksLists() {
+  tasksListsPlaceholder = "";
 
-  for(i = 0; i < tasksLists.length; ++i){
+  for (i = 0; i < tasksLists.length; ++i) {
     if (tasksLists[i].userId == currentUser.id) {
       if (tasksLists[i].projectId == currentProject.projectId) {
         tasksListsPlaceholder += `
@@ -60,27 +60,24 @@ function displayTasksLists(){
       }
     }
   }
-  document.getElementById('showLists').innerHTML = tasksListsPlaceholder
+  document.getElementById("showLists").innerHTML = tasksListsPlaceholder;
 
-  displayTasks()
-
+  displayTasks();
 }
 
 // #####[ function to display tasks ]######
 function displayTasks() {
-  
   if (tasks == null || tasks == undefined) {
     tasks = [];
   }
 
-  for (j = 0; j < tasksLists.length; ++j){
+  for (j = 0; j < tasksLists.length; ++j) {
     tasksPlaceholder = "";
-      for (i = 0; i < tasks.length; i++) {
-        task = tasks[i];
-        if (task.userId == currentUser.id) {
-        if(tasksLists[j].name == task.listName){        
-          if (task.projectId == currentProject.projectId) {  
-
+    for (i = 0; i < tasks.length; i++) {
+      task = tasks[i];
+      if (task.userId == currentUser.id) {
+        if (tasksLists[j].name == task.listName) {
+          if (task.projectId == currentProject.projectId) {
             tasksPlaceholder += `<div class="card bg-grey m-3 " style="max-width: 90%">   
                 <div class="card-header my-0 bg-grey">
                     <h6 class="">${task.taskName}</h6>
@@ -103,60 +100,55 @@ function displayTasks() {
             </div>`;
             document.getElementById(j).innerHTML = tasksPlaceholder;
           }
-          }
-
         }
-
       }
-
-}
-}
-
-document.getElementById("showLists").addEventListener('click',function(event){
-  activeList = {
-    "name":event.target.value
+    }
   }
-  
-  localStorage.setItem('activeList', JSON.stringify(activeList))
-})
+}
+
+document
+  .getElementById("showLists")
+  .addEventListener("click", function (event) {
+    activeList = {
+      name: event.target.value,
+    };
+
+    localStorage.setItem("activeList", JSON.stringify(activeList));
+  });
 let listId;
-function addList(){
+function addList() {
   for (let i = 0; i <= tasksLists.length; i++) {
     listId = i;
   }
 
   newList = {
-    "listId": listId,
-    "name" : document.getElementById('listName').value,
-    "projectId": currentProject.projectId,
-    "userId": currentUser.id,
-  }
+    listId: listId,
+    name: document.getElementById("listName").value,
+    projectId: currentProject.projectId,
+    userId: currentUser.id,
+  };
 
-  tasksLists.push(newList)
-  localStorage.setItem('tasksLists', JSON.stringify(tasksLists))
-  displayTasksLists()
+  tasksLists.push(newList);
+  localStorage.setItem("tasksLists", JSON.stringify(tasksLists));
+  displayTasksLists();
 }
 
 // #####[ function to delete tasks list(works only when list is empty)]######
-function deleteTasksList(id){
-  
-  for( i=0; i < tasks.length;++i){
+function deleteTasksList(id) {
+  for (i = 0; i < tasks.length; ++i) {
     //  if(tasksLists[id].name == tasks[i].listName){
     //   //  alert("Cannot delete Non-Empty List!")
     //    return
     //  }
   }
-  tasksLists.splice(id,1)
-  localStorage.setItem('tasksLists', JSON.stringify(tasksLists))
-  displayTasksLists()
-
+  tasksLists.splice(id, 1);
+  localStorage.setItem("tasksLists", JSON.stringify(tasksLists));
+  displayTasksLists();
 }
-
 
 let taskId;
 // ######[ Function to create new task ]###############
 function addTask() {
-
   for (let i = 0; i <= tasks.length; i++) {
     taskId = i;
   }
@@ -169,7 +161,7 @@ function addTask() {
     endDate: document.getElementById("endDate").value,
     projectId: currentProject.projectId,
     userId: currentUser.id,
-    listName:activeList.name
+    listName: activeList.name,
   };
 
   tasks.push(newTask);
@@ -178,7 +170,6 @@ function addTask() {
 
   location.href = "taskoverview.html";
 }
-
 
 // ######[ Function to delete task ]###############
 function deleteTask(id) {
@@ -189,3 +180,39 @@ function deleteTask(id) {
   location.reload();
 }
 
+function displayTeamMembers() {
+  let usersPlaceholder = "";
+
+  for (let i = 0; i < users.length; ++i) {
+    usersPlaceholder += `
+            <option id="${i}" onclick="addUp(event)" value="${users[i].firstName}">${users[i].firstName}</option>
+        `;
+  }
+  document.getElementById("assign-to").innerHTML = usersPlaceholder;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayTeamMembers();
+});
+
+// displaying selected users
+var teamDisplayDiv = document.getElementById("selectedUsers");
+function addUp(e) {
+  let displayDivChildren = teamDisplayDiv.children;
+  console.log(displayDivChildren);
+  // console.log(e.target.selected,e.target.value)
+  if (e.target.selected == true) {
+    let innerDiv = document.createElement("span");
+    innerDiv.id = "badge";
+    document
+      .getElementById("badge")
+      .classList.add("badge badge-pill badge-secondary");
+    console.log(e.target.selected);
+    innerDiv.append(e.target.value);
+    innerDiv.id = e.target.id;
+    teamDisplayDiv.appendChild(innerDiv);
+  } else {
+    let toRemove = document.getElementById(e.target.id);
+    teamDisplayDiv.removeChild(toRemove);
+  }
+}
