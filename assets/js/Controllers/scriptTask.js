@@ -73,7 +73,7 @@ class todoList {
 
   addToDo() {
     let text = this.input.value;
-    // let tasksListId;
+  //   let tasksListId;
 
   //   for (let i = 0; i <= tasksList.length; i++) {
   //     tasksListId = i;
@@ -95,7 +95,8 @@ class todoList {
         card.innerText = text;
         this.div.append(card);*/
 
-
+    // this.cardArray.push(new Card(currentTaskList.tasksListName, this.div, this));
+    
     this.cardArray.push(new Card(text, this.div, this));
   }
 }
