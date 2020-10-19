@@ -11,17 +11,24 @@
       rel="stylesheet"
       href="../../assets/css/bootstrap/bootstrap.min.css"
     /> -->
-    <link rel="stylesheet" href="temp.css">
-    <link rel="stylesheet" href="../../assets/css/activities.css" />
 
-    <script src="../../js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <link rel="stylesheet" href="../../assets/css/temp.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.2/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.2/main.min.js"></script>
+    <!-- <link rel="stylesheet" href="../../assets/css/calender/main.min.css">
+    <link rel="stylesheet" href="../../assets/css/calender/calenderScrollbar.css">
+    <script src="../../assets/js/Controllers/Calender/main.min.js"></script> -->
+    <script src="../../assets/js/Controllers/Calender/calender.js"></script>
+
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <title>Document</title>
   </head>
   <body>
-    <body>
+    <body >
       <!-- Add Project Modal -->
       <div
       class="modal fade addProject"
@@ -74,6 +81,14 @@
                   id="projectDescription"
                 ></textarea>
               </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label"
+                  >Team</label
+                >
+                <select name="" id="teamsListModal">
+                  <option value="">hello</option>
+                </select>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -116,13 +131,13 @@
           </div>
           <ul class="nav flex-row offset-lg-2 offset-sm-0">
             <li class="nav-item">
-              <a class="nav-link hover-border-bottom" href="taskoverview.html">Overview</a>
+              <a class="nav-link hover-border-bottom " href="./temp.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hover-border-bottom active" href="#">Activities</a>
+              <a class="nav-link hover-border-bottom" href="activities.html">Activities</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hover-border-bottom" href="./calender.html">Calender</a>
+              <a class="nav-link hover-border-bottom active" href="#">Calender</a>
             </li>
             <li class="nav-item">
               <a class="nav-link hover-border-bottom" href="#">Files</a>
@@ -148,15 +163,15 @@
             </a>
             <div class="d-flex justify-content-around">
               <div class="profile mt-2 ">
-                <img src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
+                <img id="theAvatar" src="../../assets/img/Sophia.jpg" alt="Avatar" class="avatar my-2"></img>
                 <div class="profile-info-group">
-                    <p class="profile-name mb-0" id="userName"></p>
-                    <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
+                  <p class="profile-name mb-0" id="userName"></p>
+                  <small class="profile-info primary-options-color text-wrap" id="userRole"></small>
                 </div>
                 <span >
                 <li class="dropdown"><a class="dropdown-toggle ml-3" data-toggle="dropdown" href="#" id="DropdownProfile">...</a>
                   <ul class="dropdown-menu">
-                    <li class="mx-2 text-decoration-none"><a href="settings.html" class="text-black">Profile settings</a></li>
+                    <li class="mx-2 text-decoration-none" ><a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong"  class="text-black" onclick=editTrigger()>Profile settings</a></li>
                     <li class="mx-2 text-decoration-none"><a class="text-black" onclick="logout()">Log Out</a></li>
                   </ul>
                 </li>
@@ -166,10 +181,10 @@
             </div>
               <ul class="nav flex-column sidehover">
                 <li class="nav-item">
-                  <a class="nav-link text-white hover-color " href="temp.html"><i class="fas fa-home"></i>Home</a>
+                  <a class="nav-link text-white hover-color active" href="temp.html"><i class="fas fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item hover-color">
-                  <a class="nav-link text-white hover-color active" href="taskDetail.html"><i class="fas fa-tasks"></i>Tasks</a>
+                  <a class="nav-link text-white hover-color" href="taskoverview.html"><i class="fas fa-tasks"></i>Tasks</a>
                 </li>
                 <li class="nav-item hover-color">
                   <a class="nav-link text-white " href="#"><i class="fas fa-bell"></i>Notification</a>
@@ -183,16 +198,11 @@
               </div>
               <div class="collapse" id="projects">
                 <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Pace Time Sheet</i></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Yellow Card System</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Chat App</a>
-                  </li>
-                  <div class="add-team-project primary-logo-color px-2"><small>+ Add new project</small></div>
+                  <div id="projectsSidebar">
+
+                  </div>
+                  <a class="add-team-project primary-logo-color px-2" data-toggle="modal"
+                  data-target="#staticBackdrop"><small>+ Add new project</small></a>
                 </ul>
               </div>
               <!--  -->
@@ -210,91 +220,26 @@
                     <li class="nav-item">
                       <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Frontend</a>
                     </li>
-                    <div class="add-team-project primary-logo-color px-2"><small>+ Add a Team</small></div>
+                    <button onclick="addTeam()" class="add-team-project primary-logo-color px-2"><small>+ Add a Team</small></button>
+                    
                   </ul>
                 </div>
             </div>
-            <!--  -->
             <div class="fixed-bottom">
               <button type="button" class="btn btn-outline-light   btn-lg  mx-3 my-3">Invite Teams</button>
             </div>
+            <!--  -->
           </div>
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-5">
-            <section class="activities-section ml-5 pt-3">
-                <h5 class="pt-3">TODAY</h5>
-                <div class="activities">
-                    <div class="activity">
-                        <p><img class="icons icon-check" src="https://img.icons8.com/android/24/000000/checkmark.png"/>
-                        <p class="text">
-                            <span class="bold">Daniel Ugwu</span> mark as done <span class="bold">Listing on Product Hunt so that we can reach as many potential users</span>
-                        </p>
-                        <span class="time">8:40 PM</span></p>
-                    </div>
-                    <div class="activity activity-comment">
-                        <div class="activity-text">
-                            <p><img class="icons icon-message" src="https://img.icons8.com/android/24/000000/checkmark.png"/>
-                                <p class="text">
-                                    <span class="bold">Chidinma Nwabeke</span> commented on <span class="bold">Account for teams and personal in bottom style</span>
-                                </p>
-                            <span class="time">7:32 PM</span></p>
-                        </div>
-                        <div class="comment">
-                            <img class="comment-img" src="../../assets/img/Oval.png" alt="">
-                            <p>During a project build, it is necessary to evaluate the product design and development against project requirements and outcomes</p>
-                        </div>
-                    </div>
-                    <div class="activity activity-comment">
-                        <div class="activity-text">
-                            <p><img class="icons icon-download" src="https://img.icons8.com/fluent-systems-regular/24/000000/download.png"/>
-                                <p class="text">
-                                    <span class="bold">Daniel Ugwu</span> uploaded 4 files on <span class="bold">An option to search in current projects or in all projects</span>
-                                </p>
-                            <span class="time">6:02 PM</span></p>
-                        </div>
-                            <div class="images">
-                                <img src="../../assets/img/Image1.png" alt="">
-                                <img src="../../assets/img/Image2.png" alt="">
-                                <img src="../../assets/img/Image3.png" alt="">
-                                <img src="../../assets/img/Image4.png" alt="">
-                            </div>
-                    </div>
-                </div>
-                <h5>YESTERDAY</h5>
-                    <div class="activities">
-                        <div class="activity activity-comment">
-                            <div class="activity-text">
-                                <p><img class="icons icon-download" src="https://img.icons8.com/fluent-systems-regular/24/000000/download.png"/>
-                                <p class="text">
-                                    <span class="bold">Daniel Ugwu</span> uploaded 4 files on <span class="bold">An option to search in current projects or in all projects</span></span>
-                                </p>
-                                <span class="time">6:02 PM</span></p>
-                            </div>
-                            <div class="images">
-                                <img src="../../assets/img/Image1.png" alt="">
-                                <img src="../../assets/img/Image2.png" alt="">
-                                <img src="../../assets/img/Image3.png" alt="">
-                                <img src="../../assets/img/Image4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="activity">
-                            <p><img class="icons icon-check" src="https://img.icons8.com/android/24/000000/checkmark.png"/>
-                            <p class="text">
-                                <span class="bold">Adedeji Bankole</span> mark as done <span class="bold">Listing on Product Hunt so that we can reach as many potential users</span>
-                            </p>
-                            <span class="time">5:49 PM</span></p>
-                        </div>
-                        <div class="activity">
-                            <p><img class="icons icon-edit" src="https://img.icons8.com/metro/26/000000/edit.png"/>
-                            <p class="text">
-                                <span class="bold">Maxwell Diogu</span> edited <span class="bold">Listing on Product Hunt so that we can reach as many potential users</span>
-                            </p>
-                            <span class="time">6:02 PM</span></p>
-                        </div>
-                    </div>
-            </section>
+            <div >
               
             
+              <!-- Calender section -->
+              <div class="mt-5 pt-5"></div>
+              <div id='calendar' class="mb-3"></div>
+              
+            </div>
             
           </main>
         </div>
@@ -302,20 +247,55 @@
 
 
 
+<!-- Modal edit profile -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="profilePic" >Change Profile Picture</label>
+            <input type="file" name="" id="profilePic"><br>
+            <label for="editFirstName">First Name</label>
+            <input type="text" class="form-control" id="editFirstName" aria-describedby="emailHelp" placeholder="Enter First Name">
+            <label for="editLastName">Last Name</label>
+            <input type="text" class="form-control" id="editLastName" aria-describedby="emailHelp" placeholder="Enter Last Name">
+            <label for="editRole">Role</label>
+            <input type="text" class="form-control" id="editRole" aria-describedby="emailHelp" placeholder="Enter Job Role">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger mr-auto" onclick="deleteUser()">Delete Account</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="editUser" onclick="editUser()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
 
 
-      <script src="../../assets/js/Controllers/project.js"></script>
-    <script src="../../assets/js/sweetalert2.all.min.js"></script>
-      
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="../../assets/js/Controllers/user.js"></script>
+
+
+<script src="../../assets/js/sweetalert2.all.min.js"></script>
+
+    <script src="../../assets/js/Controllers/user.js"></script>
+  <!-- <script src="../../assets/js/Controller/project.js"></script> -->
+  <script src="../../assets/js/Controllers/team.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-

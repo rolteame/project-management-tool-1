@@ -85,6 +85,8 @@ function register() {
           email: userEmail,
           password: userPassword,
           role: role,
+          projects:[],
+          tasks:[]
         };
 
         passEmail = userEmail;
