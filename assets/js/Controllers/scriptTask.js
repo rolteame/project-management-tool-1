@@ -1,6 +1,6 @@
 let root = document.getElementById("root");
 
-/*
+
 // USERS LIST GOTTEN FROM LOCAL STORAGE
 users = JSON.parse(localStorage.getItem("users"));
 
@@ -23,7 +23,19 @@ currentProject = JSON.parse(localStorage.getItem("currentProject"));
 if (currentProject == null || currentProject == undefined) {
   currentProject = {};
 }
-*/
+
+// TASKS GOTTEN FROM LOCAL STORAGE
+tasks = JSON.parse(localStorage.getItem("tasks"));
+if (tasks == null || tasks == undefined) {
+  tasks = [];
+}
+
+// TASKS LIST GOTTEN FROM LOCAL STORAGE
+tasksList = JSON.parse(localStorage.getItem("tasksList"));
+if (tasksList == null || tasks == undefined) {
+  tasksList = [];
+}
+
 
 class todoList {
   constructor(place, title = "to-do list") {
@@ -61,10 +73,28 @@ class todoList {
 
   addToDo() {
     let text = this.input.value;
+    // let tasksListId;
+
+  //   for (let i = 0; i <= tasksList.length; i++) {
+  //     tasksListId = i;
+  //   }
+  
+  //   newTasksList = {tasksListId: tasksListId,
+  //     tasksListName: this.input.value
+  //   };
+
+  //   tasksList.push(newTasksList);
+
+  // localStorage.setItem("tasksList", JSON.stringify(tasksList));
+  // currentTaskList = localStorage.setItem(
+  //   "currentTaskList",
+  //   JSON.stringify(newTasksList)
+  // );
 
     /*let card = document.createElement('div');
         card.innerText = text;
         this.div.append(card);*/
+
 
     this.cardArray.push(new Card(text, this.div, this));
   }
