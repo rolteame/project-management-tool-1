@@ -84,11 +84,11 @@
                     <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="endDate">
                 </div>
                 <div class="form-group">
-                  <div class="selectedUsers">
-                    
+                  <div class="selectedUsers" id="selectedTeamMembers" style="border: 1px solid black; margin-bottom: 10px">
+                    selected team member appears here!
                   </div>
                   <label for="assign-to">Assign to</label>
-                  <select class="form-control" id="assign-to">
+                  <select multiple style="height: 10vh; width: 20vw; font-size: 1.2rem" class="form-control" id="assign-to">
                             
                   </select>
                 </div>
@@ -199,7 +199,7 @@
               </div>
               <div class="collapse" id="projects">
                 <ul class="nav flex-column">
-                  <div id="projectsSidebar">
+                  <div id="projectsSidebarTask">
 
                   </div>
                   <div class="add-team-project primary-logo-color px-2"><small>+ Add new project</small></div>
@@ -209,9 +209,15 @@
                 <div class="project-teams">
                   <a class="menu-header text-white primary-options-color px-2 py-2 cursor-pointer d-flex flex-row justify-content-between " data-toggle="collapse" data-target="#teams" aria-expanded="false" aria-controls="collapseExample">Teams <i class="fas fa-caret-down"></i></a>
                 </div>
+                
                 <div class="collapse" id="teams">
                   <ul class="nav flex-column">
-                    <li class="nav-item">
+                    <div id="teamsSidebarTask">
+                      <li>hhh</li>
+                      nawa
+                    </div>
+
+                    <!-- <li class="nav-item">
                       <a class="nav-link active text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Backend</i></a>
                     </li>
                     <li class="nav-item">
@@ -219,7 +225,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">Frontend</a>
-                    </li>
+                    </li> -->
                     <a href="team.html"><div class="add-team-project primary-logo-color px-2"><small>+ Add a Team</small></div></a>
                   </ul>
                 </div>
