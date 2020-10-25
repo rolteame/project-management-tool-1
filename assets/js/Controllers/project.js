@@ -134,7 +134,41 @@ function openProject(id) {
 
 function displayName(params) {}
 
+ //This will append images of registered users to the navigation bar
 
+ function displayTeamImages() {
+  
+
+  teamImagesPlaceholder= "";
+
+  for(i=0; i< users.length; i++){
+    if(users[i]!=null || users[i]!=undefined ){
+      
+      if(users.length===3)
+      {
+        teamImagesPlaceholder +=`
+
+        <img  src="${users[i].image}" alt="Team member" class="picture" id=${i}> `;
+      }
+      else{
+
+        teamImagesPlaceholder +=`
+
+        <img  src="${users[0].image}" alt="Team member" class="picture" id=${0}> 
+        <img  src="${users[1].image}" alt="Team member" class="picture" id=${1}> 
+        <img  src="${users[2].image}" alt="Team member" class="picture" id=${2}> 
+        <div class="picture circle" >${users.length-3}</div>`;
+
+      }
+    }
+   
+  }
+  
+  document.getElementById("team-images").innerHTML=teamImagesPlaceholder; 
+
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{ displayTeamImages()})
 
 
 
