@@ -51,6 +51,14 @@ nav.navbar {
   height: 35px;
 }
 
+
+.circle::before{
+  background-color: coral;
+  
+  
+  }
+
+
 .nav-btn {
   margin-top: 19px;
   margin-right: 12px;
