@@ -14,7 +14,10 @@ var internalUsers = [
         "password" : "admin"
     }
 ]
+// Users Gotten from local storage
 localStorage.setItem("internalUsers", JSON.stringify(internalUsers))
+// PROJECTS LIST GOTTEN FROM LOCAL STORAGE
+projects = JSON.parse(localStorage.getItem("projects"));
 
 var users = JSON.parse(localStorage.getItem('users'))
 var internalUsers = JSON.parse(localStorage.getItem("internalUsers"));
@@ -37,7 +40,7 @@ function mngtsLogin() {
 }
 // alert(users.length)
 document.getElementById('registeredUsersNumber').innerHTML = users.length;
-document.getElementById('projectsCreatedNumber').innerHTML = users.length;
+document.getElementById('projectsCreatedNumber').innerHTML = projects.length;
 
 function displayUsers() {
     let usersPlaceholder;
@@ -49,12 +52,12 @@ function displayUsers() {
         <thead>
         <tr>
             <th scope="col">#</th>
-            
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email Address</th>
             <th scope="col">Role</th>
             <th scope="col">Password</th>
+            <th scope="col">Status</th>
             <th scope="col"><button class="btn-custom font-size-custom" data-toggle="modal" data-target="#add">Add New User</button></th>
         </tr>
         </thead>
@@ -68,18 +71,20 @@ function displayUsers() {
         usersPlaceholder += `
             <tr>
                 <th scope="row">${i + 1}</th>
-                
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.email}</td>
                 <td>${user.role}</td>
                 <td>${user.password}</td>
+                <td>${user.status}</td>
                 <td><img src="https://img.icons8.com/material-rounded/24/000000/delete-forever.png"/ onclick="deleteUser(${i})" style="cursor: pointer"><img src="https://img.icons8.com/material/24/000000/edit-user-female.png" class="mr-2 ml-2" style="cursor: pointer" data-toggle="modal" data-target="#edit" onclick="editUserTrigger(${i})"/>
             </tr>
         `
+       
     }
     document.getElementById('showConsole').innerHTML = tableHolder;
     document.getElementById('addToTable').innerHTML = usersPlaceholder;
+    
 }
 
 function editUserTrigger(id) {
@@ -90,11 +95,16 @@ function editUserTrigger(id) {
     document.getElementById("editfirstName").value = userRecord.firstName;
     document.getElementById("editlastName").value = userRecord.lastName;
     document.getElementById("editrole").value = userRecord.role;
+    document.getElementById('status').value = userRecord.status;
     document.getElementById('index').value = id;
 }
+// alert(document.getElementById('status').value)
 
 function update() {
     i = document.getElementById("index").value;
+    // status = document.getElementById('status')
+    // alert(status.options[status.selectedIndex].text)
+    
     let updatedRecord = {
         firstName: document.getElementById("editfirstName").value,
         lastName: document.getElementById("editlastName").value,
@@ -102,7 +112,9 @@ function update() {
         email: document.getElementById("editemail").value,
         password: document.getElementById("editpassword").value,
         role:  document.getElementById("editrole").value,
+        status: document.getElementById('editstatus').value
     }
+    
     users[i] = updatedRecord;
     localStorage.setItem('users', JSON.stringify(users));
     location.reload();
@@ -124,6 +136,7 @@ function addUser() {
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
     let role = document.getElementById("role").value;
+    let userStatus = document.getElementById("status").value;
 
     let userId;
     for (let i = 0; i <= users.length; i++) {
@@ -138,6 +151,7 @@ function addUser() {
         email: userEmail,
         password: userPassword,
         role: role,
+        status: userStatus
     }
     users.push(addUser);
     localStorage.setItem("users", JSON.stringify(users));
@@ -148,3 +162,11 @@ function addUser() {
 function search() {
 
 }
+
+// function statusEdit(id) {
+//     userStatus = users[id];
+//     changeStatus = document.getElementById('status').value;
+//     alert(changeStatus)
+//     // localStorage.setItem("users", JSON.stringify(users.status))
+//     // location.reload()
+// }
