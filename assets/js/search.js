@@ -6,6 +6,7 @@ if (projects == null || projects == undefined) {
 }
 
 
+
 const projectList = getProjectsName(projects);
 
 
@@ -17,7 +18,6 @@ function getProjectsName(projects){
         for (let i = 0; i < projects.length; i++) {
             list[i] = {name: projects[i].projectName.toLowerCase()};
         }
-        
         return list;
 }
 
