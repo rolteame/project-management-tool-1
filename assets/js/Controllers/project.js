@@ -10,7 +10,6 @@ if (projects == null || projects == undefined) {
   projects = [];
 }
 
-
 // TEAMS GOTTEN FROM LOCAL STORAGE
 teams = JSON.parse(localStorage.getItem("teams"));
 if (teams == null || teams == undefined) {
@@ -37,25 +36,25 @@ function displayProjects() {
   // if (projects == null || projects == undefined) {
   //   projects = [];
   // }
-  
+
   // This will append the team list to the modal of create project so that you can add team to project
   teamsPlaceholder = "";
   // console.log(teams)
-    for(i=0;i < teams.length; ++i){
-        teamsPlaceholder += `
+  for (i = 0; i < teams.length; ++i) {
+    teamsPlaceholder += `
             <option id="${i}"  value="${teams[i].teamId}">${teams[i].teamName}</option>
         `;
-        
-        teamsSidebarPlaceholder += `
+
+    teamsSidebarPlaceholder += `
         <li class="nav-item" >
             <a class="nav-link active text-white" href="#"><img src="../../assets/img/project-icon.svg" alt="Project Image" class="project-image my-1">${teams[i].teamName}</a>
         </li>
       `;
-    }
-    
-    document.getElementById('teamsListModal').innerHTML = teamsPlaceholder
-    // console.log(document.getElementById('teamsSidebar'))
-    document.getElementById('teamsSidebar').innerHTML = teamsSidebarPlaceholder
+  }
+
+  document.getElementById("teamsListModal").innerHTML = teamsPlaceholder;
+  // console.log(document.getElementById('teamsSidebar'))
+  document.getElementById("teamsSidebar").innerHTML = teamsSidebarPlaceholder;
 
   // This displays all projects in the home of the dashboard(temp.html file)
   for (i = 0; i < projects.length; i++) {
@@ -87,9 +86,12 @@ function displayProjects() {
       `;
     }
     document.getElementById("showAllProjects").innerHTML = projectsPlaceholder;
-    document.getElementById('projectsSidebar').innerHTML = projectsSidebarPlaceholder;
+    document.getElementById(
+      "projectsSidebar"
+    ).innerHTML = projectsSidebarPlaceholder;
   }
-  document.getElementById("theAvatar").src = `${currentUser.image}` || "../../assets/img/Sophia.jpg";
+  document.getElementById("theAvatar").src =
+    `${currentUser.image}` || "../../assets/img/Sophia.jpg";
 }
 
 // creates new projects
@@ -103,12 +105,11 @@ function addProject() {
   newProject = {
     projectId: projectId,
     projectName: document.getElementById("projectName").value,
-    projectTeamId:document.getElementById('teamsListModal').value,
+    projectTeamId: document.getElementById("teamsListModal").value,
     projectDescription: document.getElementById("projectDescription").value,
     userId: currentUser.id,
-    teamsId:document.getElementById("teamsListModal").value
+    teamsId: document.getElementById("teamsListModal").value,
   };
-  
 
   projects.push(newProject);
 
@@ -119,7 +120,7 @@ function addProject() {
   );
 
   users[currentUser.id].projectsIdList.push(newProject.projectId);
-  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem("users", JSON.stringify(users));
   location.href = "temp.html";
 }
 
@@ -128,48 +129,40 @@ function openProject(id) {
   localStorage.setItem("currentProject", JSON.stringify(projects[id]));
 
   location.href = "taskoverview.html";
-
-  
 }
 
 function displayName(params) {}
 
- //This will append images of registered users to the navigation bar
+//This will append images of registered users to the navigation bar
 
- function displayTeamImages() {
-  
+function displayTeamImages() {
+  teamImagesPlaceholder = "";
 
-  teamImagesPlaceholder= "";
-
-  for(i=0; i< users.length; i++){
-    if(users[i]!=null || users[i]!=undefined ){
-      
-      if(users.length===3)
-      {
-        teamImagesPlaceholder +=`
+  for (i = 0; i < users.length; i++) {
+    if (users[i] != null || users[i] != undefined) {
+      if (users.length === 3) {
+        teamImagesPlaceholder += `
 
         <img  src="${users[i].image}" alt="Team member" class="picture" id=${i}> `;
-      }
-      else{
-
-        teamImagesPlaceholder +=`
-
-        <img  src="${users[0].image}" alt="Team member" class="picture" id=${0}> 
-        <img  src="${users[1].image}" alt="Team member" class="picture" id=${1}> 
-        <img  src="${users[2].image}" alt="Team member" class="picture" id=${2}> 
-        <div class="picture circle" >${users.length-3}</div>`;
-
+      } else {
+        teamImagesPlaceholder = `
+        
+        <div class="picture circle" >+${users.length - 3}</div>
+        <img  src="${
+          users[0].image
+        }" alt="Team member" class="picture" id=${0}> 
+        <img  src="${
+          users[1].image
+        }" alt="Team member" class="picture" id=${1}> 
+        <img  src="${users[2].image}" alt="Team member" class="picture" id=${2}>
+        `;
       }
     }
-   
   }
-  
-  document.getElementById("team-images").innerHTML=teamImagesPlaceholder; 
 
+  document.getElementById("team-images").innerHTML = teamImagesPlaceholder;
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{ displayTeamImages()})
-
-
-
-
+document.addEventListener("DOMContentLoaded", () => {
+  displayTeamImages();
+});

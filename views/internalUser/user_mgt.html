@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
   <title>Side Navigation Bar</title>
-  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../../assets/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/css/Dashboard.css">  
-    <link rel="tyle.sheet" href="../../assets/css/activities.css">
+    <link rel="style.sheet" href="../../assets/css/activities.css">
     <link rel="stylesheet" href="../../assets/css/usermgt.css">
     <link rel="stylesheet" href="../../assets/css/managemetconsole/mngtlogin.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-  <script src="../../assets/js/Controller/activites.js"></script>
+  <!-- <script src="../../assets/js/Controller/activites.js"></script> -->
   
 </head>
 <body>
@@ -216,6 +216,12 @@
               name="password"
               required
             />
+            <label for="status">Status</label>
+            <select class="form-control py-3" id="status">
+              <option selected>Choose...</option>
+              <option value="Enable">Enable</option>
+              <option value="Disable">Disable</option>
+            </select>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -278,6 +284,12 @@
               name="password"
               required
             />
+            <label for="status">Status</label>
+            <select class="form-control custom-select py-3" id="editstatus">
+              <option selected>Choose...</option>
+              <option value="Enable">Enable</option>
+              <option value="Disable">Disable</option>
+            </select>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
