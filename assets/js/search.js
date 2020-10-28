@@ -5,6 +5,18 @@ if (projects == null || projects == undefined) {
   projects = [];
 }
 
+// TASKS GOTTEN FROM LOCAL STORAGE
+tasks = JSON.parse(localStorage.getItem("tasks"));
+if (tasks == null || tasks == undefined) {
+  tasks = [];
+}
+
+// TaskLists GOTTEN FROM LOCAL STORAGE
+tasksLists = JSON.parse(localStorage.getItem("tasksLists"));
+if (tasksLists == null || tasksLists == undefined) {
+  tasksLists = [];
+}
+
 
 
 const projectList = getProjectsName(projects);
@@ -70,7 +82,7 @@ function getRelevancy(value, searchTerm){
 const searchInput = document.getElementById("search");
 
 // main search action is performed here
-searchInput.addEventListener('input', (event) => {
+searchInput.addEventListener('keyup', (event) => {
     let value = event.target.value;
 
     if(value && value.trim().length > 0){
