@@ -11,13 +11,15 @@ if (tasks == null || tasks == undefined) {
   tasks = [];
 }
 
+console.log(tasks);
+
+console.log(tasksLists);
+
 // TaskLists GOTTEN FROM LOCAL STORAGE
 tasksLists = JSON.parse(localStorage.getItem("tasksLists"));
 if (tasksLists == null || tasksLists == undefined) {
   tasksLists = [];
 }
-
-
 
 const projectList = getProjectsName(projects);
 
