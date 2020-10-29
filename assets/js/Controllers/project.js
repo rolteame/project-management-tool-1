@@ -137,23 +137,25 @@ function displayName(params) {}
 function displayTeamImages() {
   teamImagesPlaceholder = "";
 
-  for (i = 0; i <= users.length; i++) {
+  for (i = 0; i < users.length; i++) {
     if (users[i] != null || users[i] != undefined) {
-      if (users.length === 3) {
+      if (users.length <= 3) {
         teamImagesPlaceholder += `
 
-        <img  src="${users[i].image}" alt="Team member" class="picture" id=${i}> `;
+        <img  src="${users[i].image}" alt="Team member" class="picture avatar" id=${i}> `;
       } else {
         teamImagesPlaceholder = `
         
         <div class="picture circle" >+${users.length - 3}</div>
         <img  src="${
           users[0].image
-        }" alt="Team member" class="picture" id=${0}> 
+        }" alt="Team member" class="picture avatar" id=${0}> 
         <img  src="${
           users[1].image
-        }" alt="Team member" class="picture" id=${1}> 
-        <img  src="${users[2].image}" alt="Team member" class="picture" id=${2}>
+        }" alt="Team member" class="picture avatar" id=${1}> 
+        <img  src="${
+          users[2].image
+        }" alt="Team member" class="picture avatar" id=${2}>
         `;
       }
     }
