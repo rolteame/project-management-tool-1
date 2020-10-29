@@ -90,8 +90,7 @@ function displayProjects() {
       "projectsSidebar"
     ).innerHTML = projectsSidebarPlaceholder;
   }
-  document.getElementById("theAvatar").src =
-    `${currentUser.image}` || "../../assets/img/Sophia.jpg";
+  document.getElementById("theAvatar").src = `${currentUser.image}`;
 }
 
 // creates new projects
@@ -138,7 +137,7 @@ function displayName(params) {}
 function displayTeamImages() {
   teamImagesPlaceholder = "";
 
-  for (i = 0; i < users.length; i++) {
+  for (i = 0; i <= users.length; i++) {
     if (users[i] != null || users[i] != undefined) {
       if (users.length === 3) {
         teamImagesPlaceholder += `

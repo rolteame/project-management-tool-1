@@ -78,18 +78,18 @@ function register() {
         for (let i = 0; i <= users.length; i++) {
           userId = i;
         }
-
-        newUser = {
+        let imageVal = `https://ui-avatars.com/api/?name=${firstName}+${lastName}&background=random`;
+        let newUser = {
           id: userId,
           firstName: firstName,
           lastName: lastName,
-          image: "../../assets/img/Sophia.jpg",
+          image: imageVal,
           email: userEmail,
           password: userPassword,
           role: role,
-          teamIdList:[],
-          tasksIdList:[],
-          projectsIdList:[]
+          teamIdList: [],
+          tasksIdList: [],
+          projectsIdList: [],
         };
 
         passEmail = userEmail;
@@ -262,12 +262,12 @@ var getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
 // };
 
 //edit trigger
-let editReader =""
+let editReader = "";
 function editTrigger() {
   // let currentUser = users.find((user) => {
   let editUsers = users.find((user) => getCurrentUser.email == user.email);
   // });
-  let profilePic = document.getElementById('profilePic');
+  let profilePic = document.getElementById("profilePic");
   let firstname = document.getElementById("editFirstName");
   let lastname = document.getElementById("editLastName");
   let role = document.getElementById("editRole");
@@ -279,10 +279,10 @@ function editTrigger() {
     lastname.value = editUsers.lastName;
     role.value = editUsers.role;
     email.value = editUsers.email;
-    profilePic.addEventListener("change", function() {
+    profilePic.addEventListener("change", function () {
       editReader = new FileReader();
       editReader.readAsDataURL(this.files[0]);
-  })
+    });
   });
 }
 
@@ -296,7 +296,7 @@ function editUser() {
   let lastname = document.getElementById("editLastName").value;
   let role = document.getElementById("editRole").value;
   let email = document.getElementById("exampleInputEmail1").value;
-  let image = (editReader != "") ? editReader.result : currentUser.image;
+  let image = editReader != "" ? editReader.result : currentUser.image;
 
   editUsers.firstName = firstname;
   editUsers.lastName = lastname;
@@ -382,9 +382,8 @@ function deleteUser() {
 currentUser = JSON.parse(localStorage.getItem("currentUser"));
 showUserName = currentUser.firstName;
 showLastName = currentUser.lastName;
-userRole = currentUser.role
-document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
-document.getElementById('userRole').innerHTML = userRole;
-document.getElementById('helloUserName').innerHTML = showUserName;
-
-
+userRole = currentUser.role;
+document.getElementById("userName").innerHTML =
+  showUserName + " " + showLastName;
+document.getElementById("userRole").innerHTML = userRole;
+document.getElementById("helloUserName").innerHTML = showUserName;
