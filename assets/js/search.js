@@ -1,6 +1,7 @@
 
     // PROJECTS LIST GOTTEN FROM LOCAL STORAGE
 <<<<<<< HEAD
+<<<<<<< HEAD
 projects = JSON.parse(localStorage.getItem("projects"));
 if (projects == null || projects == undefined) {
   projects = [];
@@ -99,6 +100,8 @@ searchInput.addEventListener('keyup', (event) => {
     }
 }); 
 =======
+=======
+>>>>>>> 9cb438492bbaa455f3182a88845859f4a04fda59
     projects = JSON.parse(localStorage.getItem("projects"));
     if (projects == null || projects == undefined) {
       projects = [];
@@ -190,5 +193,9 @@ searchInput.addEventListener('keyup', (event) => {
             clearList();
         }
     }); 
+<<<<<<< HEAD
+    
+>>>>>>> 9cb438492bbaa455f3182a88845859f4a04fda59
+=======
     
 >>>>>>> 9cb438492bbaa455f3182a88845859f4a04fda59
