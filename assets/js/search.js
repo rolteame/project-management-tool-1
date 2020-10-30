@@ -6,13 +6,13 @@
     }
     
     
-    const projectList = getProjectsName(projects);
+    const projectList = getProjectsList(projects);
     
     
     const searchList = document.getElementgitById("searchList");
     
     //save projects name from localStorage to a list
-    function getProjectsName(projects){
+    function getProjectsList(projects){
         let list = [];
             for (let i = 0; i < projects.length; i++) {
                 list[i] = {name: projects[i].projectName.toLowerCase(), projectId: projects[i].projectId};
