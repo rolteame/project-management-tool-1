@@ -5,35 +5,28 @@ if (projects == null || projects == undefined) {
   projects = [];
 }
 
-// TASKS GOTTEN FROM LOCAL STORAGE
-tasks = JSON.parse(localStorage.getItem("tasks"));
-if (tasks == null || tasks == undefined) {
-  tasks = [];
+// CURRENT USER GOTTEN FROM LOCAL STORAGE
+currentProject = JSON.parse(localStorage.getItem("currentProject"));
+if (currentProject == null || currentProject == undefined) {
+  currentProject = {};
 }
 
-console.log(tasks);
 
-console.log(tasksLists);
-
-// TaskLists GOTTEN FROM LOCAL STORAGE
-tasksLists = JSON.parse(localStorage.getItem("tasksLists"));
-if (tasksLists == null || tasksLists == undefined) {
-  tasksLists = [];
-}
-
-const projectList = getProjectsName(projects);
-
+const projectList = getProjectsList(projects);
 
 const searchList = document.getElementById("searchList");
 
 //save projects name from localStorage to a list
-function getProjectsName(projects){
+function getProjectsList(projects){
     let list = [];
         for (let i = 0; i < projects.length; i++) {
-            list[i] = {name: projects[i].projectName.toLowerCase()};
+            list[i] = {name: projects[i].projectName.toLowerCase(), projectId: projects[i].projectId};
         }
         return list;
 }
+
+console.log(projects);
+console.log(projectList);
 
 //set searchList from localStorage
 function setList(group){

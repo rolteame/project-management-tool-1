@@ -128,8 +128,6 @@ function openProject(id) {
   localStorage.setItem("currentProject", JSON.stringify(projects[id]));
 
   location.href = "taskoverview.html";
-
-  
 }
 
 function displayName(params) {}
