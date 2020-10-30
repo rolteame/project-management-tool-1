@@ -6,18 +6,18 @@ if (projects == null || projects == undefined) {
 }
 
 
-const projectList = getProjectsName(projects);
+
+const projectList = getProjectList(projects);
 
 
 const searchList = document.getElementById("searchList");
 
 //save projects name from localStorage to a list
-function getProjectsName(projects){
+function getProjectList(projects){
     let list = [];
         for (let i = 0; i < projects.length; i++) {
             list[i] = {name: projects[i].projectName.toLowerCase()};
         }
-        
         return list;
 }
 
