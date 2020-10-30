@@ -1,7 +1,6 @@
 
     // PROJECTS LIST GOTTEN FROM LOCAL STORAGE
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 projects = JSON.parse(localStorage.getItem("projects"));
 if (projects == null || projects == undefined) {
   projects = [];
@@ -108,13 +107,13 @@ searchInput.addEventListener('keyup', (event) => {
     }
     
     
-    const projectList = getProjectsName(projects);
+    const projectList = getProjectsList(projects);
     
     
     const searchList = document.getElementgitById("searchList");
     
     //save projects name from localStorage to a list
-    function getProjectsName(projects){
+    function getProjectsList(projects){
         let list = [];
             for (let i = 0; i < projects.length; i++) {
                 list[i] = {name: projects[i].projectName.toLowerCase(), projectId: projects[i].projectId};
@@ -194,8 +193,12 @@ searchInput.addEventListener('keyup', (event) => {
         }
     }); 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 >>>>>>> 9cb438492bbaa455f3182a88845859f4a04fda59
 =======
     
 >>>>>>> 9cb438492bbaa455f3182a88845859f4a04fda59
+=======
+    
+>>>>>>> 24aa66bcefaa225dd5a2558e04a4cc0978d9b5b7
