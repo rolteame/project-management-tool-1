@@ -3,3 +3,4 @@ currentProject = localStorage.getItem("currentProject");
 
 document.getElementById("notifications").innerHTML = currentProject
 // document.getElementById("notifications").innerHTML = currentProject[0].projectName
+

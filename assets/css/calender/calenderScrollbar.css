@@ -1,0 +1,28 @@
+/* scrollbar begins */
+
+#calender *::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+#calender *::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+#calender *::-webkit-scrollbar-thumb {
+  background: #067ea7;
+}
+
+/* Handle on hover */
+#calender *::-webkit-scrollbar-thumb:hover {
+  background: #047196;
+}
+/* scrollbar ends */
+.app {
+  max-width: 100%;
+  /* margin: 10% auto; */
+}
+.h-max {
+  height: 100%;
+}

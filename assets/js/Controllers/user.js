@@ -13,11 +13,13 @@ var token = {
 
 // user array
 var userExist = new Object();
-var users = JSON.parse(localStorage.getItem("users"));
 
+// USERS FROM LOCALSTORAGE
+var users = JSON.parse(localStorage.getItem("users"));
 if (users == null || users == undefined) {
   users = [];
 }
+
 var saveDetails = JSON.parse(localStorage.getItem("saveDetails"));
 
 if (saveDetails == null || saveDetails == undefined) {
@@ -76,15 +78,19 @@ function register() {
         for (let i = 0; i <= users.length; i++) {
           userId = i;
         }
-
-        newUser = {
+        let imageVal = `https://ui-avatars.com/api/?name=${firstName}+${lastName}&background=random`;
+        let newUser = {
           id: userId,
           firstName: firstName,
           lastName: lastName,
-          image: "../../assets/img/Sophia.jpg",
+          image: imageVal,
           email: userEmail,
           password: userPassword,
           role: role,
+          status: "Enable",
+          teamIdList: [],
+          tasksIdList: [],
+          projectsIdList: [],
         };
 
         passEmail = userEmail;
@@ -181,6 +187,14 @@ function login() {
       timer: 2000,
     });
   } else if (userExist && passwordExist) {
+    if(userExist.status == "Disable") {
+      Swal.fire({
+        icon: "error",
+        title: "Sorry, this account has been deactivated, contact your Administrator.",
+        showConfirmButton: false,
+       
+      });
+    }else {
     activeUsers.push(token);
 
     Swal.fire({
@@ -198,6 +212,7 @@ function login() {
     localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
     localStorage.setItem("currentUser", JSON.stringify(userExist));
+    }
   } else if (userExist == undefined || passwordExist == undefined) {
     let error = "Wrong Email and/or Password";
     Swal.fire({
@@ -257,12 +272,12 @@ var getCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
 // };
 
 //edit trigger
-let editReader =""
+let editReader = "";
 function editTrigger() {
   // let currentUser = users.find((user) => {
   let editUsers = users.find((user) => getCurrentUser.email == user.email);
   // });
-  let profilePic = document.getElementById('profilePic');
+  let profilePic = document.getElementById("profilePic");
   let firstname = document.getElementById("editFirstName");
   let lastname = document.getElementById("editLastName");
   let role = document.getElementById("editRole");
@@ -274,10 +289,10 @@ function editTrigger() {
     lastname.value = editUsers.lastName;
     role.value = editUsers.role;
     email.value = editUsers.email;
-    profilePic.addEventListener("change", function() {
+    profilePic.addEventListener("change", function () {
       editReader = new FileReader();
       editReader.readAsDataURL(this.files[0]);
-  })
+    });
   });
 }
 
@@ -291,7 +306,7 @@ function editUser() {
   let lastname = document.getElementById("editLastName").value;
   let role = document.getElementById("editRole").value;
   let email = document.getElementById("exampleInputEmail1").value;
-  let image = (editReader != "") ? editReader.result : currentUser.image;
+  let image = editReader != "" ? editReader.result : currentUser.image;
 
   editUsers.firstName = firstname;
   editUsers.lastName = lastname;
@@ -306,6 +321,10 @@ function editUser() {
     email: email,
     password: editUsers.password,
     role: role,
+    status: editUsers.status,
+    teamIdList: editUsers.teamIdList,
+    tasksIdList: editUsers.tasksIdList,
+    projectsIdList: editUsers.projectsIdList,
   };
 
   users.splice(editUserIndex, 1, edittedUser);
@@ -377,9 +396,8 @@ function deleteUser() {
 currentUser = JSON.parse(localStorage.getItem("currentUser"));
 showUserName = currentUser.firstName;
 showLastName = currentUser.lastName;
-userRole = currentUser.role
-document.getElementById('userName').innerHTML = showUserName +  " " + showLastName;
-document.getElementById('userRole').innerHTML = userRole;
-document.getElementById('helloUserName').innerHTML = showUserName;
-
-
+userRole = currentUser.role;
+document.getElementById("userName").innerHTML =
+  showUserName + " " + showLastName;
+document.getElementById("userRole").innerHTML = userRole;
+document.getElementById("helloUserName").innerHTML = showUserName;
