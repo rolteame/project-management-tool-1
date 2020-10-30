@@ -9,17 +9,19 @@
     const projectList = getProjectsName(projects);
     
     
-    const searchList = document.getElementById("searchList");
+    const searchList = document.getElementgitById("searchList");
     
     //save projects name from localStorage to a list
     function getProjectsName(projects){
         let list = [];
             for (let i = 0; i < projects.length; i++) {
-                list[i] = {name: projects[i].projectName.toLowerCase()};
+                list[i] = {name: projects[i].projectName.toLowerCase(), projectId: projects[i].projectId};
             }
             
             return list;
     }
+
+    console.log(projectList);
     
     //set searchList from localStorage
     function setList(group){
@@ -30,7 +32,11 @@
             const text = document.createTextNode(searchTerm.name);
             item.appendChild(text);
             searchList.appendChild(item);
+
+            // searchChoice = document.getElementsByClassName(search)
         }
+
+        console.log(searchList);
         if(group.length === 0){
             setNoResults();
         }
