@@ -87,6 +87,7 @@ function register() {
           email: userEmail,
           password: userPassword,
           role: role,
+          status: "Enable",
           teamIdList: [],
           tasksIdList: [],
           projectsIdList: [],
@@ -186,6 +187,14 @@ function login() {
       timer: 2000,
     });
   } else if (userExist && passwordExist) {
+    if(userExist.status == "Disable") {
+      Swal.fire({
+        icon: "error",
+        title: "Sorry, this account has been deactivated, contact your Administrator.",
+        showConfirmButton: false,
+       
+      });
+    }else {
     activeUsers.push(token);
 
     Swal.fire({
@@ -203,6 +212,7 @@ function login() {
     localStorage.setItem("activeUsers", JSON.stringify(activeUsers));
 
     localStorage.setItem("currentUser", JSON.stringify(userExist));
+    }
   } else if (userExist == undefined || passwordExist == undefined) {
     let error = "Wrong Email and/or Password";
     Swal.fire({
@@ -311,6 +321,10 @@ function editUser() {
     email: email,
     password: editUsers.password,
     role: role,
+    status: editUsers.status,
+    teamIdList: editUsers.teamIdList,
+    tasksIdList: editUsers.tasksIdList,
+    projectsIdList: editUsers.projectsIdList,
   };
 
   users.splice(editUserIndex, 1, edittedUser);
