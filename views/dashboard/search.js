@@ -108,12 +108,3 @@
     }); 
     
     
-     
-    
-    /*
-    <div>
-                    <input type="text" placeholder="Search..." class="mr-5 form-control search" name ="search" id="search" autocomplete="off"/>
-                        <ul class="list-group" id="searchList" style="border-radius: 50%; position: absolute;"></ul> 
-                    </div>
-    */
-     
