@@ -78,16 +78,16 @@ document.getElementById('teamsSidebarTask').innerHTML = teamsSidebarPlaceholder
 
       if (tasksLists[i].projectId == currentProject.projectId) {
         tasksListsPlaceholder += `
-            <div class="card " style="max-width: 30%">
-            <div class="card-body">
-              <div class="card-header d-flex justify-content-between flex-column">
-                  <span class="card-heading text-center ">${tasksLists[i].name}</span>
+            <div class="card task-list-card" style="max-width: 30%">
+            <div class="">
+              <div class=" d-flex justify-content-between flex-column">
+                  <span class="my-2 card-heading text-center font-weight-normal">${tasksLists[i].name}</span>
                   <div class="d-flex justify-content-around">
-                    <button data-toggle="modal" value="${tasksLists[i].listId}" data-target="#staticBackdrop" class="btn btn-outline-secondary rounded-pill add-btn-color p-2" style="font-size: 12px;">+ Add Task</button>
-                    <button  class="btn btn-outline-secondary rounded-pill add-btn-color p-2" style="font-size: 12px;" onclick="deleteTasksList(${i})">- Delete List</button>
+                    <button data-toggle="modal" value="${tasksLists[i].listId}" data-target="#staticBackdrop" class="task-addtask-button btn btn-outline-primary p-2" style="font-size: 12px;">+ Add Task</button>
+                    <button  class="btn btn-danger  p-2" style="font-size: 12px;" onclick="deleteTasksList(${i})">- Delete List</button>
                   </div>
               </div>
-              <div id="${i}list">
+              <div id="${i}list" class="">
 
               </div>
             </div>
@@ -125,25 +125,20 @@ function displayTasks() {
       if (task.userId == currentUser.id) {
         if (tasksLists[j].listId == task.listId) {
           if (task.projectId == currentProject.projectId) {
-            tasksPlaceholder += `<div class="card bg-grey m-3 " style="max-width: 90%">   
-                <div class="card-header my-0 bg-grey">
-                    <h6 class="">${task.taskName}</h6>
-                        
+            tasksPlaceholder += `<div class="card bg-grey m-3 " >   
+                <div class="p-2 my-0 bg-grey">
+                    <h6 class="mr-4" >${task.taskName}</h6>
                 </div>    
-                <div class="card-body bg-grey" >
-                    <p class="text-center">
-                    ${task.taskBody}
-                    </p>
-                    <small class="text-muted my-0 py-0">
-                            <span class="my-0">${task.startDate} </span>
-                            <br class="my-0">to <br class="my-0">
-                            <span class="my-0">${task.endDate}</span>
-                        </small>
+                
+                <div>
+                  <span class="mx-2 p-1 badge badge-primary"><i class="far fa-clock"></i>  ${task.endDate}</span>
                 </div>
-                <div class="card-footer d-flex justify-content-around px-1 py-1 border-top-0">
-                    <button class="btn btn-info">Edit</button>
-                    <button class="btn btn-danger" onclick= "deleteTask(${i})">Delete</button><br>
-                </div>
+
+
+                <div>
+                ${task.assigneesId.map(id=>
+                `<img id="theAvatar" src="${users[id].image}" alt="Avatar" class="avatar my-2 mx-2"></img>`)}  
+                </div>              
             </div>`;
             document.getElementById(j+'list').innerHTML = tasksPlaceholder;
           }
