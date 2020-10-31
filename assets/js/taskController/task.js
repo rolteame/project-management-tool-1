@@ -125,13 +125,13 @@ function displayTasks() {
       if (task.userId == currentUser.id) {
         if (tasksLists[j].listId == task.listId) {
           if (task.projectId == currentProject.projectId) {
-            tasksPlaceholder += `<div class="card bg-grey m-3 " >   
+            tasksPlaceholder += `<div class=" task-task-card card bg-grey m-3 " >   
                 <div class="p-2 my-0 bg-grey">
                     <h6 class="mr-4" >${task.taskName}</h6>
                 </div>    
                 
                 <div>
-                  <span class="mx-2 p-1 badge badge-primary"><i class="far fa-clock"></i>  ${task.endDate}</span>
+                  <span class="task-badge-green mx-2 p-1 badge badge-primary"><i class="far fa-clock"></i>  ${task.endDate}</span>
                 </div>
 
 
