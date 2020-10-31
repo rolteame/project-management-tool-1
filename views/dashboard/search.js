@@ -32,8 +32,7 @@
         for (let i = 0; i < projects.length; i++) {
             if (result === projects[i].projectName.toLowerCase()){
                 localStorage.setItem("currentProject", JSON.stringify(projects[i]));
-                location.href ="taskoverview.html";
-                console.log(currentProject);   
+                location.href ="taskoverview.html"; 
             }  
         }
     }
