@@ -30,7 +30,7 @@ if (tasks == null || tasks == undefined) {
   tasks = [];
 }
 
-// Lists GOTTEN FROM LOCAL STORAGE
+// TaskLists GOTTEN FROM LOCAL STORAGE
 tasksLists = JSON.parse(localStorage.getItem("tasksLists"));
 if (tasksLists == null || tasksLists == undefined) {
   tasksLists = [];
