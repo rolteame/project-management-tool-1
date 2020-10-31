@@ -1,52 +1,67 @@
-// const projects = [
-//     {name: 'david'},
-//     {name: 'patel'},
-//     {name: 'kevin'},
-//     {name: 'steven'},
-//     {name: 'coco'},
-//     {name: 'brock'},
-//     {name: 'rock'}
-//     ];
-
 
     // PROJECTS LIST GOTTEN FROM LOCAL STORAGE
-projects = JSON.parse(localStorage.getItem("projects"));
-if (projects == null || projects == undefined) {
-  projects = [];
-}
 
-//  const projects = (projects) => {
-//     let list = null;
-//     for (let i = projects.length - 1; i >= 0; i--) {
-//         list = { name: projects[i]};
-//     }
-//     return list;
-// };
-
-console.log(projects);
+    projects = JSON.parse(localStorage.getItem("projects"));
+    if (projects == null || projects == undefined) {
+      projects = [];
+    }
     
-    const searchList = document.getElementById("searchlist")
+    // CURRENT USER GOTTEN FROM LOCAL STORAGE
+    currentProject = JSON.parse(localStorage.getItem("currentProject"));
+    if (currentProject == null || currentProject == undefined) {
+      currentProject = {};
+    }
     
-    //set list from localStorage
+    const projectList = getProjectList(projects);
+    
+    
+    const searchList = document.getElementById("searchList");
+    
+    //save projects name from localStorage to a list
+    function getProjectList(projects){
+        let list = [];
+            for (let i = 0; i < projects.length; i++) {
+                list[i] = {name: projects[i].projectName.toLowerCase()};
+            }
+            return list;
+    }
+    
+    function openSearchResult(event){
+        result = event.target.firstChild.nodeValue;
+        if (result){
+        for (let i = 0; i < projects.length; i++) {
+            if (result === projects[i].projectName.toLowerCase()){
+                localStorage.setItem("currentProject", JSON.stringify(projects[i]));
+                location.href ="taskoverview.html";
+                console.log(currentProject);   
+            }  
+        }
+    }
+        
+    }
+    
+    //set searchList from localStorage
     function setList(group){
         clearList();
-        for (const projectSearch of group){
+        for (const searchTerm of group){
             const item = document.createElement("li");
-            item.classList.add("list-group-item");
-            const text = document.createTextNode(projectSearch.projectName);
+            const text = document.createTextNode(searchTerm.name);
+            item.classList.add("list-group-item","search-display");  
             item.appendChild(text);
-            searchlist.appendChild(item);
+            searchList.addEventListener('click', openSearchResult);
+            searchList.appendChild(item);
         }
+        
         if(group.length === 0){
             setNoResults();
         }
     
     }
     
-    //clear search list so we dont have duplicates 
+    //clear searchList so we dont have duplicates 
     function clearList(){
-        while(searchlist.firstChild){
-            searchlist.removeChild(projects.firstChild);
+        while(searchList.firstChild){
+            searchList.removeChild(searchList.firstChild);
         }
     }
     
@@ -57,7 +72,7 @@ console.log(projects);
         item.classList.add("list-group-item");
         const text = document.createTextNode("No results found");
         item.appendChild(text);
-        searchlist.appendChild(item);
+        searchList.appendChild(item);
     }
     
     //get relevant of search input
@@ -72,25 +87,33 @@ console.log(projects);
             return -1;
         }
     }
-
-    
     
     const searchInput = document.getElementById("search");
     
     // main search action is performed here
-    searchInput.addEventListener('input', (event) => {
-        // console.log(event.target.value);
+    searchInput.addEventListener('keyup', (event) => {
         let value = event.target.value;
     
         if(value && value.trim().length > 0){
             value = value.trim().toLowerCase();
-            setList(projects.filter(projectSearch => {
-                return projectSearch.projectName.includes(value);
-            }).sort((projectSearchA, projectSearchB) => {
-                return getRelevancy(projectSearchB.projectName, value)   -  getRelevancy(projectSearchA.projectName, value);
+            setList(projectList.filter(searchTerm => {
+                return searchTerm.name.includes(value);
+            }).sort((searchTermA, searchTermB) => {
+                return getRelevancy(searchTermB.name, value)   -  getRelevancy(searchTermA.name, value);
             }));
         } else {
     
             clearList();
         }
     }); 
+    
+    
+     
+    
+    /*
+    <div>
+                    <input type="text" placeholder="Search..." class="mr-5 form-control search" name ="search" id="search" autocomplete="off"/>
+                        <ul class="list-group" id="searchList" style="border-radius: 50%; position: absolute;"></ul> 
+                    </div>
+    */
+     
