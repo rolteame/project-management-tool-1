@@ -26,6 +26,8 @@
             return list;
     }
     
+
+    //load valid search result
     function openSearchResult(event){
         result = event.target.firstChild.nodeValue;
         if (result){
