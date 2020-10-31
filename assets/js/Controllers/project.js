@@ -113,7 +113,12 @@ function addProject() {
   projects.push(newProject);
 
   localStorage.setItem("projects", JSON.stringify(projects));
-  saveNotification(newProject.projectName, currentUser.firstName, currentUser.lastName, "project")
+  saveNotification(
+    newProject.projectName,
+    currentUser.firstName,
+    currentUser.lastName,
+    "project"
+  );
   currentProject = localStorage.setItem(
     "currentProject",
     JSON.stringify(newProject)
@@ -167,67 +172,60 @@ function displayTeamImages() {
 
 document.addEventListener("DOMContentLoaded", () => {
   displayTeamImages();
-  displayNotification();
 });
 
 //Notifications
 let Notifications = JSON.parse(localStorage.getItem("Notifications"));
 if (Notifications == null || Notifications == undefined) {
-    Notifications = [];
+  Notifications = [];
 }
 
-
 // Creating Notification
-function saveNotification(name, firstName, lastName, type) { 
+function saveNotification(name, firstName, lastName, type) {
   let notificationId;
+  const date = new Date();
 
   for (let i = 0; i <= Notifications.length; i++) {
     notificationId = i;
   }
 
-   let newNotification = {
+  let newNotification = {
     notificationId: notificationId,
     fullName: `${firstName} ${lastName}`,
     notificationName: `${name}`,
-    type: `${type}`,
-
+    notificationType: `${type}`,
+    read: false,
+    createdAt: date.getTime(),
   };
 
   Notifications.push(newNotification);
   localStorage.setItem("Notifications", JSON.stringify(Notifications));
-
 }
 
 function displayNotification() {
-  let notifyMsg = document.getElementById("notify-msg")
+  let notifyMsg = document.getElementById("notify-msg");
 
-  let notifyPlaceholder = ''
-  for (let i = 0; i <= Notifications.length; i++ )
-  { 
-    console.log(Notifications[0].type)
-    if (Notifications[i] !==null || Notifications[i] !==undefined) { 
-  if (Notifications[i].type ==="task") { 
-    notifyPlaceholder = ` <tr> 
+  let notifyPlaceholder = "";
+  for (let i = 0; i < Notifications.length; i++) {
+    if (Notifications[i] !== null || Notifications[i] !== undefined) {
+      console.log(Notifications[i]);
+      if (Notifications[i].notificationType == "task") {
+        notifyPlaceholder += ` <tr id="${Notifications[i].id}"> 
      <th scope="row"><input type="checkbox"></th>
-     <td><span class="bold">${Notifications[i].fullName}</span> added a new task <span class = "text-italic"> ${Notifications[i].notificationName} </span></td>
+     <td><span class="bold">${Notifications[i].fullName}</span> added a new task <span class = "font-italic"> ${Notifications[i].notificationName} </span></td>
      
      <td><span class="time text-muted">6:02 PM</span></td>
-   </tr>`
- 
-   }
-   else if (Notifications[i].type ==="project") {
-    notifyPlaceholder = ` <tr> 
+   </tr>`;
+      } else if (Notifications[i].notificationType == "project") {
+        notifyPlaceholder += ` <tr> 
    <th scope="row"><input type="checkbox"></th>
-   <td><span class="bold">${Notifications[i].fullName}</span> created a new project <span class = "text-italic"> ${Notifications[i].notificationName} </span></td>
+   <td><span class="bold">${Notifications[i].fullName}</span> created a new project <span class = "font-italic"> ${Notifications[i].notificationName} </span></td>
    
    <td><span class="time text-muted">6:02 PM</span></td>
- </tr>`
-
-   }
- 
+ </tr>`;
+      }
+    }
   }
-}
 
-  notifyMsg.innerHTML = notifyPlaceholder
-
+  notifyMsg.innerHTML = notifyPlaceholder;
 }
