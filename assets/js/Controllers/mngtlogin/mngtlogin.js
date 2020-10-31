@@ -14,6 +14,10 @@ var internalUsers = [
         "password" : "admin"
     }
 ]
+
+document.getElementById('profileName').innerHTML = internalUsers.firstName;
+document.getElementById('profileRole').innerHTML = internalUsers.category;
+
 // Users Gotten from local storage
 localStorage.setItem("internalUsers", JSON.stringify(internalUsers))
 // PROJECTS LIST GOTTEN FROM LOCAL STORAGE
@@ -42,7 +46,7 @@ function mngtsLogin() {
 document.getElementById('registeredUsersNumber').innerHTML = users.length;
 document.getElementById('projectsCreatedNumber').innerHTML = projects.length;
 
-function displayUsers() {
+async function displayUsers() {
     let usersPlaceholder;
     let tableHolder = `
     <div class="d-flex justify-content-end p-2">
@@ -97,10 +101,12 @@ function editUserTrigger(id) {
     document.getElementById("editrole").value = userRecord.role;
     document.getElementById('status').value = userRecord.status;
     document.getElementById('index').value = id;
+    
 }
 // alert(document.getElementById('status').value)
 
 function update() {
+    // userRecord = users[id];
     i = document.getElementById("index").value;
     // status = document.getElementById('status')
     // alert(status.options[status.selectedIndex].text)
@@ -108,18 +114,22 @@ function update() {
     let updatedRecord = {
         firstName: document.getElementById("editfirstName").value,
         lastName: document.getElementById("editlastName").value,
-        image: "../../assets/img/Sophia.jpg",
+        image: users[i].image,
         email: document.getElementById("editemail").value,
         password: document.getElementById("editpassword").value,
         role:  document.getElementById("editrole").value,
-        status: document.getElementById('editstatus').value
+        status: document.getElementById('editstatus').value,
+        teamIdList: users[i].teamIdList,
+        tasksIdList: users[i].taskIdList,
+        projectsIdList: users[i].projectsIdList
     }
     
+    alert(users.teamIdList)
     users[i] = updatedRecord;
     localStorage.setItem('users', JSON.stringify(users));
     location.reload();
 }
-
+// alert(JSON.stringify(users[5].teamIdList))
 function deleteUser(id) {
     let confirmation = confirm('Are you sure you want to delete');
     if(confirmation = true) {
@@ -151,7 +161,10 @@ function addUser() {
         email: userEmail,
         password: userPassword,
         role: role,
-        status: userStatus
+        status: userStatus,
+        teamIdList: [],
+        taskIdList: [],
+        projectsIdList: [],
     }
     users.push(addUser);
     localStorage.setItem("users", JSON.stringify(users));
