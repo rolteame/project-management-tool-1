@@ -49,3 +49,18 @@ box-shadow: 0px 3px 19px -8px rgba(0,0,0,0.75);
 .task-list-card{
     border-radius: 10px;
 }
+
+.task-task-card{
+    border-radius: 10px;
+    border: solid  #d1d1d1  1px /*#f5f6f7*/;
+}
+.task-task-card:hover{
+     -webkit-box-shadow: 2px 5px 13px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 5px 13px -8px rgba(0,0,0,0.75);
+    box-shadow: 2px 5px 13px -8px rgba(0,0,0,0.75);
+    transition: all ease-in-out 0.1s;
+}
+
+.task-badge-green{
+    background-color: #78d5af;
+}
