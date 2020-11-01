@@ -177,15 +177,25 @@ function addUpTeamMember(e) {
   // console.log(e.target.selected,e.target.value)
   if (e.target.selected == true) {
     innerDiv = document.createElement("div");
+    innerDiv.classList.add("badge");
+    innerDiv.classList.add("badge-secondary");
+    innerDiv.classList.add("m-2");
     button = document.createElement("button");
     button.innerHTML = "X";
+    button.classList.add("badge");
+    button.classList.add("badge-danger");
+    button.classList.add("text-white");
+    button.classList.add("font-weight-bold");
+    button.classList.add("border-0");
+    button.classList.add("ml-1");
+
     button.onclick = function (e) {
       this.parentElement.parentElement.removeChild(this.parentElement);
     };
+
     innerDiv.append(e.target.value);
     innerDiv.append(button);
     innerDiv.id = e.target.id;
-
     teamMemberDisplayDiv.appendChild(innerDiv);
   }
 }
