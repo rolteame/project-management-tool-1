@@ -229,3 +229,7 @@ function displayNotification() {
 
   notifyMsg.innerHTML = notifyPlaceholder;
 }
+
+function getNotifyCount(params) {}
+document.getElementById("notifyCount").innerText = Notifications.length;
+document.getElementById("theAvatar").src = `${currentUser.image}`;

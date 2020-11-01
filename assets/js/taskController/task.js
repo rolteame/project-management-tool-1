@@ -77,7 +77,7 @@ function displayTasksLists() {
     if (tasksLists[i].userId == currentUser.id) {
       if (tasksLists[i].projectId == currentProject.projectId) {
         tasksListsPlaceholder += `
-            <div class="card task-list-card" style="max-width: 30%">
+            <div class="card task-list-card" style="min-width: 30%; max-width:30%">
             <div class="">
               <div class=" d-flex justify-content-between flex-column">
                   <span class="my-2 card-heading text-center font-weight-normal">${tasksLists[i].name}</span>
