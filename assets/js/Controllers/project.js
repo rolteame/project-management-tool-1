@@ -202,6 +202,7 @@ function saveNotification(name, firstName, lastName, type) {
   localStorage.setItem("Notifications", JSON.stringify(Notifications));
 }
 
+// displays notifications
 function displayNotification() {
   let notifyMsg = document.getElementById("notify-msg");
 
