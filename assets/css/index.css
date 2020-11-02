@@ -103,3 +103,18 @@
     max-width: 100%;
   }
 }
+
+.font-hero {
+  font-size: 1.725rem !important;
+}
+.font-sub-hero {
+  font-size: 1rem !important;
+}
+
+.font-section-heading {
+  font-size: 1.625rem;
+}
+
+.form-label {
+  font-weight: bold !important;
+}
