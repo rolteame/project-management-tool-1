@@ -49,7 +49,7 @@ Bascom Projects is a user friendly Project Management Tool(software) that is aim
 
 > Creators
 
-> > 1.  Adebiyi Rotimi(Team leader)
+> > 1.  Adebiyi Rotimi(Team Lead)
 > > 2.  Sophia Stephanie Daniels
 > > 3.  Bankole Ayodeji
 > > 4.  Onyedikachi E. Ibeabuchi
